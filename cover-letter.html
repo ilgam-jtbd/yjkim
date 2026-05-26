@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자기소개서 — 김연재 YJ KIM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B2A4A;--navy-dark:#0F1C33;
+  --blue:#2563EB;
+  --gray-100:#F1F3F5;--gray-200:#E9ECEF;
+  --gray-500:#6B7280;--gray-700:#374151;--gray-900:#111827;
+}
+body{font-family:'Noto Sans KR','Inter',-apple-system,sans-serif;color:var(--gray-900);background:#fff;font-size:14px;line-height:1.85}
+
+@media screen{
+  body{max-width:820px;margin:0 auto;padding:2rem 1.5rem}
+  .toolbar{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--gray-200);padding:0.75rem 0;display:flex;justify-content:space-between;align-items:center;margin:-2rem -1.5rem 2rem;padding-left:1.5rem;padding-right:1.5rem;z-index:10}
+  .tb-left a{font-size:0.8125rem;color:var(--blue);text-decoration:none;font-weight:500}
+  .tb-right{display:flex;gap:0.75rem}
+  .btn{padding:0.4375rem 0.875rem;border-radius:6px;font-size:0.8125rem;font-weight:600;cursor:pointer;text-decoration:none;border:none;font-family:inherit}
+  .btn-outline{border:1px solid var(--gray-200);color:var(--gray-700);background:#fff}
+  .btn-outline:hover{border-color:var(--navy);color:var(--navy)}
+  .btn-primary{background:var(--blue);color:#fff}
+  .btn-primary:hover{background:#1D4ED8}
+}
+@media print{
+  .toolbar{display:none}
+  body{font-size:11pt;padding:0}
+}
+
+.cl-header{border-bottom:3px solid var(--navy);padding-bottom:1.5rem;margin-bottom:2rem}
+.cl-title{font-size:1.5rem;font-weight:900;color:var(--navy-dark);letter-spacing:-0.01em;margin-bottom:0.25rem}
+.cl-sub{font-size:0.875rem;color:var(--blue);font-weight:600;margin-bottom:0.5rem}
+.cl-contact{font-size:0.8125rem;color:var(--gray-500);display:flex;gap:1.5rem;flex-wrap:wrap}
+
+.section{margin-bottom:2rem}
+.section-title{font-size:0.6875rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);border-bottom:1px solid var(--gray-200);padding-bottom:0.375rem;margin-bottom:1rem}
+
+p{font-size:0.9375rem;color:var(--gray-700);line-height:1.85;margin-bottom:0.875rem}
+p:last-child{margin-bottom:0}
+
+.indent{padding-left:1.25rem;border-left:3px solid var(--gray-200);margin-bottom:1rem}
+.indent p{font-size:0.9rem}
+
+.contrib-list{list-style:none;margin-top:0.75rem}
+.contrib-list li{font-size:0.9rem;color:var(--gray-700);padding:0.4rem 0 0.4rem 1.25rem;position:relative;border-bottom:1px solid var(--gray-100);line-height:1.6}
+.contrib-list li:last-child{border-bottom:none}
+.contrib-list li::before{content:'';position:absolute;left:0;top:0.85rem;width:5px;height:5px;background:var(--blue);border-radius:50%}
+.contrib-list li strong{color:var(--navy-dark)}
+
+.ptab{width:100%;border-collapse:collapse;font-size:0.75rem;margin-top:0.75rem}
+.ptab th{background:var(--navy);color:rgba(255,255,255,0.8);padding:0.5rem 0.75rem;text-align:left;font-size:0.6875rem;font-weight:600;letter-spacing:0.06em}
+.ptab td{padding:0.5rem 0.75rem;border-bottom:1px solid var(--gray-200);color:var(--gray-700);vertical-align:top;line-height:1.5}
+.ptab tr:last-child td{border-bottom:none}
+.pnum{font-family:'Inter',sans-serif;font-weight:600;color:var(--navy);font-size:0.6875rem;white-space:nowrap}
+.badge{display:inline-block;padding:0.15rem 0.5rem;border-radius:100px;font-size:0.625rem;font-weight:700}
+.badge-g{background:#D1FAE5;color:#065F46}
+.badge-b{background:#DBEAFE;color:#1E40AF}
+
+.perf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.5rem;margin-bottom:1rem}
+.pgi{background:var(--gray-100);border-radius:6px;padding:0.625rem 0.875rem;font-size:0.8125rem}
+.pgi strong{color:var(--navy-dark);display:block;font-size:0.875rem;margin-bottom:0.15rem}
+.pgi span{color:var(--gray-500)}
+
+@media print{
+  .ptab th{background:var(--navy) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .badge-g{background:#D1FAE5 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .badge-b{background:#DBEAFE !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .pgi{background:var(--gray-100) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="tb-left"><a href="index.html">← 포트폴리오로 돌아가기</a></div>
+  <div class="tb-right">
+    <a href="김연재_자기소개서_2026.pdf" class="btn btn-outline" download>PDF 다운로드</a>
+    <button class="btn btn-primary" onclick="window.print()">인쇄 / PDF 저장</button>
+  </div>
+</div>
+
+<div class="cl-header">
+  <div class="cl-title">자 기 소 개 서</div>
+  <div class="cl-sub">김 연 재 (YJ KIM) &nbsp;|&nbsp; 부사장 / CSO &nbsp;|&nbsp; 플랫폼 전략 · 이커머스 · Business Development · 데이터 그로스 · IR</div>
+  <div class="cl-contact">
+    <span>010-9593-9917</span>
+    <span>wisdom.yjkim@gmail.com</span>
+  </div>
+</div>
+
+<!-- 커리어 흐름 -->
+<div class="section">
+  <div class="section-title">커리어 흐름 — 기술에서 전략으로, 국내외를 넘나들며</div>
+  <p>마이크로소프트 R&D 연구원으로 커리어를 시작했습니다. MSSQL 국내·미국 버전 동시 출시에 직접 참여하며 기술이 시장을 만드는 방식을 체감했고, 그 감각이 이후 모든 사업 결정의 기준이 되었습니다. 인터파크에서는 FIFA 월드컵 온라인 판매 공식 파트너 제안을 기술 총괄로 이끌었고, ATHUB에서는 SKT·KTF 대상 IT 컨설팅을 5년간 진행하며 AI 에이전트 특허까지 출원했습니다.</p>
+  <p>인도네시아로 건너가 Smart Wisdom을 7년간 총괄하면서 소셜 커머스를 1년 만에 업계 1위로 올려놓고, 연 매출 11억 원에서 207억 원으로 성장시켰습니다. 그 과정에서 Red Herring Global 100 혁신기업으로 선정(카카오와 동시 수상)되었고, 인도네시아 이커머스 협회 설립도 직접 제안·구축했습니다. 귀국 후에는 웍스메이트 CSO로 2년 5개월 만에 직원 3명을 50명으로 확대하고 60억 원 규모 투자를 유치하며 O2O 플랫폼 성장을 이끌었습니다.</p>
+  <p>현재는 어바웃피싱 부사장 겸 CSO로서 낚시 슈퍼앱의 전략·마케팅·데이터·BD 전 영역을 총괄하고 있습니다. 서버사이드트래킹, AI 자동화 보고 시스템, 등록 특허 5건까지 직접 설계·실행하고 있으며, MAU는 2026년 3월 기준 8.4만 명을 달성했습니다.</p>
+</div>
+
+<!-- 핵심 역량 -->
+<div class="section">
+  <div class="section-title">핵심 역량 — 세 가지 축</div>
+
+  <p><strong>첫째, 데이터 기반 그로스 전략입니다.</strong></p>
+  <div class="indent">
+    <p>GA4·GTM·서버사이드트래킹(SST)을 직접 구축해 정확한 전환 데이터를 확보하는 것에서 시작합니다. 검색 로그 1,689건 전수 분석으로 단골 바이럴 SEO 전략을 설계하고, OKR 변형 방식(가설-실험-신호-핵심결과)으로 팀의 의사결정 속도를 높입니다. 데이터 사이언티스트를 직접 영입해 추천 시스템을 최적화한 경험도 있습니다.</p>
+  </div>
+
+  <p><strong>둘째, 플랫폼 BM 기획과 Business Development입니다.</strong></p>
+  <div class="indent">
+    <p>D2C 이커머스, O2O 인력 중개, 마켓플레이스, AI 추천 커머스 등 다양한 BM을 처음부터 설계하고 PMF를 검증해왔습니다. 단순 기획에 그치지 않고 외부 파트너십 발굴, 협상, 연동까지 BD 전 과정을 직접 담당합니다. SK T-map 연동 POC 제안, 액셀러레이터 지원, 이커머스 협회 설립 등이 대표적인 사례입니다.</p>
+  </div>
+
+  <p><strong>셋째, 투자 유치(IR)와 경영 리더십입니다.</strong></p>
+  <div class="indent">
+    <p>누적 100억 원 이상의 IR 투자 유치 경험을 보유하고 있습니다. 한국투자파트너스·NHN·하나금융·중기은행·DTN인베스트먼트 등 다수의 기관 투자자를 직접 설득했고, Pre-A부터 시리즈 A 대응 문서 작성까지 혼자 처리했습니다. 이노비즈 인증, 기업 가치 산정, 중장기 재무 시나리오 수립도 CSO 역할로 직접 수행하고 있습니다.</p>
+  </div>
+</div>
+
+<!-- 지식재산권 -->
+<div class="section">
+  <div class="section-title">지식재산권 — AI 기반 신뢰도 추천 시스템 (등록 5건 전부 완료)</div>
+  <p>어바웃피싱에서 직접 발명한 특허군으로, 소셜 네트워크 기반의 지인 신뢰도를 활용해 상품을 추천하고 구매 전환 기여자에게 수익을 자동 분배하는 기술입니다. 이커머스·핀테크·SNS 영역에 광범위하게 적용 가능하며, <strong>5건 모두 등록 완료(2026.03~05)</strong>되었습니다.</p>
+  <table class="ptab">
+    <thead>
+      <tr><th>구분</th><th>등록번호</th><th>발명의 명칭</th><th>상태</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>등록 특허 1</strong></td>
+        <td class="pnum">10-2947624</td>
+        <td>신뢰도에 기반하여 상품을 추천하고 수익을 분배하는 방법 및 시스템</td>
+        <td><span class="badge badge-g">등록완료 (2026.03)</span></td>
+      </tr>
+      <tr>
+        <td><strong>등록 특허 2</strong></td>
+        <td class="pnum">10-2960681</td>
+        <td>소셜 네트워크 기반 지인 신뢰도를 이용한 상품 추천 방법 및 시스템</td>
+        <td><span class="badge badge-g">등록완료 (2026.05)</span></td>
+      </tr>
+      <tr>
+        <td><strong>등록 특허 3</strong></td>
+        <td class="pnum">10-2960682</td>
+        <td>소셜 네트워크 기반 지인 신뢰도를 이용한 상품 추천 방법 및 시스템 (II)</td>
+        <td><span class="badge badge-g">등록완료 (2026.05)</span></td>
+      </tr>
+      <tr>
+        <td><strong>등록 특허 4</strong></td>
+        <td class="pnum">10-2960683</td>
+        <td>컨텍스트 정보 기반 구매 가능성 산출 및 적응적 추천 전략 변경 방법 및 전자 장치</td>
+        <td><span class="badge badge-g">등록완료 (2026.05)</span></td>
+      </tr>
+      <tr>
+        <td><strong>등록 특허 5</strong></td>
+        <td class="pnum">10-2960684</td>
+        <td>지인 구매 이력 기반 대화형 인터페이스를 통해 추천 정보를 제공하는 방법 및 시스템</td>
+        <td><span class="badge badge-g">등록완료 (2026.05)</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 현직 성과 -->
+<div class="section">
+  <div class="section-title">현직(어바웃피싱) 주요 성과 — 2025년 10월 입사 이후</div>
+  <div class="perf-grid">
+    <div class="pgi"><strong>+35.5% MAU</strong><span>6.2만 → 8.4만 명 (2026.03) | 월간 세션 271,671회</span></div>
+    <div class="pgi"><strong>광고 효율</strong><span>Google CPA 769원 | Meta ROAS 643% — 업계 최상위</span></div>
+    <div class="pgi"><strong>자동화 구축</strong><span>AI 은과장 봇, 선박 좌석 자동수집 파이프라인, GTM v3 배포</span></div>
+    <div class="pgi"><strong>BD / 사업개발</strong><span>SK T-map POC, 오션스프링보드, 이노비즈, Pre-A IR</span></div>
+  </div>
+</div>
+
+<!-- 지원 동기 -->
+<div class="section">
+  <div class="section-title">지원 동기 및 기여 방향</div>
+  <p>어바웃피싱에서 슈퍼앱 전략, 광고 최적화, AI 자동화, 특허 출원, IR까지 동시에 진행하며 CSO 역할의 범위를 최대로 밀어붙였습니다. 그 과정에서 분명해진 것이 있습니다. 저는 한 가지 기능에 특화된 실무자보다는, 전략과 실행을 함께 리드하는 경영자로서 조직에 더 큰 기여를 할 수 있다는 것입니다.</p>
+  <p>귀사에서 아래 세 가지 방향으로 즉각적인 기여를 드릴 수 있습니다.</p>
+  <ul class="contrib-list">
+    <li><strong>데이터 그로스</strong> — GA4·GTM·SST 기반 전환 분석 체계를 빠르게 구축하고 광고 효율과 리텐션을 개선합니다.</li>
+    <li><strong>BD &amp; 플랫폼 확장</strong> — 외부 파트너십 발굴부터 신규 수익 구조 설계까지 직접 리드합니다.</li>
+    <li><strong>IR &amp; 스케일업</strong> — 검증된 투자 유치 경험과 팀 빌딩 역량으로 성장 속도를 높입니다.</li>
+  </ul>
+  <p style="margin-top:1rem">단기 성과보다 브랜드의 비전과 고객 신뢰를 함께 설계해 나가는 경영자가 되겠습니다. 귀사와 함께 의미 있는 성장을 만들어가고 싶습니다. 감사합니다.</p>
+</div>
+
+<div style="text-align:right;font-size:0.8125rem;color:var(--gray-500);padding:1.5rem 0;border-top:1px solid var(--gray-200);margin-top:1rem">
+  2026년 5월<br>
+  지원자 &nbsp;<strong style="color:var(--navy-dark)">김 연 재 (YJ KIM)</strong><br>
+  010-9593-9917 &nbsp;|&nbsp; wisdom.yjkim@gmail.com
+</div>
+
+</body>
+</html>
