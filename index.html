@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김연재 YJ KIM · Portfolio</title>
+<meta name="description" content="부사장 / CSO 김연재(YJ KIM) — 플랫폼 전략, 이커머스, Business Development, 데이터 그로스, IR 포트폴리오">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B2A4A;--navy-dark:#0F1C33;--navy-mid:#2C3E6B;
+  --blue:#2563EB;--blue-light:#3B82F6;
+  --gray-50:#F8F9FA;--gray-100:#F1F3F5;--gray-200:#E9ECEF;
+  --gray-400:#9CA3AF;--gray-600:#6B7280;--gray-700:#4B5563;--gray-900:#111827;
+  --white:#FFFFFF;--accent:#0EA5E9;--green:#10B981;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR','Inter',-apple-system,sans-serif;color:var(--gray-900);background:var(--white);line-height:1.7;font-size:16px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,28,51,0.97);backdrop-filter:blur(8px);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-brand{color:#fff;font-weight:700;font-size:0.9375rem;letter-spacing:0.02em;text-decoration:none}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.8125rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{display:flex;gap:0.625rem}
+.btn{padding:0.4375rem 0.875rem;border-radius:6px;font-size:0.8125rem;font-weight:600;cursor:pointer;text-decoration:none;transition:all .2s;display:inline-block;font-family:inherit}
+.btn-outline{border:1px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.85);background:transparent}
+.btn-outline:hover{border-color:#fff;color:#fff}
+.btn-primary{background:var(--blue);color:#fff;border:1px solid var(--blue)}
+.btn-primary:hover{background:var(--blue-light)}
+
+/* HERO */
+#top{min-height:100vh;background:linear-gradient(140deg,var(--navy-dark) 0%,var(--navy) 55%,var(--navy-mid) 100%);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:100px 2rem 80px;position:relative;overflow:hidden}
+#top::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(37,99,235,0.12) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:900px;margin:0 auto;width:100%;position:relative}
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.8);padding:0.375rem 1rem;border-radius:100px;font-size:0.8125rem;font-weight:500;letter-spacing:0.04em;margin-bottom:1.75rem}
+.hero-name{font-size:clamp(2.75rem,7vw,4.5rem);font-weight:900;line-height:1.05;margin-bottom:0.5rem;letter-spacing:-0.03em}
+.hero-name .en{font-family:'Inter',sans-serif;color:rgba(255,255,255,0.38);font-size:0.4em;font-weight:400;display:block;letter-spacing:0.15em;margin-top:0.3rem}
+.hero-sub{font-size:clamp(0.9rem,2vw,1.0625rem);color:rgba(255,255,255,0.55);font-weight:400;margin-bottom:1.75rem;line-height:1.6}
+.hero-sub strong{color:rgba(255,255,255,0.85);font-weight:600}
+.hero-tagline{font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:700;color:#fff;line-height:1.5;margin-bottom:2.5rem}
+.hero-tagline em{font-style:normal;color:var(--accent)}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0.875rem;margin-bottom:2.5rem;max-width:760px}
+.hs{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);border-radius:10px;padding:1rem 1.125rem}
+.hs-val{font-size:1.375rem;font-weight:800;color:#fff;font-family:'Inter',sans-serif;line-height:1;margin-bottom:0.25rem}
+.hs-lbl{font-size:0.7rem;color:rgba(255,255,255,0.45);line-height:1.35}
+.hero-actions{display:flex;gap:0.875rem;flex-wrap:wrap}
+.btn-hp{background:var(--blue);color:#fff;border:none;padding:0.75rem 1.5rem;border-radius:8px;font-size:0.9375rem;font-weight:600;cursor:pointer;text-decoration:none;transition:all .2s;font-family:inherit}
+.btn-hp:hover{background:var(--blue-light)}
+.btn-ho{background:transparent;color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.25);padding:0.75rem 1.25rem;border-radius:8px;font-size:0.875rem;font-weight:500;cursor:pointer;text-decoration:none;transition:all .2s;font-family:inherit}
+.btn-ho:hover{border-color:rgba(255,255,255,0.55);color:#fff}
+
+/* SECTIONS */
+section{padding:5.5rem 2rem}
+.si{max-width:900px;margin:0 auto}
+.slabel{font-size:0.6875rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:var(--blue);margin-bottom:0.625rem}
+.stitle{font-size:clamp(1.5rem,3.5vw,2.125rem);font-weight:800;color:var(--navy-dark);line-height:1.2;margin-bottom:0.75rem;letter-spacing:-0.02em}
+.ssub{font-size:0.9375rem;color:var(--gray-600);max-width:580px;margin-bottom:2.75rem;line-height:1.65}
+.bg-light{background:var(--gray-50)}
+.bg-navy{background:var(--navy-dark);color:#fff}
+
+/* STATS GRID */
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.sc{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:1.375rem 1.5rem;transition:box-shadow .2s}
+.sc:hover{box-shadow:0 4px 16px rgba(0,0,0,0.06)}
+.sc-val{font-size:1.875rem;font-weight:800;color:var(--navy);font-family:'Inter',sans-serif;line-height:1;margin-bottom:0.375rem}
+.sc-lbl{font-size:0.875rem;color:var(--gray-700);font-weight:500}
+.sc-sub{font-size:0.75rem;color:var(--gray-400);margin-top:0.25rem}
+
+/* CASES */
+.cases-list{display:flex;flex-direction:column;gap:3rem}
+.case-card{border:1px solid var(--gray-200);border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
+.ch{background:var(--navy);color:#fff;padding:2rem 2.25rem}
+.cn{font-size:0.6875rem;font-weight:700;letter-spacing:0.12em;color:rgba(255,255,255,0.35);margin-bottom:0.5rem;font-family:'Inter',sans-serif;text-transform:uppercase}
+.cc{font-size:1.5rem;font-weight:800;margin-bottom:0.2rem;letter-spacing:-0.01em}
+.cr{font-size:0.8125rem;color:rgba(255,255,255,0.55);margin-bottom:1rem}
+.cp{display:inline-block;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:0.25rem 0.75rem;border-radius:100px;font-size:0.6875rem;color:rgba(255,255,255,0.65);font-family:'Inter',sans-serif;letter-spacing:0.03em}
+.cm{display:grid;grid-template-columns:repeat(4,1fr);gap:0.625rem;margin-top:1.5rem}
+.cmi{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:0.75rem 0.875rem}
+.cmv{font-size:1.125rem;font-weight:800;font-family:'Inter',sans-serif;color:#fff;line-height:1}
+.cml{font-size:0.65rem;color:rgba(255,255,255,0.42);margin-top:0.25rem;line-height:1.3}
+.cb{padding:2rem 2.25rem}
+.cs{margin-bottom:1.75rem}
+.cst{font-size:0.6875rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:0.625rem}
+.cs p{color:var(--gray-700);line-height:1.75;font-size:0.9375rem}
+.ca{list-style:none}
+.ca li{padding:0.5rem 0 0.5rem 1.375rem;position:relative;color:var(--gray-700);font-size:0.9rem;border-bottom:1px solid var(--gray-100);line-height:1.6}
+.ca li:last-child{border-bottom:none}
+.ca li::before{content:'';position:absolute;left:0;top:0.85rem;width:5px;height:5px;background:var(--blue);border-radius:50%}
+
+/* PATENTS */
+.ptab{width:100%;border-collapse:collapse;font-size:0.875rem;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.ptab th{background:var(--navy);color:rgba(255,255,255,0.75);padding:0.875rem 1.25rem;text-align:left;font-size:0.6875rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase}
+.ptab td{padding:1rem 1.25rem;border-bottom:1px solid var(--gray-100);color:var(--gray-700);vertical-align:top;line-height:1.5}
+.ptab tr:last-child td{border-bottom:none}
+.pnum{font-family:'Inter',sans-serif;font-weight:600;color:var(--navy);font-size:0.8125rem;white-space:nowrap}
+.badge{display:inline-block;padding:0.2rem 0.625rem;border-radius:100px;font-size:0.6875rem;font-weight:700;letter-spacing:0.02em;white-space:nowrap}
+.badge-g{background:#D1FAE5;color:#065F46}
+.badge-b{background:#DBEAFE;color:#1E40AF}
+
+/* SKILLS */
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.sk{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:1.375rem}
+.skt{font-size:0.6875rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);margin-bottom:0.875rem}
+.stags{display:flex;flex-wrap:wrap;gap:0.4375rem}
+.stag{background:var(--gray-100);color:var(--gray-700);padding:0.25rem 0.6875rem;border-radius:6px;font-size:0.8125rem;font-weight:500}
+
+/* TIMELINE */
+.tl{position:relative;padding-left:2rem}
+.tl::before{content:'';position:absolute;left:0;top:0.5rem;bottom:0;width:2px;background:var(--gray-200)}
+.tli{position:relative;margin-bottom:2.25rem}
+.tli::before{content:'';position:absolute;left:-2.375rem;top:0.3rem;width:10px;height:10px;background:var(--blue);border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.tlp{font-size:0.7rem;font-family:'Inter',sans-serif;font-weight:700;color:var(--blue);letter-spacing:0.04em;margin-bottom:0.2rem}
+.tlt{font-size:1rem;font-weight:700;color:var(--navy-dark);margin-bottom:0.15rem}
+.tlr{font-size:0.8125rem;color:var(--gray-600);margin-bottom:0.375rem}
+.tld{font-size:0.875rem;color:var(--gray-600);line-height:1.6}
+
+/* EDU & AWARDS */
+.eg{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-bottom:2.75rem}
+.ec{border:1px solid var(--gray-200);border-radius:12px;padding:1.375rem 1.5rem;background:#fff}
+.ecp{font-size:0.7rem;font-family:'Inter',sans-serif;font-weight:700;color:var(--blue);margin-bottom:0.4rem}
+.ecs{font-size:1rem;font-weight:700;color:var(--navy-dark);margin-bottom:0.2rem}
+.ecd{font-size:0.875rem;color:var(--gray-600)}
+.ecn{margin-top:0.375rem;font-size:0.75rem;color:var(--gray-400)}
+.alist{display:flex;flex-direction:column;gap:0.875rem}
+.ai{display:flex;gap:1rem;align-items:flex-start;padding:1rem 1.25rem;background:#fff;border:1px solid var(--gray-200);border-radius:10px}
+.ay{font-size:0.7rem;font-family:'Inter',sans-serif;font-weight:700;color:var(--blue);min-width:52px;padding-top:0.1rem}
+.at{font-size:0.9375rem;font-weight:600;color:var(--navy-dark);margin-bottom:0.15rem}
+.ad{font-size:0.8125rem;color:var(--gray-600)}
+
+/* CONTACT */
+#contact{background:var(--navy-dark);color:#fff;padding:5.5rem 2rem}
+.cg{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;max-width:900px;margin:0 auto}
+.ct{font-size:clamp(1.25rem,3vw,1.75rem);font-weight:800;color:#fff;margin-bottom:0.5rem;line-height:1.3}
+.csub{color:rgba(255,255,255,0.5);font-size:0.9375rem;margin-bottom:1.5rem}
+.cl{display:flex;flex-direction:column;gap:0.5rem}
+.cla{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.9375rem;transition:color .2s}
+.cla:hover{color:#fff}
+.dbs{display:flex;flex-direction:column;gap:0.625rem}
+.db{display:flex;align-items:center;gap:0.5rem;padding:0.6875rem 1.125rem;border:1px solid rgba(255,255,255,0.15);border-radius:8px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.8125rem;font-weight:500;transition:all .2s;white-space:nowrap;font-family:inherit}
+.db:hover{border-color:rgba(255,255,255,0.45);color:#fff}
+
+/* FOOTER */
+footer{background:var(--navy-dark);border-top:1px solid rgba(255,255,255,0.06);padding:1.5rem 2rem;text-align:center}
+footer p{color:rgba(255,255,255,0.25);font-size:0.75rem}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .cm{grid-template-columns:repeat(2,1fr)}
+  .sg{grid-template-columns:repeat(2,1fr)}
+  .cg{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  nav{padding:0 1rem}
+  .nav-links{display:none}
+  section{padding:4rem 1.25rem}
+  #top{padding:90px 1.25rem 60px}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .sg{grid-template-columns:1fr}
+  .eg{grid-template-columns:1fr}
+  .ch,.cb{padding:1.5rem}
+  .cm{grid-template-columns:repeat(2,1fr)}
+  .ptab{font-size:0.8rem}
+  .ptab th,.ptab td{padding:0.75rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#top" class="nav-brand">김연재 · YJ KIM</a>
+  <ul class="nav-links">
+    <li><a href="#overview">핵심 성과</a></li>
+    <li><a href="#cases">경력 사례</a></li>
+    <li><a href="#patents">지식재산</a></li>
+    <li><a href="#skills">역량</a></li>
+    <li><a href="#career">경력</a></li>
+    <li><a href="#contact">연락</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="resume.html" class="btn btn-outline">이력서</a>
+    <a href="cover-letter.html" class="btn btn-primary">자기소개서</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="top">
+  <div class="hero-inner">
+    <div class="hero-badge">부사장 / CSO &nbsp;·&nbsp; Open to Opportunities 2026</div>
+    <h1 class="hero-name">
+      김연재
+      <span class="en">YJ KIM</span>
+    </h1>
+    <p class="hero-sub">
+      <strong>플랫폼 전략 · 이커머스 · Business Development · 데이터 그로스 · IR</strong><br>
+      Microsoft R&D → 인터파크 → ATHUB → Smart Wisdom (인도네시아 7년) → 웍스메이트 → 애즈유 → 어바웃피싱
+    </p>
+    <p class="hero-tagline">
+      전략을 데이터로 증명하고,<br>
+      투자를 <em>100억+</em> 유치하고,<br>
+      매출을 <em>19배</em> 성장시킨 CSO.
+    </p>
+    <div class="hero-stats">
+      <div class="hs">
+        <div class="hs-val">100억+</div>
+        <div class="hs-lbl">누적 IR 투자 유치<br>한국투자파트너스·NHN·하나금융 등</div>
+      </div>
+      <div class="hs">
+        <div class="hs-val">19배</div>
+        <div class="hs-lbl">매출 성장<br>11억 → 207억 (3년, 인도네시아)</div>
+      </div>
+      <div class="hs">
+        <div class="hs-val">+35.5%</div>
+        <div class="hs-lbl">MAU 성장<br>6.2만 → 8.4만 (2026.03, 어바웃피싱)</div>
+      </div>
+      <div class="hs">
+        <div class="hs-val">5건</div>
+        <div class="hs-lbl">AI 신뢰도 특허<br>등록 5건 모두 완료</div>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="#cases" class="btn-hp">경력 사례 보기</a>
+      <a href="resume.html" class="btn-ho">이력서 (HTML)</a>
+      <a href="김연재_이력서_2026.pdf" class="btn-ho" download>이력서 PDF 다운로드</a>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section id="overview">
+  <div class="si">
+    <div class="slabel">Overview</div>
+    <h2 class="stitle">핵심 성과 지표</h2>
+    <p class="ssub">20년+ 커리어를 관통하는 세 가지 축 — 전략 수립, 투자 유치, 글로벌 사업개발</p>
+    <div class="stats-grid">
+      <div class="sc">
+        <div class="sc-val">100억+</div>
+        <div class="sc-lbl">누적 IR 투자 유치</div>
+        <div class="sc-sub">한국투자파트너스·NHN·하나금융·포스코CVC 등</div>
+      </div>
+      <div class="sc">
+        <div class="sc-val">207억</div>
+        <div class="sc-lbl">인도네시아 연매출 달성</div>
+        <div class="sc-sub">11억 → 207억, 3년 만에 19배 · Smart Wisdom</div>
+      </div>
+      <div class="sc">
+        <div class="sc-val">643%</div>
+        <div class="sc-lbl">Meta ROAS 달성</div>
+        <div class="sc-sub">Google CPA 769원 동시 달성 · 어바웃피싱 CSO 직접 실행</div>
+      </div>
+      <div class="sc">
+        <div class="sc-val">+827%</div>
+        <div class="sc-lbl">D2C 플랫폼 회원 성장</div>
+        <div class="sc-sub">1년, 매출 +187% 동반 · 애즈유 부사장</div>
+      </div>
+      <div class="sc">
+        <div class="sc-val">250억</div>
+        <div class="sc-lbl">플랫폼 거래액</div>
+        <div class="sc-sub">직원 3→50명, 2년 5개월 · 웍스메이트 CSO</div>
+      </div>
+      <div class="sc">
+        <div class="sc-val">Global 100</div>
+        <div class="sc-lbl">Red Herring 혁신기업 선정</div>
+        <div class="sc-sub">2012 · 카카오와 동시 수상</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases" class="bg-light">
+  <div class="si">
+    <div class="slabel">Cases</div>
+    <h2 class="stitle">경력 사례 — 전략에서 실행까지</h2>
+    <p class="ssub">CSO·부사장으로서 직접 기획하고 실행한 네 개의 성장 궤적</p>
+
+    <div class="cases-list">
+
+      <!-- CASE 01 -->
+      <div class="case-card">
+        <div class="ch">
+          <div class="cn">01 · AboutFishing</div>
+          <div class="cc">어바웃피싱</div>
+          <div class="cr">부사장 / CSO — 전략·마케팅·데이터·BD 총괄</div>
+          <span class="cp">2025.10 — 현재</span>
+          <div class="cm">
+            <div class="cmi">
+              <div class="cmv">+35.5%</div>
+              <div class="cml">MAU 성장<br>6.2만 → 8.4만</div>
+            </div>
+            <div class="cmi">
+              <div class="cmv">769원</div>
+              <div class="cml">Google CPA<br>업계 최상위</div>
+            </div>
+            <div class="cmi">
+              <div class="cmv">643%</div>
+              <div class="cml">Meta ROAS</div>
+            </div>
+            <div class="cmi">
+              <div class="cmv">5건</div>
+              <div class="cml">AI 특허<br>5건 모두 등록완료</div>
+            </div>
+          </div>
+        </div>
+        <div class="cb">
+          <div class="cs">
+            <div class="cst">역할 및 포지션</div>
+            <p>낚시 슈퍼앱(예약·커머스·중고장터·커뮤니티) 전 부문 전략 및 사업을 부사장 겸 CSO로 총괄. 마케팅 퍼포먼스 최적화, AI 자동화 인프라 구축, BD 파트너십 개발, 투자 유치(Pre-A) IR을 동시에 설계·실행합니다.</p>
+          </div>
+          <div class="cs">
+            <div class="cst">데이터 그로스 전략</div>
+            <ul class="ca">
+              <li>GA4·GTM v3·서버사이드트래킹(SST) 직접 구축 — Google CPA 769원, Meta ROAS 643% 달성 (업계 최상위 수준)</li>
+              <li>AI 자동화 보고 시스템 '은과장 봇' 설계·운영 — 데일리·위클리 리포트 자동화로 의사결정 속도 단축</li>
+              <li>선박 좌석 자동수집 파이프라인 구축 (GCS·GitHub Actions) — 수동 데이터 수집 제로화, 운영 비용 절감</li>
+            </ul>
+          </div>
+          <div class="cs">
+            <div class="cst">BD / 사업개발</div>
+            <ul class="ca">
+              <li>SK T-map POC 제안 검토 — 위치 기반 낚시 데이터 연동 및 대형 모빌리티 파트너십 전략 수립</li>
+              <li>오션스프링보드 액셀러레이터 지원, 이노비즈 인증 대응 — 대외 신뢰도 및 비희석 자금 확보</li>
+              <li>Pre-A IR 문서 작성 및 투자자 미팅 리드 — 기업가치 산정, 재무 시나리오 수립, VC 대응</li>
+            </ul>
+          </div>
+          <div class="cs">
+            <div class="cst">지식재산 — AI 신뢰도 추천 시스템 (총 5건)</div>
+            <p>소셜 네트워크 기반 지인 신뢰도를 활용한 상품 추천 및 구매 전환 기여자 수익 자동 분배 기술. 이커머스·핀테크·SNS 영역에 적용 가능한 원천 기술로, <strong>등록 특허 5건 모두 완료 (2026.03~05).</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 02 -->
+      <div class="case-card">
+        <div class="ch">
+          <div class="cn">02 · Worksmate</div>
+          <div class="cc">웍스메이트 (건설 O2O 플랫폼)</div>
+          <div class="cr">CSO / 부사장 — 전략본부 총괄</div>
+          <span class="cp">2020.08 — 2022.12 · 2년 5개월</span>
+          <div class="cm">
+            <div class="cmi">
+              <div class="cmv">60억</div>
+              <div class="cml">IR 유치<br>총 투자금</div>
+            </div>
+            <div class="cmi">
+              <div class="cmv">3→50명</div>
+              <div class="cml">직원 규모<br>2년 5개월</div>
+            </div>
+            <div class="cmi">
+              <div class="cmv">12만</div>
+              <div class="cml">누적 회원</div>
+            </div>
+            <div class="cmi">
+              <div class="cmv">250억</div>
+              <div class="cml">플랫폼 거래액</div>
+            </div>
+          </div>
+        </div>
+        <div class="cb">
+          <div class="cs">
+            <div class="cst">역할 및 포지션</div>
+            <p>건설 O2O 플랫폼 웍스메이트의 전략본부를 신설하고 2년 5개월 만에 직원 3명에서 50명 규모로 성장시켰습니다. 60억 규모의 기관 투자 유치를 직접 리드하고, 국내 최초 노임채권 시스템과 대안신용평가 기반 금융 서비스를 설계·실행했습니다.</p>
+          </div>
+          <div class="cs">
+            <div class="cst">IR 성과 — 총 60억 유치</div>
+            <ul class="ca">
+              <li><strong>한국투자파트너스</strong> — Lead 투자사 유치 리드</li>
+              <li><strong>NHN, 하나금융 ESG</strong> — 전략적 투자 유치</li>
+              <li><strong>IBK 기업은행, DTN인베스트먼트</strong> — 기관 투자 유치</li>
+              <li><strong>포스코·호반건설 CVC</strong> — 건설업계 전략적 투자 유치 (산업 네트워크 및 채널 동시 확보)</li>
+            </ul>
+          </div>
+          <div class="cs">
+            <div class="cst">전략 및 사업 실행</div>
+            <ul class="ca">
+              <li>전략본부 신설·운영 — OKR 변형(HOS-KR) 방식 도입으로 조직 의사결정 체계 구축, 일자리 매칭 13만 건 달성</li>
+              <li>국내 최초 노임채권 시스템 구축 — 건설 근로자 임금 미지급 리스크 해소, 핀테크 사업모델 확장 기반 마련</li>
+              <li>대안신용평가 기반 건설 근로자 금융 서비스 기획 — 한화 EBC·피플펀드 P2P 대출 연계, 대상 300명 전원 상환 완료</li>
+              <li>데이터 사이언티스트 직접 영입 및 추천 시스템 최적화 — 매칭 정확도 향상 및 거래액 250억 달성</li>
+              <li>농촌 일자리 확대 신사업 기획 — 비농업 플랫폼의 농촌 확장 전략 수립</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 03 -->
+      <div class="case-card">
+        <div class="ch" style="background:linear-gradient(135deg,#0F1C33 0%,#1B2A4A 100%)">
+          <div class="cn">03 · Smart Wisdom Group · 인도네시아</div>
+          <div class="cc">소셜커머스 플랫폼 — 경영전략·이커머스 총괄</div>
+          <div class="cr">경영전략 / E-Commerce 총괄 이사</div>
+          <span class="cp">2011.08 — 2018.07 · 7년</span>
+          <div class="cm">
+            <div class="cmi">
+              <div class="cmv">19배</div>
+              <div class="cml">매출 성장<br>11억 → 207억</div>
+            </div>
+            <div class="cmi">
+              <div class="cmv">1년</div>
+              <div class="cml">업계 1위<br>달성 기간</div>
+            </div>
+            <div class="cmi">
+              <div class="cmv">5개국</div>
+              <div class="cml">현지화<br>이커머스</div>
+            </div>
+            <div class="cmi">
+              <div class="cmv">Global 100</div>
+              <div class="cml">Red Herring<br>혁신기업 선정</div>
+            </div>
+          </div>
+        </div>
+        <div class="cb">
+          <div class="cs">
+            <div class="cst">역할 및 포지션</div>
+            <p>인도네시아 소셜 커머스 플랫폼을 7년간 경영 총괄했습니다. 1년 만에 업계 1위를 달성하고 연 매출을 11억 원에서 207억 원(19배)으로 성장시켰습니다. 2012년 Red Herring Global 100 혁신기업으로 선정되어 카카오와 동시 수상했습니다.</p>
+          </div>
+          <div class="cs">
+            <div class="cst">핵심 성과</div>
+            <ul class="ca">
+              <li><strong>업계 1위 달성 (1년만)</strong> — 소셜커머스 플랫폼 전략 기획·운영으로 연 매출 11억 → 207억 달성 (2012→2015, 3년 19배)</li>
+              <li><strong>Red Herring Global 100 혁신기업 선정</strong> (2012.11) — 카카오와 동시 수상, 아시아 스타트업 글로벌 인지도 확보</li>
+              <li><strong>인도네시아 이커머스 협회</strong> 설립 제안·구축 — 업계 표준 형성 주도, 정부 및 기관 신뢰도 확보</li>
+              <li><strong>Microsoft·Google·Facebook 공동 프로모션</strong> 진행 — 글로벌 테크 파트너십 구축 및 마케팅 레버리지 극대화</li>
+              <li><strong>5개국 현지화 이커머스</strong> 오픈 및 해외 BD 파트너십 운영 — 국영기업 시장점유율 85% 채널 확보</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 04 -->
+      <div class="case-card">
+        <div class="ch">
+          <div class="cn">04 · As-You · 환인제약 건기식 자회사</div>
+          <div class="cc">애즈유 — D2C 플랫폼 경영 총괄</div>
+          <div class="cr">부문대표 / 부사장 — 경영 총괄</div>
+          <span class="cp">2023.05 — 2025.09 · 2년 4개월</span>
+          <div class="cm">
+            <div class="cmi">
+              <div class="cmv">+827%</div>
+              <div class="cml">회원 수 성장<br>(1년)</div>
+            </div>
+            <div class="cmi">
+              <div class="cmv">+187%</div>
+              <div class="cml">매출 성장<br>(1년)</div>
+            </div>
+            <div class="cmi">
+              <div class="cmv">3배</div>
+              <div class="cml">월 매출<br>B2B/B2C 영업</div>
+            </div>
+          </div>
+        </div>
+        <div class="cb">
+          <div class="cs">
+            <div class="cst">역할 및 포지션</div>
+            <p>환인제약 건강기능식품 자회사 애즈유의 부문대표로 취임해 D2C 자사몰 플랫폼 구축부터 신제품 기획, SCM 시스템 자동화, IR까지 경영 전반을 총괄했습니다. 1년 만에 회원 +827%, 매출 +187%를 달성했습니다.</p>
+          </div>
+          <div class="cs">
+            <div class="cst">전략 및 사업 실행</div>
+            <ul class="ca">
+              <li>건기식 D2C 자사몰 플랫폼 구축·리뉴얼 주도 — 1년간 회원 +827%, 매출 +187% 달성 (언론 보도)</li>
+              <li>신제품 기획 및 포트폴리오 확대 (아이리프·비피유·솔솔바인) — 솔솔바인 1년 내 5차 재주문 달성</li>
+              <li>SCM 자동 물류·재고 관리 시스템 구축 — 운영 효율화로 월 매출 3배 달성, B2B/B2C 영업 전략 동시 실행</li>
+              <li>IR 문서 작업 및 자본증자 진행 — 재무 구조 개선 및 투자 유치 대응</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PATENTS -->
+<section id="patents">
+  <div class="si">
+    <div class="slabel">Intellectual Property</div>
+    <h2 class="stitle">지식재산권 — AI 기반 신뢰도 추천 시스템</h2>
+    <p class="ssub">소셜 네트워크·AI를 활용한 신뢰 기반 상품 추천 및 자동 수익 분배 시스템. 이커머스·SNS·핀테크 영역에 적용 가능한 원천 기술 — <strong>5건 모두 등록 완료.</strong></p>
+    <table class="ptab">
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th>등록번호</th>
+          <th>발명의 명칭</th>
+          <th>상태</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>등록 특허 1</strong></td>
+          <td class="pnum">10-2947624</td>
+          <td>신뢰도에 기반하여 상품을 추천하고 수익을 분배하는 방법 및 시스템</td>
+          <td><span class="badge badge-g">등록완료 (2026.03)</span></td>
+        </tr>
+        <tr>
+          <td><strong>등록 특허 2</strong></td>
+          <td class="pnum">10-2960681</td>
+          <td>소셜 네트워크 기반 지인 신뢰도를 이용한 상품 추천 방법 및 시스템</td>
+          <td><span class="badge badge-g">등록완료 (2026.05)</span></td>
+        </tr>
+        <tr>
+          <td><strong>등록 특허 3</strong></td>
+          <td class="pnum">10-2960682</td>
+          <td>소셜 네트워크 기반 지인 신뢰도를 이용한 상품 추천 방법 및 시스템 (II)</td>
+          <td><span class="badge badge-g">등록완료 (2026.05)</span></td>
+        </tr>
+        <tr>
+          <td><strong>등록 특허 4</strong></td>
+          <td class="pnum">10-2960683</td>
+          <td>컨텍스트 정보 기반 구매 가능성 산출 및 적응적 추천 전략 변경 방법 및 전자 장치</td>
+          <td><span class="badge badge-g">등록완료 (2026.05)</span></td>
+        </tr>
+        <tr>
+          <td><strong>등록 특허 5</strong></td>
+          <td class="pnum">10-2960684</td>
+          <td>지인 구매 이력 기반 대화형 인터페이스를 통해 추천 정보를 제공하는 방법 및 시스템</td>
+          <td><span class="badge badge-g">등록완료 (2026.05)</span></td>
+        </tr>
+        <tr style="background:#F8F9FA">
+          <td colspan="4" style="font-size:0.8125rem;color:var(--gray-600);padding:1rem 1.25rem">
+            <strong>과거 등록 특허</strong> &nbsp;·&nbsp; 10-0468514 — 지능형 에이전트 특허 (메신저 기반 AI 정보검색, ATHUB 재직 시) &nbsp;·&nbsp; Microsoft 파트너 금상 수상
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="bg-light">
+  <div class="si">
+    <div class="slabel">Skills</div>
+    <h2 class="stitle">역량 및 기술</h2>
+    <p class="ssub">전략 기획에서 데이터 실행, IR까지 — CSO의 전 영역을 직접 수행합니다.</p>
+    <div class="sg">
+      <div class="sk">
+        <div class="skt">전략 / BD</div>
+        <div class="stags">
+          <span class="stag">사업전략 수립</span>
+          <span class="stag">Business Development</span>
+          <span class="stag">신규 BM 설계</span>
+          <span class="stag">M&amp;A 전략</span>
+          <span class="stag">OKR/KPI 체계</span>
+          <span class="stag">파트너십 협상</span>
+        </div>
+      </div>
+      <div class="sk">
+        <div class="skt">IR / 투자유치</div>
+        <div class="stags">
+          <span class="stag">IR 피칭 문서</span>
+          <span class="stag">VC 미팅 리드</span>
+          <span class="stag">Pre-A~Series A</span>
+          <span class="stag">이노비즈 인증</span>
+          <span class="stag">기업 가치 산정</span>
+          <span class="stag">재무 시나리오</span>
+        </div>
+      </div>
+      <div class="sk">
+  2     <div class="skt">데이터 / AI</div>
+        <div class="stags">
+          <span class="stag">GA4</span>
+          <span class="stag">GTM v3</span>
+          <span class="stag">서버사이드트래킹</span>
+          <span class="stag">AI 자동화</span>
+          <span class="stag">Claude MCP</span>
+          <span class="stag">GCS 파이프라인</span>
+          <span class="stag">추천 시스템</span>
+        </div>
+      </div>
+      <div class="sk">
+        <div class="skt">마케팅 / 그로스</div>
+        <div class="stags">
+          <span class="stag">Google Ads</span>
+          <span class="stag">Meta Ads</span>
+          <span class="stag">SEO / GEO</span>
+          <span class="stag">퍼포먼스 마케팅</span>
+          <span class="stag">CRM 캠페인</span>
+          <span class="stag">인플루언서</span>
+        </div>
+      </div>
+      <div class="sk">
+        <div class="skt">이커머스 / 플랫폼</div>
+        <div class="stags">
+          <span class="stag">D2C 자사몰</span>
+          <span class="stag">마켓플레이스</span>
+          <span class="stag">O2O 플랫폼</span>
+          <span class="stag">소셜커머스</span>
+          <span class="stag">구독 BM</span>
+          <span class="stag">5개국 현지화</span>
+        </div>
+      </div>
+      <div class="sk">
+        <div class="skt">글로벌</div>
+        <div class="stags">
+          <span class="stag">영어 (Business)</span>
+          <span class="stag">인도네시아어 (Business)</span>
+          <span class="stag">해외 8년+ 거주</span>
+          <span class="stag">5개국 사업 경험</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER TIMELINE -->
+<section id="career">
+  <div class="si">
+    <div class="slabel">Career</div>
+    <h2 class="stitle">전체 경력 흐름</h2>
+    <p class="ssub">기술(R&D)에서 전략(CSO)으로, 국내외를 넘나드는 20년+ 커리어</p>
+    <div class="tl">
+      <div class="tli">
+        <div class="tlp">2025.10 — 현재</div>
+        <div class="tlt">㈜어바웃피싱 &nbsp;·&nbsp; 부사장 / CSO</div>
+        <div class="tlr">전략·마케팅·데이터·BD 총괄</div>
+        <div class="tld">낚시 슈퍼앱 전 부문 전략 총괄. MAU 6.2만→8.4만 (+35.5%), Google CPA 769원, Meta ROAS 643%. AI 신뢰도 특허 5건 모두 등록완료(2026.03~05). Pre-A IR 진행 중.</div>
+      </div>
+      <div class="tli">
+        <div class="tlp">2023.05 — 2025.09</div>
+        <div class="tlt">㈜애즈유 &nbsp;·&nbsp; 부문대표 / 부사장</div>
+        <div class="tlr">경영 총괄 (환인제약 건기식 자회사)</div>
+        <div class="tld">D2C 자사몰 구축, 신제품 기획, SCM 자동화. 1년 회원 +827%, 매출 +187%, 월 매출 3배 달성.</div>
+      </div>
+      <div class="tli">
+        <div class="tlp">2020.08 — 2022.12</div>
+        <div class="tlt">㈜웍스메이트 &nbsp;·&nbsp; CSO / 부사장</div>
+        <div class="tlr">전략본부 총괄</div>
+        <div class="tld">전략본부 신설, 직원 3→50명, IR 60억 유치(한국투자파트너스·NHN·하나금융·포스코CVC 등), 거래액 250억. 국내 최초 노임채권 시스템 구축.</div>
+      </div>
+      <div class="tli">
+        <div class="tlp">2011.08 — 2018.07</div>
+        <div class="tlt">Smart Wisdom Group (인도네시아) &nbsp;·&nbsp; 경영전략 / E-Commerce 총괄 이사</div>
+        <div class="tlr">소셜커머스 플랫폼 경영 총괄</div>
+        <div class="tld">소셜커머스 1년 만에 업계 1위, 연매출 11억→207억 (19배, 3년). Red Herring Global 100 선정 (카카오 동시). 이커머스 협회 설립, 5개국 현지화, MS·Google·Facebook 파트너십.</div>
+      </div>
+      <div class="tli">
+        <div class="tlp">2004.02 — 2009.05</div>
+        <div class="tlt">ATHUB IT 컨설팅 &nbsp;·&nbsp; 이사</div>
+        <div class="tlr">IT 전략 컨설팅</div>
+        <div class="tld">SKT·KTF 무선 콘텐츠·검색 서비스 컨설팅 5년. 지능형 에이전트 특허 등록(10-0468514, 메신저 기반 AI 정보검색) — Microsoft 파트너 금상 수상.</div>
+      </div>
+      <div class="tli">
+        <div class="tlp">2000.10 — 2002.11</div>
+        <div class="tlt">㈜인터파크 &nbsp;·&nbsp; 솔루션사업부 팀장</div>
+        <div class="tlr">전략 기획</div>
+        <div class="tld">FIFA 월드컵 온라인 판매 공식 파트너 제안·기술 총괄 및 해외 FIFA 협력사 코디네이션. 모바일 One-to-one 마케팅 솔루션 기획·관리.</div>
+      </div>
+      <div class="tli">
+        <div class="tlp">1999.02 — 2000.10</div>
+        <div class="tlt">한국 마이크로소프트 &nbsp;·&nbsp; R&amp;D 기술연구소 연구원</div>
+        <div class="tlr">R&amp;D 연구원</div>
+        <div class="tld">MSSQL 국내·미국 버전 동시 출시 참여. Knowledge Management 기반 글로벌 기업 DB 기술 지원.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & AWARDS -->
+<section class="bg-light">
+  <div class="si">
+    <div class="slabel">Education &amp; Awards</div>
+    <h2 class="stitle">학력 및 수상</h2>
+    <div class="eg">
+      <div class="ec">
+        <div class="ecp">2010.08 — 2013.07</div>
+        <div class="ecs">University of Indonesia</div>
+        <div class="ecd">경영전략 박사 수료</div>
+        <div class="ecn">포스코 청암재단·한국외대 아시아지역전문가 장학생 선발</div>
+      </div>
+      <div class="ec">
+        <div class="ecp">2004.08 — 2005.08</div>
+        <div class="ecs">Helsinki School of Economics</div>
+        <div class="ecd">Executive MBA 석사</div>
+        <div class="ecn">기업 장학금 (SK IT컨설팅)</div>
+      </div>
+    </div>
+    <div class="alist">
+      <div class="ai">
+        <div class="ay">2026.03</div>
+        <div>
+          <div class="at">AI 신뢰도 추천 시스템 특허 5건 전부 등록완료 (10-2947624 외 4건)</div>
+          <div class="ad">소셜 네트워크 기반 신뢰도 추천·수익 분배 원천 기술 &nbsp;·&nbsp; 어바웃피싱 &nbsp;·&nbsp; 2026.03~05</div>
+        </div>
+      </div>
+      <div class="ai">
+        <div class="ay">2012.11</div>
+        <div>
+          <div class="at">Red Herring Global 100 혁신기업 선정</div>
+          <div class="ad">카카오와 동시 수상 &nbsp;·&nbsp; Smart Wisdom Group (인도네시아)</div>
+        </div>
+      </div>
+      <div class="ai">
+        <div class="ay">2010</div>
+        <div>
+          <div class="at">포스코 청암재단 장학 선발</div>
+          <div class="ad">아시아지역전문가 프로그램 &nbsp;·&nbsp; 한국외대 공동 운영</div>
+        </div>
+      </div>
+      <div class="ai">
+        <div class="ay">2004</div>
+        <div>
+          <div class="at">Microsoft 파트너 금상</div>
+          <div class="ad">지능형 에이전트 AI 개발 &nbsp;·&nbsp; 특허 10-0468514 &nbsp;·&nbsp; ATHUB</div>
+        </div>
+      </div>
+      <div class="ai">
+        <div class="ay">2004</div>
+        <div>
+          <div class="at">SK IT컨설팅 장학 선발</div>
+          <div class="ad">Helsinki School of Economics Executive MBA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="cg">
+    <div>
+      <div class="slabel" style="color:rgba(255,255,255,0.35)">Contact</div>
+      <div class="ct">전략을 함께 만들 기회가 있다면,<br>연락 주십시오.</div>
+      <div class="csub">플랫폼 전략·IR·BD·데이터 그로스 전 영역에서<br>즉각적인 기여가 가능합니다.</div>
+      <div class="cl">
+        <a href="tel:01095939917" class="cla">010-9593-9917</a>
+        <a href="mailto:wisdom.yjkim@gmail.com" class="cla">wisdom.yjkim@gmail.com</a>
+      </div>
+    </div>
+    <div class="dbs">
+      <a href="resume.html" class="db">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+        이력서 (HTML)
+      </a>
+      <a href="김연재_이력서_2026.pdf" class="db" download>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        이력서 PDF 다운로드
+      </a>
+      <a href="cover-letter.html" class="db">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+        자기소개서 (HTML)
+      </a>
+      <a href="김연재_자기소개서_2026.pdf" class="db" download>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        자기소개서 PDF 다운로드
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 김연재 YJ KIM &nbsp;·&nbsp; wisdom.yjkim@gmail.com &nbsp;·&nbsp; 010-9593-9917</p>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
+  });
+});
+</script>
+</body>
+</html>
