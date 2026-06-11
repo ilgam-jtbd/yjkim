@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSO·CEO 채용 레이더 — 김연재 YJ KIM · 시니어 전략 리더 포지션 트래커</title>
+<meta name="description" content="김연재(YJ KIM) 부사장/CSO의 C레벨·시니어 전략 리더 채용 레이더. CSO·CEO·COO·사업총괄 포지션을 큐레이션하고 프로필 적합도를 스코어링하는 개인 대시보드.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://ilgam-jtbd.github.io/yjkim/dashboard.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:url" content="https://ilgam-jtbd.github.io/yjkim/dashboard.html">
+<meta property="og:title" content="CSO·CEO 채용 레이더 — 김연재 YJ KIM">
+<meta property="og:description" content="C레벨·시니어 전략 리더 포지션 큐레이션 + 프로필 적합도 스코어링 대시보드.">
+<meta property="og:image" content="https://ilgam-jtbd.github.io/yjkim/og-image.png">
+<meta name="theme-color" content="#0F1C33">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B2A4A;--navy-dark:#0F1C33;--navy-mid:#2C3E6B;
+  --blue:#2563EB;--blue-light:#3B82F6;--accent:#0EA5E9;
+  --gray-50:#F8F9FA;--gray-100:#F1F3F5;--gray-200:#E9ECEF;
+  --gray-400:#9CA3AF;--gray-600:#6B7280;--gray-700:#4B5563;--gray-900:#111827;
+  --tier-top:#DC2626;--tier-top-bg:#FEF2F2;
+  --tier-high:#2563EB;--tier-high-bg:#EFF6FF;
+  --tier-mid:#B45309;--tier-mid-bg:#FFFBEB;
+  --green:#10B981;--green-bg:#ECFDF5;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR','Inter',-apple-system,sans-serif;color:var(--gray-900);background:var(--gray-50);line-height:1.7;font-size:15px}
+a{color:var(--blue)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,28,51,0.97);backdrop-filter:blur(8px);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-brand{color:#fff;font-weight:700;font-size:0.9375rem;letter-spacing:0.02em;text-decoration:none}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.8125rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{display:flex;gap:0.625rem}
+.btn{padding:0.4375rem 0.875rem;border-radius:6px;font-size:0.8125rem;font-weight:600;cursor:pointer;text-decoration:none;transition:all .2s;display:inline-block;font-family:inherit}
+.btn-outline{border:1px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.85);background:transparent}
+.btn-outline:hover{border-color:#fff;color:#fff}
+.btn-primary{background:var(--blue);color:#fff;border:1px solid var(--blue)}
+.btn-primary:hover{background:var(--blue-light)}
+
+/* HEADER */
+.masthead{background:linear-gradient(140deg,var(--navy-dark) 0%,var(--navy) 55%,var(--navy-mid) 100%);color:#fff;padding:110px 2rem 3rem;position:relative;overflow:hidden}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(37,99,235,0.12) 0%,transparent 70%);pointer-events:none}
+.mh-inner{max-width:1080px;margin:0 auto;position:relative}
+.mh-status{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.8);padding:0.3rem 0.875rem;border-radius:100px;font-size:0.75rem;font-weight:500;letter-spacing:0.04em;margin-bottom:1.25rem}
+.mh-status .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px rgba(16,185,129,0.8)}
+.mh-title{font-size:clamp(1.75rem,4.5vw,2.625rem);font-weight:900;line-height:1.15;letter-spacing:-0.02em;margin-bottom:0.625rem}
+.mh-title em{font-style:normal;color:var(--accent)}
+.mh-sub{font-size:0.9375rem;color:rgba(255,255,255,0.6);max-width:720px;line-height:1.7;margin-bottom:1rem}
+.mh-sub strong{color:rgba(255,255,255,0.88);font-weight:600}
+.mh-byline{font-size:0.78125rem;color:rgba(255,255,255,0.42);font-family:'Inter','Noto Sans KR',sans-serif}
+
+/* KPI */
+.kpi-wrap{max-width:1080px;margin:-1.75rem auto 0;padding:0 2rem;position:relative;z-index:5}
+.kpi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0.875rem}
+.kpi{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:1.125rem 1.25rem;box-shadow:0 4px 16px rgba(15,28,51,0.07)}
+.kpi-val{font-size:1.75rem;font-weight:800;font-family:'Inter',sans-serif;line-height:1;margin-bottom:0.3rem;color:var(--navy)}
+.kpi-val.c-top{color:var(--tier-top)}
+.kpi-val.c-high{color:var(--tier-high)}
+.kpi-val.c-new{color:var(--accent)}
+.kpi-val.c-done{color:var(--green)}
+.kpi-lbl{font-size:0.75rem;color:var(--gray-600);font-weight:500}
+
+/* MAIN */
+main{max-width:1080px;margin:0 auto;padding:2rem 2rem 4rem}
+
+/* PROFILE FIT CRITERIA */
+.criteria{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:1.5rem}
+.criteria-title{font-size:0.6875rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:0.75rem}
+.criteria-grid{display:flex;flex-wrap:wrap;gap:0.5rem}
+.crit{display:inline-flex;align-items:center;gap:0.45rem;background:var(--gray-100);border-radius:100px;padding:0.3rem 0.875rem;font-size:0.75rem;color:var(--gray-700)}
+.crit b{color:var(--navy);font-weight:700}
+.crit .w{font-family:'Inter',sans-serif;font-weight:700;color:var(--blue);font-size:0.7rem}
+
+/* CONTROLS */
+.controls{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:1.125rem 1.5rem;margin-bottom:1.75rem;display:flex;flex-direction:column;gap:0.875rem}
+.ctrl-row{display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center}
+.search-box{flex:1;min-width:240px;position:relative}
+.search-box input{width:100%;padding:0.625rem 1rem 0.625rem 2.375rem;border:1px solid var(--gray-200);border-radius:8px;font-size:0.875rem;font-family:inherit;background:var(--gray-50);transition:border-color .2s}
+.search-box input:focus{outline:none;border-color:var(--blue);background:#fff}
+.search-box::before{content:'⌕';position:absolute;left:0.875rem;top:50%;transform:translateY(-50%);color:var(--gray-400);font-size:1.125rem;pointer-events:none}
+.chips{display:flex;gap:0.5rem;flex-wrap:wrap}
+.chip{padding:0.4375rem 0.9375rem;border-radius:100px;font-size:0.78125rem;font-weight:600;border:1px solid var(--gray-200);background:#fff;color:var(--gray-600);cursor:pointer;transition:all .15s;font-family:inherit}
+.chip:hover{border-color:var(--blue);color:var(--blue)}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.chip.on.t-top{background:var(--tier-top);border-color:var(--tier-top)}
+.chip.on.t-high{background:var(--tier-high);border-color:var(--tier-high)}
+.chip.on.t-mid{background:var(--tier-mid);border-color:var(--tier-mid)}
+.toggle{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.78125rem;font-weight:600;color:var(--gray-600);cursor:pointer;padding:0.4375rem 0.9375rem;border-radius:100px;border:1px dashed var(--gray-400);background:#fff;transition:all .15s;font-family:inherit}
+.toggle.on{background:var(--green-bg);border:1px solid var(--green);color:#065F46}
+select.sortsel{padding:0.4375rem 0.875rem;border:1px solid var(--gray-200);border-radius:8px;font-size:0.78125rem;font-weight:600;color:var(--gray-700);background:#fff;cursor:pointer;font-family:inherit}
+.result-count{font-size:0.75rem;color:var(--gray-400);margin-left:auto;font-family:'Inter','Noto Sans KR',sans-serif}
+
+/* JOB CARDS */
+.jobs{display:flex;flex-direction:column;gap:1rem}
+.job{background:#fff;border:1px solid var(--gray-200);border-radius:14px;padding:1.5rem 1.75rem;display:grid;grid-template-columns:1fr 150px;gap:1.5rem;transition:box-shadow .2s,border-color .2s;position:relative}
+.job:hover{box-shadow:0 6px 20px rgba(15,28,51,0.08);border-color:#CBD5E1}
+.job.applied{opacity:0.62;background:var(--gray-50)}
+.job-rank{position:absolute;top:1.125rem;right:1.25rem;font-family:'Inter',sans-serif;font-size:0.6875rem;font-weight:700;color:var(--gray-400);letter-spacing:0.05em}
+.job-head{display:flex;align-items:baseline;gap:0.625rem;flex-wrap:wrap;margin-bottom:0.2rem}
+.job-co{font-size:1.0625rem;font-weight:800;color:var(--navy-dark);letter-spacing:-0.01em}
+.job-title{font-size:0.9375rem;font-weight:600;color:var(--gray-700)}
+.tag-new{display:inline-block;background:var(--accent);color:#fff;font-size:0.59375rem;font-weight:800;padding:0.125rem 0.4375rem;border-radius:4px;letter-spacing:0.08em;font-family:'Inter',sans-serif;vertical-align:2px}
+.job-meta{font-size:0.75rem;color:var(--gray-400);margin-bottom:0.75rem;display:flex;gap:0.875rem;flex-wrap:wrap;font-family:'Inter','Noto Sans KR',sans-serif}
+.dl{display:inline-block;padding:0.15rem 0.625rem;border-radius:100px;font-size:0.65625rem;font-weight:700;font-family:'Inter','Noto Sans KR',sans-serif}
+.dl-soon{background:var(--tier-top-bg);color:var(--tier-top)}
+.dl-month{background:var(--tier-mid-bg);color:var(--tier-mid)}
+.dl-rolling{background:var(--green-bg);color:#065F46}
+.job-domains{display:flex;gap:0.375rem;flex-wrap:wrap;margin-bottom:0.875rem}
+.dom{font-size:0.6875rem;font-weight:600;color:var(--navy-mid);background:var(--gray-100);padding:0.2rem 0.625rem;border-radius:5px}
+.job-process{font-size:0.75rem;color:var(--gray-600);margin-bottom:0.875rem;font-weight:500}
+.job-process .arr{color:var(--gray-400);margin:0 0.3rem}
+.fit-reasons{list-style:none;margin-bottom:1rem}
+.fit-reasons li{font-size:0.8125rem;color:var(--gray-700);padding:0.2rem 0 0.2rem 1.125rem;position:relative;line-height:1.55}
+.fit-reasons li::before{content:'';position:absolute;left:0;top:0.62rem;width:5px;height:5px;background:var(--blue);border-radius:50%}
+.job-actions{display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap}
+.btn-view{padding:0.4375rem 1rem;border-radius:7px;font-size:0.78125rem;font-weight:600;background:var(--navy);color:#fff;text-decoration:none;transition:background .2s}
+.btn-view:hover{background:var(--navy-mid)}
+.apply-check{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.78125rem;font-weight:600;color:var(--gray-600);cursor:pointer;user-select:none}
+.apply-check input{width:15px;height:15px;accent-color:var(--green);cursor:pointer}
+.note-input{flex:1;min-width:160px;padding:0.4375rem 0.75rem;border:1px solid var(--gray-200);border-radius:7px;font-size:0.75rem;font-family:inherit;background:var(--gray-50)}
+.note-input:focus{outline:none;border-color:var(--blue);background:#fff}
+
+/* SCORE PANEL */
+.score-panel{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;border-left:1px solid var(--gray-100);padding-left:1.5rem}
+.score-num{font-family:'Inter',sans-serif;font-size:2.375rem;font-weight:800;line-height:1}
+.score-num.s-top{color:var(--tier-top)}
+.score-num.s-high{color:var(--tier-high)}
+.score-num.s-mid{color:var(--tier-mid)}
+.score-tier{font-size:0.65625rem;font-weight:800;letter-spacing:0.1em;padding:0.2rem 0.7rem;border-radius:100px}
+.score-tier.s-top{background:var(--tier-top-bg);color:var(--tier-top)}
+.score-tier.s-high{background:var(--tier-high-bg);color:var(--tier-high)}
+.score-tier.s-mid{background:var(--tier-mid-bg);color:var(--tier-mid)}
+.score-bar{width:100%;height:6px;background:var(--gray-100);border-radius:100px;overflow:hidden}
+.score-fill{height:100%;border-radius:100px}
+.score-fill.s-top{background:var(--tier-top)}
+.score-fill.s-high{background:var(--tier-high)}
+.score-fill.s-mid{background:var(--tier-mid)}
+.score-cap{font-size:0.625rem;color:var(--gray-400);text-align:center;line-height:1.4}
+
+.empty{text-align:center;padding:4rem 1rem;color:var(--gray-400);font-size:0.9375rem}
+
+/* NOTICE + FOOTER */
+.notice{margin-top:2.25rem;background:var(--gray-100);border:1px solid var(--gray-200);border-radius:10px;padding:1rem 1.375rem;font-size:0.75rem;color:var(--gray-600);line-height:1.7}
+footer{background:var(--navy-dark);border-top:1px solid rgba(255,255,255,0.06);padding:1.5rem 2rem;text-align:center}
+footer p{font-size:0.75rem;color:rgba(255,255,255,0.4)}
+footer a{color:rgba(255,255,255,0.7);text-decoration:none}
+
+@media (max-width:860px){
+  nav{padding:0 1rem}
+  .nav-links{display:none}
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .kpi:first-child{grid-column:1/-1}
+  .job{grid-template-columns:1fr}
+  .score-panel{border-left:none;border-top:1px solid var(--gray-100);padding-left:0;padding-top:1rem;flex-direction:row;justify-content:flex-start;gap:1rem}
+  .score-bar{flex:1}
+  .masthead{padding:90px 1.25rem 2.5rem}
+  .kpi-wrap,main{padding-left:1.25rem;padding-right:1.25rem}
+}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
+window.track=function(n,p){p=p||{};try{gtag('event',n,p);}catch(e){}dataLayer.push(Object.assign({event:n},p));console.debug('[track]',n,p);};
+track('page_view',{page:'dashboard'});
+</script>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">김연재 · YJ KIM</a>
+  <ul class="nav-links">
+    <li><a href="index.html#overview">핵심 성과</a></li>
+    <li><a href="index.html#cases">경력 사례</a></li>
+    <li><a href="index.html#patents">지식재산</a></li>
+    <li><a href="index.html#career">경력</a></li>
+    <li><a href="index.html#contact">연락</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="resume.html" class="btn btn-outline">이력서</a>
+    <a href="cover-letter.html" class="btn btn-primary">자기소개서</a>
+  </div>
+</nav>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="mh-inner">
+    <div class="mh-status"><span class="dot"></span>스냅샷 · 2026.06.11 기준</div>
+    <h1 class="mh-title">CSO · CEO <em>채용 레이더</em></h1>
+    <p class="mh-sub">
+      <strong>CSO · CEO · COO · 사업총괄 · 시니어 전략 리더</strong> 포지션을 큐레이션하고,
+      김연재(YJ KIM)의 프로필 — O2O·D2C 플랫폼 전략 · Growth Hacking · 신규사업개발(BD) · IR 100억+ · AI 빌드 —
+      기준으로 적합도를 스코어링하는 개인 트래킹 대시보드입니다.
+    </p>
+    <p class="mh-byline">Curated by 김연재 — 부사장/CSO · IR 누적 100억+ · 단독 창업 매출 19배 · AI 특허 5건 &nbsp;|&nbsp; Last updated 2026-06-11</p>
+  </div>
+</header>
+
+<!-- KPI -->
+<div class="kpi-wrap">
+  <div class="kpi-grid">
+    <div class="kpi"><div class="kpi-val" id="kpi-total">0</div><div class="kpi-lbl">누적 공고</div></div>
+    <div class="kpi"><div class="kpi-val c-top" id="kpi-top">0</div><div class="kpi-lbl">최상 핏 (85+)</div></div>
+    <div class="kpi"><div class="kpi-val c-high" id="kpi-high">0</div><div class="kpi-lbl">상위 핏 (75–84)</div></div>
+    <div class="kpi"><div class="kpi-val c-new" id="kpi-new">0</div><div class="kpi-lbl">오늘 신규</div></div>
+    <div class="kpi"><div class="kpi-val c-done" id="kpi-applied">0</div><div class="kpi-lbl">지원 완료</div></div>
+  </div>
+</div>
+
+<main>
+
+  <!-- FIT CRITERIA -->
+  <section class="criteria">
+    <div class="criteria-title">적합도 스코어링 기준 — 프로필 매칭 가중치</div>
+    <div class="criteria-grid">
+      <span class="crit"><b>플랫폼 전략·BD</b> O2O·D2C·슈퍼앱 총괄 경험 <span class="w">30%</span></span>
+      <span class="crit"><b>그로스·데이터</b> GA4·SST·퍼포먼스·CRM 직접 실행 <span class="w">25%</span></span>
+      <span class="crit"><b>IR·투자</b> 누적 100억+ 유치, Pre-A~A 리드 <span class="w">20%</span></span>
+      <span class="crit"><b>글로벌</b> 인니 8년+ · 5개국 현지화 · 영어/인니어 <span class="w">15%</span></span>
+      <span class="crit"><b>AI 리터러시</b> 특허 5건 · 자동화 파이프라인 빌드 <span class="w">10%</span></span>
+    </div>
+  </section>
+
+  <!-- CONTROLS -->
+  <section class="controls">
+    <div class="ctrl-row">
+      <div class="search-box"><input type="text" id="q" placeholder="회사 · 직책 · 도메인 · 전형 검색…"></div>
+      <select class="sortsel" id="sort">
+        <option value="fit">적합도순</option>
+        <option value="deadline">마감임박순</option>
+        <option value="new">신규순</option>
+        <option value="name">회사명순</option>
+      </select>
+    </div>
+    <div class="ctrl-row">
+      <div class="chips" id="tier-chips">
+        <button class="chip on" data-tier="all">전체</button>
+        <button class="chip t-top" data-tier="top">최상 85+</button>
+        <button class="chip t-high" data-tier="high">상 75–84</button>
+        <button class="chip t-mid" data-tier="mid">중 65–74</button>
+      </div>
+      <div class="chips" id="role-chips">
+        <button class="chip on" data-role="all">전 직군</button>
+        <button class="chip" data-role="CSO">CSO·전략</button>
+        <button class="chip" data-role="CEO">CEO·대표</button>
+        <button class="chip" data-role="COO">COO·사업총괄</button>
+      </div>
+      <button class="toggle" id="tg-new">✦ 신규만</button>
+      <button class="toggle" id="tg-hide">✓ 지원숨김</button>
+      <span class="result-count" id="count"></span>
+    </div>
+  </section>
+
+  <!-- JOB LIST -->
+  <section class="jobs" id="jobs"></section>
+  <div class="empty" id="empty" style="display:none">조건에 맞는 공고가 없습니다. 필터를 조정해 보세요.</div>
+
+  <div class="notice">
+    ⚠️ <strong>스냅샷 안내</strong> — 본 대시보드의 공고 목록은 2026.06.11 기준 큐레이션 스냅샷(예시 데이터 포함)입니다.
+    C레벨 포지션 특성상 비공개·헤드헌팅 채널 비중이 높아, 지원 전 반드시 각 채널(리멤버 · 원티드 · 링크드인 · 헤드헌터)에서 원문 공고와 모집 여부를 확인하세요.
+    '공고 검색' 버튼은 해당 회사·포지션의 최신 공고 검색 결과로 연결됩니다.
+    지원 체크·메모는 이 브라우저(localStorage)에만 저장됩니다.
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 김연재 YJ KIM · <a href="index.html">포트폴리오</a> · <a href="resume.html">이력서</a> · <a href="mailto:wisdom.yjkim@gmail.com">wisdom.yjkim@gmail.com</a></p>
+</footer>
+
+<script>
+// ───────────────────────────────────────────────────────────────
+// 스냅샷 데이터 (2026.06.11) — 항목 추가/수정은 이 배열만 편집
+// role: CSO | CEO | COO  · deadline: {type:'soon'|'month'|'rolling', date:'YYYY-MM-DD'|null}
+// ───────────────────────────────────────────────────────────────
+const JOBS = [
+  {co:'야놀자클라우드', title:'CSO / 글로벌 전략총괄', role:'CSO', level:'C-Level', loc:'서울 강남', src:'링크드인', isNew:true,
+   deadline:{type:'rolling', date:null}, domains:['O2O','트래블테크','글로벌 SaaS','B2B'],
+   process:['서류','전략 케이스 발표','경영진 인터뷰','컬처핏'],
+   fit:92, reasons:['O2O 슈퍼앱 전략총괄 경험(어바웃피싱 MAU +35.5%)과 도메인 직결','글로벌 5개국 이커머스 현지화 + 인니 8년 — 동남아 확장 전략에 즉시 기여','IR 100억+ 유치 경험으로 글로벌 투자 라운드 대응 가능']},
+  {co:'컬리', title:'사업전략총괄 (CSO급)', role:'CSO', level:'C-Level', loc:'서울 송파', src:'헤드헌터', isNew:true,
+   deadline:{type:'month', date:'2026-07-10'}, domains:['D2C','커머스','물류','신선식품'],
+   process:['서류','과제 발표','CEO 인터뷰'],
+   fit:89, reasons:['애즈유 D2C 자사몰 회원 +827% · 매출 +187% — 커머스 그로스 실적 직결','SCM 자동 물류·재고 시스템 구축 경험으로 물류 전략 이해도 높음','신규 BM 설계·수익화 경험(구독·재주문 5차 달성)']},
+  {co:'당근', title:'신규사업총괄 (Head of New Biz)', role:'COO', level:'임원', loc:'서울 서초', src:'원티드', isNew:false,
+   deadline:{type:'month', date:'2026-06-30'}, domains:['로컬 커머스','중고거래','O2O','커뮤니티'],
+   process:['서류','직무 인터뷰','임원 인터뷰','컬처핏'],
+   fit:87, reasons:['중고장터·커뮤니티 포함 슈퍼앱 전 부문 총괄 경험과 도메인 일치','로컬 O2O 수익화 — 예약·커머스 BM 설계 실적 보유','데이터 기반 신뢰도 추천 특허 5건 — 로컬 커머스 신뢰 모델에 직접 적용 가능']},
+  {co:'트릿지', title:'CSO (Chief Strategy Officer)', role:'CSO', level:'C-Level', loc:'서울 강남', src:'링크드인', isNew:true,
+   deadline:{type:'rolling', date:null}, domains:['애그테크','글로벌 B2B','데이터 플랫폼','무역'],
+   process:['서류','케이스 스터디','경영진 인터뷰'],
+   fit:86, reasons:['글로벌 B2B BD — 인니 국영기업 점유율 85% 채널 확보 실적','데이터 플랫폼 전략 + 영어/인니어 비즈니스급','시리즈 후기 IR·기업가치 산정 경험으로 투자 대응 가능']},
+  {co:'마이리얼트립', title:'COO / 사업총괄 부사장', role:'COO', level:'C-Level', loc:'서울 서초', src:'헤드헌터', isNew:false,
+   deadline:{type:'soon', date:'2026-06-19'}, domains:['트래블테크','O2O','예약 플랫폼','글로벌'],
+   process:['서류','실무 인터뷰','CEO 인터뷰'],
+   fit:85, reasons:['예약 기반 O2O 플랫폼(선상낚시 통합 예약) 전략·운영 총괄 경험 직결','퍼포먼스 마케팅 직접 실행 — Google CPA 769원 · Meta ROAS 643%','글로벌 현지화·해외 파트너십 BD 8년 실적']},
+  {co:'강남언니 (힐링페이퍼)', title:'사업전략 리드 (Senior Director)', role:'CSO', level:'시니어 디렉터', loc:'서울 강남', src:'원티드', isNew:false,
+   deadline:{type:'month', date:'2026-07-05'}, domains:['헬스케어','O2O','글로벌(일본)','마켓플레이스'],
+   process:['서류','과제','직무 인터뷰','컬처핏'],
+   fit:82, reasons:['O2O 마켓플레이스 수익화 전략 경험 일치','일본 등 해외 확장 — 글로벌 현지화 5개국 실행 경험','헬스케어 커머스(건기식 D2C) 도메인 인접성'],},
+  {co:'정육각', title:'CEO 후보 (PE 포트폴리오사)', role:'CEO', level:'C-Level', loc:'서울', src:'헤드헌터', isNew:true,
+   deadline:{type:'rolling', date:null}, domains:['D2C','신선식품','커머스','턴어라운드'],
+   process:['서류','PE 운용사 인터뷰','이사회 인터뷰'],
+   fit:81, reasons:['단독 창업 CEO — 매출 11억→207억(19배) 스케일업 실적','D2C 자사몰 턴어라운드(애즈유 매출 +187%) 경험 직결','IR·자본증자·기업가치 산정 경험으로 PE 거버넌스 대응 가능']},
+  {co:'캐치테이블 (와드)', title:'CSO / 전략총괄', role:'CSO', level:'C-Level', loc:'서울 강남', src:'링크드인', isNew:false,
+   deadline:{type:'month', date:'2026-06-28'}, domains:['O2O','예약 플랫폼','F&B','구독 BM'],
+   process:['서류','전략 케이스','경영진 인터뷰'],
+   fit:80, reasons:['예약 O2O 플랫폼 BM 설계·수익화 경험 직결','구독 BM·B2B SaaS 기획 경험(선주 B2B앱)','시리즈 라운드 IR 리드 경험']},
+  {co:'무신사', title:'신규사업 부문장 (글로벌)', role:'COO', level:'임원', loc:'서울 성수', src:'원티드', isNew:false,
+   deadline:{type:'month', date:'2026-07-15'}, domains:['커머스','패션','글로벌','D2C'],
+   process:['서류','직무 인터뷰','임원 인터뷰'],
+   fit:78, reasons:['글로벌 이커머스 현지화 5개국 — 동남아 확장 전략 직결','D2C·마켓플레이스 양쪽 운영 경험','데이터 마케팅(GA4·SST) 직접 구축 역량'],},
+  {co:'두나무', title:'전략기획실장 (Senior Director)', role:'CSO', level:'시니어 디렉터', loc:'서울 강남', src:'헤드헌터', isNew:false,
+   deadline:{type:'rolling', date:null}, domains:['핀테크','플랫폼','신사업','M&A'],
+   process:['서류','케이스 발표','경영진 인터뷰','평판조회'],
+   fit:77, reasons:['M&A·신규 BM 설계 등 전략기획 전반 커버','대안신용평가 금융 서비스 기획(웍스메이트 노임채권) — 핀테크 인접 경험','IR·기업가치 산정 역량'],},
+  {co:'버킷플레이스 (오늘의집)', title:'사업전략 디렉터', role:'CSO', level:'디렉터', loc:'서울 서초', src:'원티드', isNew:false,
+   deadline:{type:'month', date:'2026-07-08'}, domains:['커머스','O2O 시공','커뮤니티','데이터'],
+   process:['서류','과제','직무 인터뷰','컬처핏'],
+   fit:76, reasons:['커머스+커뮤니티+O2O 결합 모델 — 슈퍼앱 전략 경험 일치','콘텐츠 기반 커머스 전환 퍼널 — CRM·어트리뷰션 직접 실행','추천 시스템 최적화 경험(데이터 사이언티스트 영입·운영)'],},
+  {co:'그린랩스 (리바이벌)', title:'CEO / 공동대표 후보', role:'CEO', level:'C-Level', loc:'서울', src:'헤드헌터', isNew:false,
+   deadline:{type:'rolling', date:null}, domains:['애그테크','플랫폼','턴어라운드','B2B'],
+   process:['서류','투자사 인터뷰','이사회 인터뷰'],
+   fit:75, reasons:['창업 CEO + 턴어라운드 경영(애즈유) 복합 경험','농촌 일자리 신사업 기획 경험(웍스메이트) — 애그 도메인 접점','구조조정 후 IR 재개 — 투자유치 100억+ 실적'],},
+  {co:'스푼라디오 (스푼랩스)', title:'COO (글로벌 사업총괄)', role:'COO', level:'C-Level', loc:'서울 강남', src:'링크드인', isNew:false,
+   deadline:{type:'month', date:'2026-06-25'}, domains:['콘텐츠 플랫폼','글로벌','구독 BM','커뮤니티'],
+   process:['서류','직무 인터뷰','CEO 인터뷰'],
+   fit:73, reasons:['글로벌(일본·동남아) 운영 — 현지화 실행 경험 직결','구독·수익화 BM 설계 경험','콘텐츠 도메인은 인접 경험(커뮤니티 운영)으로 보완 필요'],},
+  {co:'페오펫', title:'CSO / 부대표', role:'CSO', level:'C-Level', loc:'서울', src:'원티드', isNew:false,
+   deadline:{type:'soon', date:'2026-06-17'}, domains:['펫테크','D2C','커머스','구독'],
+   process:['서류','과제 발표','대표 인터뷰'],
+   fit:72, reasons:['D2C 버티컬 커머스 그로스 실적 직결(애즈유)','구독·재구매 BM — 5차 재주문 달성 경험','조직 규모상 C레벨 직접 실행형 — 빌더형 프로필과 부합'],},
+  {co:'시리즈벤처스 포트폴리오사 (비공개)', title:'전문경영인 CEO (커머스)', role:'CEO', level:'C-Level', loc:'서울/부산', src:'헤드헌터', isNew:true,
+   deadline:{type:'rolling', date:null}, domains:['커머스','지역 기반','턴어라운드','B2C'],
+   process:['헤드헌터 추천','운용사 인터뷰','이사회 선임'],
+   fit:71, reasons:['창업·전문경영 양쪽 CEO 트랙 보유','지역 기반 사업(부산 해양 프로젝트 제안 경험) 접점','상세 비공개 — 도메인 확인 후 재스코어링 필요'],},
+  {co:'밀리의서재', title:'신사업본부장', role:'COO', level:'본부장', loc:'서울', src:'원티드', isNew:false,
+   deadline:{type:'month', date:'2026-07-20'}, domains:['콘텐츠','구독 BM','플랫폼','신사업'],
+   process:['서류','직무 인터뷰','임원 인터뷰'],
+   fit:68, reasons:['구독 BM·신규 수익원 발굴 경험 일치','콘텐츠 도메인 직접 경험은 제한적 — 무선 콘텐츠 컨설팅(SKT·KTF)으로 일부 보완','상장사 환경 — IR·공시 이해도는 강점'],},
+  {co:'한국 시니어케어 스타트업 (비공개)', title:'CSO / 시니어 서비스 사업총괄', role:'CSO', level:'C-Level', loc:'서울', src:'리멤버', isNew:true,
+   deadline:{type:'rolling', date:null}, domains:['시니어 서비스','헬스케어','O2O','구독'],
+   process:['서류','대표 인터뷰','이사회 인터뷰'],
+   fit:74, reasons:['건기식 D2C(시니어 핵심 타깃) 경영총괄 — 시니어 커머스 직접 실적','O2O 케어 매칭 플랫폼 — 인력 매칭 플랫폼(웍스메이트) BM 설계 경험 직결','고령화 시장 IR 스토리 — 투자유치 100억+ 경험으로 라운드 리드 가능'],},
+  {co:'AI 버티컬 SaaS 스타트업 (비공개)', title:'Co-CEO / 사업총괄', role:'CEO', level:'C-Level', loc:'서울 강남', src:'링크드인', isNew:false,
+   deadline:{type:'rolling', date:null}, domains:['AI','SaaS','B2B','신사업'],
+   process:['커피챗','상호 실사','공동창업 협의'],
+   fit:70, reasons:['AI 특허 5건 + Claude MCP 자동화 직접 빌드 — 기술 공동창업자와 대화 가능한 사업 리더','B2B SaaS BD·IR 커버 가능','초기 단계 리스크 — 지분·런웨이 실사 필요'],},
+];
+
+// ── 상태 ─────────────────────────────────────────────
+const LS_KEY = 'yj-radar-v1';
+let state = {tier:'all', role:'all', q:'', newOnly:false, hideApplied:false, sort:'fit'};
+let saved = {};
+try{ saved = JSON.parse(localStorage.getItem(LS_KEY)||'{}'); }catch(e){ saved = {}; }
+const jobKey = j => j.co + '|' + j.title;
+const save = () => localStorage.setItem(LS_KEY, JSON.stringify(saved));
+
+const tierOf = f => f>=85 ? 'top' : f>=75 ? 'high' : 'mid';
+const tierLabel = {top:'최상 핏', high:'상위 핏', mid:'중간 핏'};
+const dlLabel = j => {
+  if(j.deadline.type==='rolling') return '상시 채용';
+  const d = new Date(j.deadline.date), today = new Date('2026-06-11');
+  const days = Math.round((d-today)/86400000);
+  return '~' + j.deadline.date.slice(5).replace('-','.') + ' (D-' + days + ')';
+};
+
+// ── KPI ─────────────────────────────────────────────
+function renderKPI(){
+  document.getElementById('kpi-total').textContent = JOBS.length;
+  document.getElementById('kpi-top').textContent = JOBS.filter(j=>tierOf(j.fit)==='top').length;
+  document.getElementById('kpi-high').textContent = JOBS.filter(j=>tierOf(j.fit)==='high').length;
+  document.getElementById('kpi-new').textContent = JOBS.filter(j=>j.isNew).length;
+  document.getElementById('kpi-applied').textContent = JOBS.filter(j=>(saved[jobKey(j)]||{}).applied).length;
+}
+
+// ── 필터 + 정렬 + 렌더 ────────────────────────────────
+function visibleJobs(){
+  let list = JOBS.filter(j=>{
+    const s = saved[jobKey(j)]||{};
+    if(state.tier!=='all' && tierOf(j.fit)!==state.tier) return false;
+    if(state.role!=='all' && j.role!==state.role) return false;
+    if(state.newOnly && !j.isNew) return false;
+    if(state.hideApplied && s.applied) return false;
+    if(state.q){
+      const hay = [j.co,j.title,j.level,j.loc,j.src,...j.domains,...j.process,...j.reasons].join(' ').toLowerCase();
+      if(!hay.includes(state.q.toLowerCase())) return false;
+    }
+    return true;
+  });
+  const dlOrder = j => j.deadline.type==='rolling' ? '9999-99-99' : j.deadline.date;
+  if(state.sort==='fit') list.sort((a,b)=>b.fit-a.fit);
+  if(state.sort==='deadline') list.sort((a,b)=>dlOrder(a).localeCompare(dlOrder(b)));
+  if(state.sort==='new') list.sort((a,b)=>(b.isNew?1:0)-(a.isNew?1:0)||b.fit-a.fit);
+  if(state.sort==='name') list.sort((a,b)=>a.co.localeCompare(b.co,'ko'));
+  return list;
+}
+
+function render(){
+  const wrap = document.getElementById('jobs');
+  const list = visibleJobs();
+  document.getElementById('count').textContent = list.length + ' / ' + JOBS.length + '건';
+  document.getElementById('empty').style.display = list.length ? 'none' : 'block';
+  wrap.innerHTML = '';
+  list.forEach((j,i)=>{
+    const k = jobKey(j), s = saved[k]||{}, t = tierOf(j.fit);
+    const card = document.createElement('article');
+    card.className = 'job' + (s.applied ? ' applied' : '');
+    const searchQ = encodeURIComponent(j.co.replace(/\s*\(.*?\)\s*/g,'') + ' ' + j.title.split('/')[0].split('(')[0].trim() + ' 채용');
+    card.innerHTML = `
+      <div>
+        <div class="job-rank">#${String(i+1).padStart(2,'0')}</div>
+        <div class="job-head">
+          <span class="job-co">${j.co}</span>
+          <span class="job-title">${j.title}</span>
+          ${j.isNew ? '<span class="tag-new">NEW</span>' : ''}
+          <span class="dl dl-${j.deadline.type}">${dlLabel(j)}</span>
+        </div>
+        <div class="job-meta"><span>${j.level}</span><span>${j.loc}</span><span>출처: ${j.src}</span></div>
+        <div class="job-domains">${j.domains.map(d=>`<span class="dom">${d}</span>`).join('')}</div>
+        <div class="job-process">${j.process.map(p=>`<span>${p}</span>`).join('<span class="arr">›</span>')}</div>
+        <ul class="fit-reasons">${j.reasons.map(r=>`<li>${r}</li>`).join('')}</ul>
+        <div class="job-actions">
+          <a class="btn-view" href="https://www.google.com/search?q=${searchQ}" target="_blank" rel="noopener">공고 검색 ↗</a>
+          <label class="apply-check"><input type="checkbox" ${s.applied?'checked':''} data-k="${k}" class="cb-apply">지원함</label>
+          <input class="note-input" type="text" placeholder="메모 (예: 6/15 헤드헌터 콜백)" value="${(s.note||'').replace(/"/g,'&quot;')}" data-k="${k}">
+        </div>
+      </div>
+      <div class="score-panel">
+        <div class="score-num s-${t}">${j.fit}</div>
+        <div class="score-tier s-${t}">${tierLabel[t]}</div>
+        <div class="score-bar"><div class="score-fill s-${t}" style="width:${j.fit}%"></div></div>
+        <div class="score-cap">프로필 매칭<br>적합도 점수</div>
+      </div>`;
+    wrap.appendChild(card);
+  });
+  // 이벤트 바인딩
+  wrap.querySelectorAll('.cb-apply').forEach(cb=>{
+    cb.addEventListener('change', e=>{
+      const k = e.target.dataset.k;
+      saved[k] = saved[k]||{};
+      saved[k].applied = e.target.checked;
+      save(); renderKPI(); render();
+      track('apply_toggle',{job:k,applied:e.target.checked});
+    });
+  });
+  wrap.querySelectorAll('.note-input').forEach(inp=>{
+    inp.addEventListener('change', e=>{
+      const k = e.target.dataset.k;
+      saved[k] = saved[k]||{};
+      saved[k].note = e.target.value;
+      save();
+    });
+  });
+}
+
+// ── 컨트롤 바인딩 ──────────────────────────────────────
+document.getElementById('q').addEventListener('input', e=>{state.q=e.target.value;render();});
+document.getElementById('sort').addEventListener('change', e=>{state.sort=e.target.value;render();});
+document.querySelectorAll('#tier-chips .chip').forEach(c=>{
+  c.addEventListener('click', ()=>{
+    document.querySelectorAll('#tier-chips .chip').forEach(x=>x.classList.remove('on'));
+    c.classList.add('on'); state.tier=c.dataset.tier; render();
+  });
+});
+document.querySelectorAll('#role-chips .chip').forEach(c=>{
+  c.addEventListener('click', ()=>{
+    document.querySelectorAll('#role-chips .chip').forEach(x=>x.classList.remove('on'));
+    c.classList.add('on'); state.role=c.dataset.role; render();
+  });
+});
+document.getElementById('tg-new').addEventListener('click', e=>{
+  state.newOnly=!state.newOnly; e.currentTarget.classList.toggle('on',state.newOnly); render();
+});
+document.getElementById('tg-hide').addEventListener('click', e=>{
+  state.hideApplied=!state.hideApplied; e.currentTarget.classList.toggle('on',state.hideApplied); render();
+});
+
+renderKPI();
+render();
+</script>
+</body>
+</html>
