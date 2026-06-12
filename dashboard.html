@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>채용 대시보드 — 김연재 YJ KIM · CSO / CEO 후보 스코어카드</title>
+<meta name="description" content="김연재(YJ KIM) 임원 채용 대시보드 — CSO/CEO/COO 포지션 적합도, 검증된 성과 지표, 커리어 타임라인, 강점과 검증 포인트를 한 화면에서 평가하는 채용 담당자용 스코어카드.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ilgam-jtbd.github.io/yjkim/dashboard.html">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:url" content="https://ilgam-jtbd.github.io/yjkim/dashboard.html">
+<meta property="og:title" content="채용 대시보드 — 김연재 YJ KIM · CSO / CEO 후보 스코어카드">
+<meta property="og:description" content="포지션 적합도 · 검증된 성과 · 커리어 타임라인 · 강점과 검증 포인트를 한 화면에서. 채용 담당자를 위한 임원 평가 대시보드.">
+<meta property="og:image" content="https://ilgam-jtbd.github.io/yjkim/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ilgam-jtbd.github.io/yjkim/og-image.png">
+<meta name="theme-color" content="#0F1C33">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B2A4A;--navy-dark:#0F1C33;--navy-mid:#23365C;
+  --blue:#2563EB;--blue-light:#3B82F6;
+  --ink:#0F1C33;--paper:#F6F7F9;--card:#FFFFFF;
+  --line:#E5E8EE;--line-2:#EEF1F6;
+  --gray-400:#9AA3B2;--gray-500:#6B7280;--gray-600:#566077;--gray-700:#3C4658;
+  --green:#10B981;--green-d:#047857;--amber:#D97706;--amber-bg:#FEF3C7;--red:#DC2626;
+  --green-bg:#D1FAE5;--blue-bg:#DBEAFE;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR','Inter',-apple-system,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+.mono{font-family:'Inter',sans-serif}
+
+/* TOPBAR */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(15,28,51,0.97);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.25rem;height:54px;border-bottom:1px solid rgba(255,255,255,0.07)}
+.topbar .tb-left{display:flex;align-items:center;gap:0.75rem;font-size:0.8125rem;font-weight:600}
+.topbar .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(16,185,129,0.25)}
+.topbar .tb-left a{color:rgba(255,255,255,0.6);font-weight:500}
+.topbar .tb-left a:hover{color:#fff}
+.tb-right{display:flex;gap:0.5rem}
+.btn{padding:0.4rem 0.8rem;border-radius:7px;font-size:0.8125rem;font-weight:600;cursor:pointer;text-decoration:none;border:none;font-family:inherit;transition:all .15s}
+.btn-ghost{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.16)}
+.btn-ghost:hover{background:rgba(255,255,255,0.16);color:#fff}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:var(--blue-light)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:1.5rem 1.25rem 4rem}
+
+/* HEADER */
+.dash-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1rem;padding:0.5rem 0 1.25rem;border-bottom:1px solid var(--line);margin-bottom:1.5rem}
+.dh-eyebrow{font-size:0.6875rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:0.4rem}
+.dh-name{font-size:1.875rem;font-weight:900;letter-spacing:-0.02em;color:var(--navy-dark);line-height:1.1}
+.dh-name .en{font-family:'Inter',sans-serif;font-weight:500;color:var(--gray-400);font-size:0.55em;letter-spacing:0.08em;margin-left:0.5rem}
+.dh-role{font-size:0.9375rem;color:var(--gray-600);margin-top:0.35rem;font-weight:500}
+.dh-meta{text-align:right;font-size:0.8125rem;color:var(--gray-500);line-height:1.7}
+.dh-meta strong{color:var(--navy-dark)}
+.dh-meta .upd{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.6875rem;letter-spacing:0.04em;color:var(--green-d);background:var(--green-bg);padding:0.2rem 0.6rem;border-radius:100px;font-weight:700}
+
+/* SECTION LABEL */
+.sec{margin-bottom:1.75rem}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:0.85rem;gap:1rem}
+.sec-t{font-size:0.75rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy)}
+.sec-n{font-size:0.75rem;color:var(--gray-400)}
+
+/* KPI ROW */
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:0.75rem}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem;position:relative;overflow:hidden}
+.kpi::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--blue)}
+.kpi.k-green::before{background:var(--green)}
+.kpi.k-amber::before{background:var(--amber)}
+.kpi-v{font-family:'Inter',sans-serif;font-size:1.6rem;font-weight:800;color:var(--navy-dark);line-height:1;letter-spacing:-0.02em}
+.kpi-l{font-size:0.75rem;color:var(--gray-700);font-weight:600;margin-top:0.45rem;line-height:1.4}
+.kpi-s{font-size:0.6875rem;color:var(--gray-400);margin-top:0.25rem;line-height:1.35}
+.kpi-tag{display:inline-block;font-size:0.625rem;font-weight:700;padding:0.1rem 0.4rem;border-radius:4px;margin-top:0.5rem;letter-spacing:0.02em}
+.t-verified{background:var(--green-bg);color:var(--green-d)}
+.t-self{background:var(--amber-bg);color:var(--amber)}
+
+/* TWO COL */
+.cols{display:grid;grid-template-columns:1.15fr 0.85fr;gap:1.25rem}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.25rem 1.35rem}
+.panel-t{font-size:0.8125rem;font-weight:800;color:var(--navy-dark);margin-bottom:0.15rem}
+.panel-d{font-size:0.75rem;color:var(--gray-500);margin-bottom:1rem}
+
+/* FIT BARS */
+.fit{margin-bottom:0.95rem}
+.fit:last-child{margin-bottom:0}
+.fit-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.35rem}
+.fit-role{font-size:0.875rem;font-weight:700;color:var(--navy-dark)}
+.fit-role span{font-weight:400;color:var(--gray-500);font-size:0.75rem;margin-left:0.35rem}
+.fit-score{font-family:'Inter',sans-serif;font-weight:800;font-size:0.9375rem;color:var(--navy)}
+.fit-score .tier{font-size:0.625rem;font-weight:700;padding:0.1rem 0.45rem;border-radius:100px;margin-left:0.45rem;letter-spacing:0.03em}
+.tier-a{background:var(--green-bg);color:var(--green-d)}
+.tier-b{background:var(--blue-bg);color:#1E40AF}
+.tier-c{background:#F1F3F5;color:var(--gray-600)}
+.bar{height:8px;border-radius:100px;background:var(--line-2);overflow:hidden}
+.bar > i{display:block;height:100%;border-radius:100px;background:linear-gradient(90deg,var(--blue),var(--blue-light))}
+.bar.b-green > i{background:linear-gradient(90deg,var(--green-d),var(--green))}
+.bar.b-gray > i{background:linear-gradient(90deg,#94A3B8,#CBD5E1)}
+.fit-note{font-size:0.7rem;color:var(--gray-500);margin-top:0.3rem}
+
+/* SNAPSHOT LIST */
+.snap{list-style:none}
+.snap li{display:flex;gap:0.6rem;padding:0.55rem 0;border-bottom:1px solid var(--line-2);font-size:0.8125rem;color:var(--gray-700);line-height:1.5}
+.snap li:last-child{border-bottom:none}
+.snap li b{color:var(--navy-dark);font-weight:700;min-width:74px;flex-shrink:0}
+
+/* TIMELINE */
+.tl-track{display:grid;grid-template-columns:repeat(6,1fr);gap:0.5rem}
+.tl-col{position:relative;text-align:center}
+.tl-bar{height:6px;border-radius:100px;background:var(--blue);margin-bottom:0.6rem;opacity:0.85}
+.tl-bar.now{background:var(--green)}
+.tl-bar.gapbar{background:repeating-linear-gradient(45deg,#E2486B33,#E2486B33 4px,transparent 4px,transparent 8px);border:1px dashed #E2486B66}
+.tl-yr{font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:700;color:var(--navy)}
+.tl-co{font-size:0.7rem;color:var(--gray-600);margin-top:0.15rem;line-height:1.3}
+.tl-ro{font-size:0.625rem;color:var(--gray-400);margin-top:0.1rem}
+.tl-legend{display:flex;gap:1.25rem;flex-wrap:wrap;margin-top:1rem;font-size:0.7rem;color:var(--gray-500)}
+.tl-legend i{display:inline-block;width:18px;height:6px;border-radius:100px;margin-right:0.35rem;vertical-align:middle}
+
+/* EVIDENCE TABLE */
+.etab{width:100%;border-collapse:collapse;font-size:0.8125rem}
+.etab th{text-align:left;font-size:0.625rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--gray-500);padding:0 0.75rem 0.55rem;border-bottom:1px solid var(--line)}
+.etab td{padding:0.65rem 0.75rem;border-bottom:1px solid var(--line-2);color:var(--gray-700);vertical-align:top;line-height:1.45}
+.etab tr:last-child td{border-bottom:none}
+.etab .m{font-family:'Inter',sans-serif;font-weight:800;color:var(--navy-dark);white-space:nowrap}
+.chip{display:inline-block;font-size:0.625rem;font-weight:700;padding:0.12rem 0.45rem;border-radius:5px}
+.chip-v{background:var(--green-bg);color:var(--green-d)}
+.chip-s{background:var(--amber-bg);color:var(--amber)}
+
+/* STRENGTH / WATCH */
+.sw{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.sw-card{border-radius:14px;padding:1.2rem 1.35rem;border:1px solid var(--line)}
+.sw-pos{background:#F0FDF8;border-color:#A7F3D0}
+.sw-watch{background:#FFFBF5;border-color:#FDE68A}
+.sw-t{font-size:0.8125rem;font-weight:800;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem}
+.sw-pos .sw-t{color:var(--green-d)}
+.sw-watch .sw-t{color:var(--amber)}
+.sw-list{list-style:none}
+.sw-list li{font-size:0.8125rem;line-height:1.55;padding:0.45rem 0 0.45rem 1.25rem;position:relative;color:var(--gray-700);border-bottom:1px solid rgba(0,0,0,0.04)}
+.sw-list li:last-child{border-bottom:none}
+.sw-list li::before{position:absolute;left:0;top:0.4rem;font-weight:800}
+.sw-pos .sw-list li::before{content:'+';color:var(--green)}
+.sw-watch .sw-list li::before{content:'!';color:var(--amber)}
+.sw-list li b{color:var(--navy-dark)}
+
+/* 90 DAYS */
+.plan{display:grid;grid-template-columns:repeat(3,1fr);gap:0.85rem}
+.plan-c{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.2rem}
+.plan-ph{font-family:'Inter',sans-serif;font-size:0.6875rem;font-weight:800;letter-spacing:0.08em;color:var(--blue);margin-bottom:0.5rem}
+.plan-h{font-size:0.875rem;font-weight:800;color:var(--navy-dark);margin-bottom:0.6rem}
+.plan-l{list-style:none}
+.plan-l li{font-size:0.78rem;color:var(--gray-700);line-height:1.5;padding:0.3rem 0 0.3rem 0.95rem;position:relative}
+.plan-l li::before{content:'›';position:absolute;left:0;color:var(--blue);font-weight:700}
+
+/* CTA */
+.cta{background:linear-gradient(135deg,var(--navy-dark),var(--navy-mid));border-radius:16px;padding:2rem 2.25rem;color:#fff;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem}
+.cta-h{font-size:1.25rem;font-weight:800;letter-spacing:-0.01em;margin-bottom:0.35rem}
+.cta-s{font-size:0.85rem;color:rgba(255,255,255,0.6)}
+.cta-act{display:flex;gap:0.6rem;flex-wrap:wrap}
+.cta .btn-primary{padding:0.7rem 1.3rem;font-size:0.9rem}
+.cta .btn-ghost{padding:0.7rem 1.2rem;font-size:0.9rem}
+
+.foot{text-align:center;font-size:0.7rem;color:var(--gray-400);margin-top:2rem;line-height:1.7}
+
+@media print{
+  .topbar{display:none}
+  body{background:#fff;font-size:11pt}
+  .panel,.kpi,.plan-c,.sw-card{box-shadow:none}
+  .sec{page-break-inside:avoid}
+}
+@media (max-width:860px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .cols{grid-template-columns:1fr}
+  .sw{grid-template-columns:1fr}
+  .plan{grid-template-columns:1fr}
+  .tl-track{grid-template-columns:repeat(4,1fr);row-gap:1rem}
+  .dh-meta{text-align:left}
+}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SHWHHNF355"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SHWHHNF355');
+window.track=function(n,p){p=p||{};try{gtag('event',n,p);}catch(e){}dataLayer.push(Object.assign({event:n},p));};
+track('page_view',{page:'dashboard'});
+</script>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="tb-left"><span class="dot"></span> 채용 대시보드 · Executive Scorecard &nbsp;<a href="index.html">← 포트폴리오</a></div>
+  <div class="tb-right">
+    <a href="resume.html" class="btn btn-ghost">이력서</a>
+    <a href="cover-letter.html" class="btn btn-ghost">자기소개서</a>
+    <button class="btn btn-primary" onclick="track('cta_click',{cta:'dashboard_print'});window.print()">PDF 저장</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <div class="dash-head">
+    <div>
+      <div class="dh-eyebrow">Candidate Evaluation Dashboard</div>
+      <div class="dh-name">김연재 <span class="en">YJ KIM</span></div>
+      <div class="dh-role">CSO · 사업총괄 / COO · 전문경영인(CEO) 후보 &nbsp;|&nbsp; 플랫폼 전략 · 그로스 · BD · IR</div>
+    </div>
+    <div class="dh-meta">
+      <span class="upd">● 2026.06 기준 최신</span><br>
+      <strong>경력 27년</strong> · MS R&amp;D 출신 · 단독 창업 &amp; 공동창업 Exit<br>
+      010-9593-9917 · <a href="mailto:wisdom.yjkim@gmail.com">wisdom.yjkim@gmail.com</a>
+    </div>
+  </div>
+
+  <!-- KPI -->
+  <div class="sec">
+    <div class="sec-h"><div class="sec-t">핵심 지표 · Key Metrics</div><div class="sec-n">검증 가능 출처 우선</div></div>
+    <div class="kpis">
+      <div class="kpi k-green">
+        <div class="kpi-v">100억+</div>
+        <div class="kpi-l">누적 IR 투자 유치</div>
+        <div class="kpi-s">한국투자파트너스·NHN·하나금융 등 기관</div>
+        <span class="kpi-tag t-verified">언론 보도 확인</span>
+      </div>
+      <div class="kpi k-green">
+        <div class="kpi-v">19배</div>
+        <div class="kpi-l">매출 성장 (단독 창업)</div>
+        <div class="kpi-s">연 11억 → 207억 · 3년 · 인도네시아</div>
+        <span class="kpi-tag t-self">본인 주도</span>
+      </div>
+      <div class="kpi">
+        <div class="kpi-v">+35.5%</div>
+        <div class="kpi-l">MAU 성장 (현직)</div>
+        <div class="kpi-s">6.2만 → 8.4만 · 어바웃피싱 · 2026.03</div>
+        <span class="kpi-tag t-self">현직 성과</span>
+      </div>
+      <div class="kpi">
+        <div class="kpi-v">5건</div>
+        <div class="kpi-l">신뢰도 추천 특허 패밀리</div>
+        <div class="kpi-s">관련 5건 등록 · 2026 · 발명자</div>
+        <span class="kpi-tag t-verified">등록번호 공개</span>
+      </div>
+      <div class="kpi k-amber">
+        <div class="kpi-v">1회</div>
+        <div class="kpi-l">스타트업 지분매각 Exit</div>
+        <div class="kpi-s">웍스메이트 공동창업 · CSO · 2년 5개월</div>
+        <span class="kpi-tag t-self">전략본부 총괄</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FIT + SNAPSHOT -->
+  <div class="sec cols">
+    <div class="panel">
+      <div class="panel-t">포지션 적합도 · Role Fit</div>
+      <div class="panel-d">직무별 정합도를 솔직하게 평가했습니다. 강한 핏과 보완이 필요한 핏을 함께 표기합니다.</div>
+
+      <div class="fit">
+        <div class="fit-top"><div class="fit-role">CSO / 최고전략책임자 <span>전략·BD·IR·그로스</span></div><div class="fit-score">92<span class="tier tier-a">최상 핏</span></div></div>
+        <div class="bar b-green"><i style="width:92%"></i></div>
+        <div class="fit-note">전략 수립–실행–투자 유치를 한 사람이 끝까지 끌고 간 이력이 일관됨.</div>
+      </div>
+
+      <div class="fit">
+        <div class="fit-top"><div class="fit-role">CGO / 그로스·사업개발 총괄 <span>데이터·퍼포먼스·BD</span></div><div class="fit-score">88<span class="tier tier-a">최상 핏</span></div></div>
+        <div class="bar b-green"><i style="width:88%"></i></div>
+        <div class="fit-note">GA4·SST 직접 구축 + ROAS 643% 등 실무 지표까지 손으로 만든다.</div>
+      </div>
+
+      <div class="fit">
+        <div class="fit-top"><div class="fit-role">COO / 사업총괄 <span>조직·SCM·P&amp;L</span></div><div class="fit-score">80<span class="tier tier-b">상위 핏</span></div></div>
+        <div class="bar"><i style="width:80%"></i></div>
+        <div class="fit-note">3→50명 조직 빌딩·물류 시스템 경험. 100명+ 대조직 운영은 검증 구간.</div>
+      </div>
+
+      <div class="fit">
+        <div class="fit-top"><div class="fit-role">CEO / 전문경영인 <span>단일 P&amp;L 책임</span></div><div class="fit-score">76<span class="tier tier-b">상위 핏</span></div></div>
+        <div class="bar"><i style="width:76%"></i></div>
+        <div class="fit-note">창업 CEO 경험은 보유. 외부 자본 구조의 전문경영인 트랙은 면접에서 검증 권장.</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-t">한눈에 보기 · Snapshot</div>
+      <div class="panel-d">스크리닝 3분 컷.</div>
+      <ul class="snap">
+        <li><b>한 줄</b><span>기술(MS R&amp;D)에서 출발해 전략·BD·IR까지 직접 실행하고 투자를 받아낸 실전형 경영자.</span></li>
+        <li><b>강점</b><span>0→1 빌더 + 데이터 그로스 실무 + 기관 IR을 한 몸에 가진 희소 조합.</span></li>
+        <li><b>적정 무대</b><span>Seed~Series A 플랫폼·커머스의 사업·전략 총괄, 또는 글로벌 진출 BD.</span></li>
+        <li><b>검증점</b><span>제너럴리스트 폭이 넓어 한 직무로 좁혀 보기 어려움 → 본 대시보드로 정리.</span></li>
+        <li><b>가용</b><span>현직 어바웃피싱 CSO 재직 중 · 포지션·역할 협의 가능.</span></li>
+        <li><b>언어</b><span>한국어 · 영어(Business) · 인도네시아어(Business) · 해외 8년+.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="sec">
+    <div class="sec-h"><div class="sec-t">커리어 타임라인 · 1999 → 현재</div><div class="sec-n">27년 · 전략·창업·Exit 트랙</div></div>
+    <div class="panel">
+      <div class="tl-track">
+        <div class="tl-col"><div class="tl-bar"></div><div class="tl-yr">'99–'02</div><div class="tl-co">Microsoft R&amp;D · 인터파크</div><div class="tl-ro">연구원 → 팀장</div></div>
+        <div class="tl-col"><div class="tl-bar"></div><div class="tl-yr">'04–'09</div><div class="tl-co">ATHUB</div><div class="tl-ro">IT 컨설팅 이사</div></div>
+        <div class="tl-col"><div class="tl-bar now"></div><div class="tl-yr">'11–'18</div><div class="tl-co">Smart Wisdom (인니)</div><div class="tl-ro">단독 창업 · CEO</div></div>
+        <div class="tl-col"><div class="tl-bar now"></div><div class="tl-yr">'20–'22</div><div class="tl-co">웍스메이트</div><div class="tl-ro">공동창업 · 지분매각 Exit</div></div>
+        <div class="tl-col"><div class="tl-bar"></div><div class="tl-yr">'23–'25</div><div class="tl-co">애즈유 (건기식 D2C)</div><div class="tl-ro">부문대표 / 부사장</div></div>
+        <div class="tl-col"><div class="tl-bar now"></div><div class="tl-yr">'25–현재</div><div class="tl-co">어바웃피싱</div><div class="tl-ro">부사장 / CSO</div></div>
+      </div>
+      <div class="tl-legend">
+        <span><i style="background:var(--blue)"></i>재직</span>
+        <span><i style="background:var(--green)"></i>핵심 성과 구간</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVIDENCE -->
+  <div class="sec">
+    <div class="sec-h"><div class="sec-t">성과 증빙 · Evidence</div><div class="sec-n">숫자 + 본인 역할 + 출처</div></div>
+    <div class="panel" style="padding:1.1rem 1rem">
+      <table class="etab">
+        <thead><tr><th>지표</th><th>맥락 · 본인 역할</th><th>시점</th><th>검증</th></tr></thead>
+        <tbody>
+          <tr><td class="m">100억+</td><td>누적 IR — 웍스메이트 60억(공동창업·전략본부 총괄) 외 다수 라운드 직접 리드/문서 작성</td><td>~2022</td><td><a href="https://news.mt.co.kr/mtview.php?no=2021122217123512910" target="_blank" rel="noopener"><span class="chip chip-v">머니투데이 ↗</span></a></td></tr>
+          <tr><td class="m">207억</td><td>인도네시아 Smart Wisdom 연매출 (단독 창업·CEO, 11억→207억, 3년)</td><td>2012–15</td><td><span class="chip chip-s">본인 진술</span></td></tr>
+          <tr><td class="m">Global 100</td><td>Red Herring 혁신기업 선정 (카카오 동시 수상)</td><td>2012</td><td><span class="chip chip-v">공개 수상</span></td></tr>
+          <tr><td class="m">+827% / +187%</td><td>애즈유 D2C 자사몰 회원·매출 성장 (경영총괄·1년)</td><td>2024–25</td><td><a href="https://megaeconomy.co.kr/news/newsview.php?ncode=1065598837841438" target="_blank" rel="noopener"><span class="chip chip-v">메가경제 ↗</span></a></td></tr>
+          <tr><td class="m">643% / 769원</td><td>어바웃피싱 Meta ROAS · Google CPA — GA4·SST 직접 구축 (현직 CSO)</td><td>2026</td><td><span class="chip chip-s">현직 대시보드</span></td></tr>
+          <tr><td class="m">특허 패밀리</td><td>AI 신뢰도 추천·수익분배 관련 5건 (발명자, 10-2947624 외 4건, 등록 완료)</td><td>2026</td><td><span class="chip chip-v">등록번호 공개</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- STRENGTH / WATCH -->
+  <div class="sec">
+    <div class="sec-h"><div class="sec-t">강점 &amp; 검증 포인트 · Honest Read</div><div class="sec-n">채용 담당자를 위한 솔직한 양면</div></div>
+    <div class="sw">
+      <div class="sw-card sw-pos">
+        <div class="sw-t">강점 · 왜 뽑아야 하는가</div>
+        <ul class="sw-list">
+          <li><b>희소한 풀스택 경영자</b> — 전략·BD·데이터 그로스·IR을 외주 없이 한 사람이 실행. 초기 조직에서 헤드카운트 3~4명 몫.</li>
+          <li><b>0→1 실증</b> — 단독 창업으로 업계 1위·국제 수상까지. 무에서 사업을 세운 경험이 말이 아닌 결과로 있음.</li>
+          <li><b>자본을 받아내는 사람</b> — 기관 IR을 직접 리드해 실제 자금을 유치. 성장 단계에서 가장 비싼 역량.</li>
+          <li><b>AI를 쓰는 게 아니라 만든다</b> — GA4·SST·자동화 파이프라인·특허까지 직접 빌드. 임원이 손으로 증명.</li>
+          <li><b>글로벌 BD</b> — 인니 8년, 5개국 현지화. 해외 진출 카드가 필요한 조직에 즉시 투입 가능.</li>
+        </ul>
+      </div>
+      <div class="sw-card sw-watch">
+        <div class="sw-t">검증 포인트 · 면접에서 확인할 것</div>
+        <ul class="sw-list">
+          <li><b>최근 재직 호흡</b> — 애즈유·어바웃피싱 등 최근 재직이 비교적 짧음. 합류 배경과 지속 의지를 면접에서 확인 권장(C레벨 영입·전략 과제 중심 이동 패턴).</li>
+          <li><b>대조직 운영</b> — 최대 50명 규모 경험. 수백 명 P&amp;L·거버넌스가 필요한 자리라면 보완·검증 권장.</li>
+          <li><b>지표의 단위</b> — CPA·ROAS는 실무 지표. 경영자 평가에선 사업 결과(매출·자본·Exit)로 환산해 읽을 것.</li>
+          <li><b>역할 분해</b> — '주도'와 '참여'의 경계. 각 성과의 본인 기여분을 레퍼런스로 교차 확인 권장.</li>
+          <li><b>포지션 합의</b> — 폭이 넓은 만큼 입사 전 책임 범위(전략 vs 운영 vs 사업)를 명확히 못 박는 것이 서로에게 유리.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 90 DAYS -->
+  <div class="sec">
+    <div class="sec-h"><div class="sec-t">입사 후 90일 · First 90 Days</div><div class="sec-n">말이 아니라 계획으로</div></div>
+    <div class="plan">
+      <div class="plan-c">
+        <div class="plan-ph">0–30 DAYS</div>
+        <div class="plan-h">진단 · 측정 체계</div>
+        <ul class="plan-l">
+          <li>GA4·GTM·서버사이드트래킹 점검 후 전환 데이터 신뢰도 복구</li>
+          <li>핵심 퍼널·유닛 이코노믹스 재정의, 새는 지점 3개 도출</li>
+          <li>팀·파트너·투자자 1:1로 사업의 진짜 병목 파악</li>
+        </ul>
+      </div>
+      <div class="plan-c">
+        <div class="plan-ph">30–60 DAYS</div>
+        <div class="plan-h">그로스 · BD 실험</div>
+        <ul class="plan-l">
+          <li>CAC·ROAS 개선 캠페인 가동(현직 ROAS 643% 플레이북 이식)</li>
+          <li>신규 수익원·제휴 2건 파이프라인화, POC 제안서 작성</li>
+          <li>가설–실험–신호–핵심결과(OKR 변형)로 의사결정 속도화</li>
+        </ul>
+      </div>
+      <div class="plan-c">
+        <div class="plan-ph">60–90 DAYS</div>
+        <div class="plan-h">스케일 · IR 준비</div>
+        <ul class="plan-l">
+          <li>다음 라운드 IR 스토리·데이터룸·재무 시나리오 초안</li>
+          <li>검증된 채널 더블다운, 안 되는 것 과감히 종료</li>
+          <li>분기 성장 목표와 책임 체계(R&amp;R) 합의·고정</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div>
+      <div class="cta-h">전략과 실행을 함께 끌고 갈 사람이 필요하다면.</div>
+      <div class="cta-s">30분 통화로 귀사의 단계·과제에 정확히 무엇을 더할 수 있는지 정리해 드리겠습니다.</div>
+    </div>
+    <div class="cta-act">
+      <a href="mailto:wisdom.yjkim@gmail.com?subject=[채용 문의] 김연재 CSO/CEO" class="btn btn-primary" onclick="track('cta_click',{cta:'dashboard_contact'})">면접 · 미팅 요청</a>
+      <a href="resume.html" class="btn btn-ghost">이력서 보기</a>
+      <a href="https://www.linkedin.com/in/wisdomkim" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="foot">
+    본 대시보드는 채용 담당자의 빠른 평가를 돕기 위한 요약본입니다 · 모든 수치는 이력서·언론 보도·특허 등록번호로 교차 확인 가능<br>
+    김연재 YJ KIM · 2026 · 010-9593-9917 · wisdom.yjkim@gmail.com
+  </div>
+
+</div>
+
+</body>
+</html>
