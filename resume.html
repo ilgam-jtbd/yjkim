@@ -21,15 +21,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --navy:#1B2A4A;--navy-dark:#0F1C33;
   --blue:#2563EB;
-  --gray-100:#F1F3F5;--gray-200:#E9ECEF;
+  --gold:#C19A3D;--gold-deep:#A67C2E;
+  --gray-100:#F1F3F5;--gray-200:#E9ECEF;--gray-400:#9CA3AF;
   --gray-500:#6B7280;--gray-700:#374151;--gray-900:#111827;
 }
-body{font-family:'Noto Sans KR','Inter',-apple-system,sans-serif;color:var(--gray-900);background:#fff;font-size:14px;line-height:1.7}
+body{font-family:'Pretendard','Noto Sans KR','Inter',-apple-system,sans-serif;color:var(--gray-900);background:#fff;font-size:14px;line-height:1.7}
 
 /* SCREEN ONLY */
 @media screen{
@@ -52,6 +54,7 @@ body{font-family:'Noto Sans KR','Inter',-apple-system,sans-serif;color:var(--gra
 
 /* HEADER */
 .rh{border-bottom:3px solid var(--navy);padding-bottom:1.5rem;margin-bottom:2rem}
+.rh-eyebrow{font-family:'Inter',sans-serif;font-size:0.6875rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:0.4rem}
 .rh-name{font-size:2rem;font-weight:900;color:var(--navy-dark);letter-spacing:-0.02em;margin-bottom:0.25rem}
 .rh-title{font-size:0.9375rem;color:var(--blue);font-weight:600;margin-bottom:0.5rem}
 .rh-contact{font-size:0.8125rem;color:var(--gray-500);display:flex;gap:1.5rem;flex-wrap:wrap}
@@ -112,7 +115,7 @@ body{font-family:'Noto Sans KR','Inter',-apple-system,sans-serif;color:var(--gra
   .badge-b{background:#DBEAFE !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .summary{background:var(--gray-100) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
-@media screen{.rh{border-top:3px solid var(--blue);padding-top:0.75rem}}
+@media screen{.rh{border-top:3px solid var(--gold);padding-top:0.75rem}}
 
 /* MOBILE */
 .ptabwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -154,6 +157,7 @@ track('page_view',{page:'resume'});
 
 <!-- HEADER -->
 <div class="rh">
+  <div class="rh-eyebrow">Executive Profile · 이력서</div>
   <div class="rh-name">김연재 &nbsp; <span style="font-family:'Inter',sans-serif;font-weight:500;color:var(--gray-400);font-size:0.55em;letter-spacing:0.06em">YJ KIM</span></div>
   <div class="rh-title">CSO · 최고전략책임자 / 사업총괄 &nbsp;—&nbsp; 전략 수립부터 투자 유치까지 직접 실행하는 경영자</div>
   <div class="rh-contact">
