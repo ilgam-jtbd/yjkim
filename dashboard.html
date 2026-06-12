@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>채용 대시보드 — 김연재 YJ KIM · CSO / CEO 후보 스코어카드</title>
-<meta name="description" content="김연재(YJ KIM) 임원 채용 대시보드 — CSO/CEO/COO 포지션 적합도, 검증된 성과 지표, 커리어 타임라인, 강점과 검증 포인트를 한 화면에서 평가하는 채용 담당자용 스코어카드.">
+<meta name="description" content="김연재(YJ KIM) 임원 채용 대시보드 — CEO/CSO/신규사업개발 포지션 적합도, 검증된 성과 지표, 커리어 타임라인, 강점과 검증 포인트를 한 화면에서 평가하는 채용 담당자용 스코어카드.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://ilgam-jtbd.github.io/yjkim/dashboard.html">
 <meta property="og:type" content="profile">
@@ -21,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -31,9 +32,10 @@
   --gray-400:#9AA3B2;--gray-500:#6B7280;--gray-600:#566077;--gray-700:#3C4658;
   --green:#10B981;--green-d:#047857;--amber:#D97706;--amber-bg:#FEF3C7;--red:#DC2626;
   --green-bg:#D1FAE5;--blue-bg:#DBEAFE;
+  --gold:#C19A3D;--gold-dim:#D9BC7A;--gold-deep:#A67C2E;--gold-bg:#FBF4E2;
 }
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans KR','Inter',-apple-system,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased}
+body{font-family:'Pretendard','Noto Sans KR','Inter',-apple-system,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased}
 a{color:var(--blue);text-decoration:none}
 .mono{font-family:'Inter',sans-serif}
 
@@ -54,7 +56,7 @@ a{color:var(--blue);text-decoration:none}
 
 /* HEADER */
 .dash-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1rem;padding:0.5rem 0 1.25rem;border-bottom:1px solid var(--line);margin-bottom:1.5rem}
-.dh-eyebrow{font-size:0.6875rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:0.4rem}
+.dh-eyebrow{font-size:0.6875rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:0.4rem}
 .dh-name{font-size:1.875rem;font-weight:900;letter-spacing:-0.02em;color:var(--navy-dark);line-height:1.1}
 .dh-name .en{font-family:'Inter',sans-serif;font-weight:500;color:var(--gray-400);font-size:0.55em;letter-spacing:0.08em;margin-left:0.5rem}
 .dh-role{font-size:0.9375rem;color:var(--gray-600);margin-top:0.35rem;font-weight:500}
@@ -96,11 +98,13 @@ a{color:var(--blue);text-decoration:none}
 .fit-score{font-family:'Inter',sans-serif;font-weight:800;font-size:0.9375rem;color:var(--navy)}
 .fit-score .tier{font-size:0.625rem;font-weight:700;padding:0.1rem 0.45rem;border-radius:100px;margin-left:0.45rem;letter-spacing:0.03em}
 .tier-a{background:var(--green-bg);color:var(--green-d)}
+.tier-gold{background:var(--gold-bg);color:var(--gold-deep)}
 .tier-b{background:var(--blue-bg);color:#1E40AF}
 .tier-c{background:#F1F3F5;color:var(--gray-600)}
 .bar{height:8px;border-radius:100px;background:var(--line-2);overflow:hidden}
 .bar > i{display:block;height:100%;border-radius:100px;background:linear-gradient(90deg,var(--blue),var(--blue-light))}
 .bar.b-green > i{background:linear-gradient(90deg,var(--green-d),var(--green))}
+.bar.b-gold > i{background:linear-gradient(90deg,var(--gold-deep),var(--gold-dim))}
 .bar.b-gray > i{background:linear-gradient(90deg,#94A3B8,#CBD5E1)}
 .fit-note{font-size:0.7rem;color:var(--gray-500);margin-top:0.3rem}
 
@@ -173,13 +177,42 @@ a{color:var(--blue);text-decoration:none}
   .panel,.kpi,.plan-c,.sw-card{box-shadow:none}
   .sec{page-break-inside:avoid}
 }
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 @media (max-width:860px){
   .kpis{grid-template-columns:repeat(2,1fr)}
   .cols{grid-template-columns:1fr}
   .sw{grid-template-columns:1fr}
   .plan{grid-template-columns:1fr}
-  .tl-track{grid-template-columns:repeat(4,1fr);row-gap:1rem}
+  .tl-track{grid-template-columns:repeat(3,1fr);row-gap:1.1rem}
   .dh-meta{text-align:left}
+}
+@media (max-width:600px){
+  .wrap{padding:1rem 0.9rem 3rem}
+  .topbar{padding:0 0.9rem}
+  .tb-en{display:none}
+  .dash-head{flex-direction:column;align-items:flex-start;gap:0.55rem;padding-bottom:1rem}
+  .dh-name{font-size:1.5rem}
+  .dh-role{font-size:0.85rem;line-height:1.45}
+  .dh-meta{font-size:0.75rem}
+  .sec-n{display:none}
+  .sec{margin-bottom:1.4rem}
+  .kpi-v{font-size:1.4rem}
+  .panel{padding:1rem 1.05rem}
+  .etab{min-width:520px}
+  .plan{gap:0.6rem}
+  .sw-card{padding:1rem 1.1rem}
+}
+@media (max-width:430px){
+  body{font-size:14px}
+  .kpis{gap:0.5rem}
+  .kpi{padding:0.8rem 0.85rem}
+  .kpi-s{display:none}
+  .tb-back{display:none}
+  .tl-track{grid-template-columns:repeat(2,1fr);row-gap:0.9rem}
+  .fit-role span{display:none}
+  .cta{padding:1.5rem 1.4rem}
+  .cta-h{font-size:1.1rem}
+  .btn{font-size:0.78rem;padding:0.4rem 0.65rem}
 }
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SHWHHNF355"></script>
@@ -192,7 +225,7 @@ track('page_view',{page:'dashboard'});
 <body>
 
 <div class="topbar">
-  <div class="tb-left"><span class="dot"></span> 채용 대시보드 · Executive Scorecard &nbsp;<a href="index.html">← 포트폴리오</a></div>
+  <div class="tb-left"><span class="dot"></span> <span class="tb-name">채용 대시보드<span class="tb-en"> · Executive Scorecard</span></span> <a class="tb-back" href="index.html">← 포트폴리오</a></div>
   <div class="tb-right">
     <a href="resume.html" class="btn btn-ghost">이력서</a>
     <a href="cover-letter.html" class="btn btn-ghost">자기소개서</a>
@@ -207,7 +240,7 @@ track('page_view',{page:'dashboard'});
     <div>
       <div class="dh-eyebrow">Candidate Evaluation Dashboard</div>
       <div class="dh-name">김연재 <span class="en">YJ KIM</span></div>
-      <div class="dh-role">CSO · 사업총괄 / COO · 전문경영인(CEO) 후보 &nbsp;|&nbsp; 플랫폼 전략 · 그로스 · BD · IR</div>
+      <div class="dh-role">전문경영인(CEO) · CSO · 사업총괄 후보 &nbsp;|&nbsp; 플랫폼 전략 · 그로스 · 신규사업개발(BD) · IR</div>
     </div>
     <div class="dh-meta">
       <span class="upd">● 2026.06 기준 최신</span><br>
@@ -260,6 +293,12 @@ track('page_view',{page:'dashboard'});
       <div class="panel-d">직무별 정합도를 솔직하게 평가했습니다. 강한 핏과 보완이 필요한 핏을 함께 표기합니다.</div>
 
       <div class="fit">
+        <div class="fit-top"><div class="fit-role">CEO / 전문경영인 <span>단일 P&amp;L 책임</span></div><div class="fit-score">95<span class="tier tier-gold">최상 핏 · 1순위</span></div></div>
+        <div class="bar b-gold"><i style="width:95%"></i></div>
+        <div class="fit-note">창업 CEO 경험 보유. 외부 자본 구조의 전문경영인 트랙은 면접에서 검증 권장.</div>
+      </div>
+
+      <div class="fit">
         <div class="fit-top"><div class="fit-role">CSO / 최고전략책임자 <span>전략·BD·IR·그로스</span></div><div class="fit-score">92<span class="tier tier-a">최상 핏</span></div></div>
         <div class="bar b-green"><i style="width:92%"></i></div>
         <div class="fit-note">전략 수립–실행–투자 유치를 한 사람이 끝까지 끌고 간 이력이 일관됨.</div>
@@ -272,15 +311,9 @@ track('page_view',{page:'dashboard'});
       </div>
 
       <div class="fit">
-        <div class="fit-top"><div class="fit-role">COO / 사업총괄 <span>조직·SCM·P&amp;L</span></div><div class="fit-score">80<span class="tier tier-b">상위 핏</span></div></div>
-        <div class="bar"><i style="width:80%"></i></div>
-        <div class="fit-note">3→50명 조직 빌딩·물류 시스템 경험. 100명+ 대조직 운영은 검증 구간.</div>
-      </div>
-
-      <div class="fit">
-        <div class="fit-top"><div class="fit-role">CEO / 전문경영인 <span>단일 P&amp;L 책임</span></div><div class="fit-score">76<span class="tier tier-b">상위 핏</span></div></div>
-        <div class="bar"><i style="width:76%"></i></div>
-        <div class="fit-note">창업 CEO 경험은 보유. 외부 자본 구조의 전문경영인 트랙은 면접에서 검증 권장.</div>
+        <div class="fit-top"><div class="fit-role">신규사업개발(BD) / 사업총괄 <span>제휴·신규 BM·POC</span></div><div class="fit-score">87<span class="tier tier-a">최상 핏</span></div></div>
+        <div class="bar b-green"><i style="width:87%"></i></div>
+        <div class="fit-note">이커머스 협회 설립·SK T-map POC 등 파트너십을 직접 발굴·성사시킨 트랙.</div>
       </div>
     </div>
 
@@ -321,6 +354,7 @@ track('page_view',{page:'dashboard'});
   <div class="sec">
     <div class="sec-h"><div class="sec-t">성과 증빙 · Evidence</div><div class="sec-n">숫자 + 본인 역할 + 출처</div></div>
     <div class="panel" style="padding:1.1rem 1rem">
+      <div class="tablewrap">
       <table class="etab">
         <thead><tr><th>지표</th><th>맥락 · 본인 역할</th><th>시점</th><th>검증</th></tr></thead>
         <tbody>
@@ -332,6 +366,7 @@ track('page_view',{page:'dashboard'});
           <tr><td class="m">특허 패밀리</td><td>AI 신뢰도 추천·수익분배 관련 5건 (발명자, 10-2947624 외 4건, 등록 완료)</td><td>2026</td><td><span class="chip chip-v">등록번호 공개</span></td></tr>
         </tbody>
       </table>
+      </div>
     </div>
   </div>
 
