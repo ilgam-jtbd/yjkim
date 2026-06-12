@@ -113,6 +113,27 @@ body{font-family:'Noto Sans KR','Inter',-apple-system,sans-serif;color:var(--gra
   .summary{background:var(--gray-100) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 @media screen{.rh{border-top:3px solid var(--blue);padding-top:0.75rem}}
+
+/* MOBILE */
+.ptabwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media screen and (max-width:600px){
+  body{padding:1.25rem 1rem;font-size:13.5px}
+  .toolbar{margin:-1.25rem -1rem 1.5rem;padding-left:1rem;padding-right:1rem;gap:0.5rem}
+  .toolbar .tb-left a{font-size:0.75rem}
+  .rh-name{font-size:1.6rem}
+  .summary{padding:0.875rem 1rem}
+  .summary-grid{grid-template-columns:1fr;gap:0.5rem}
+  .si strong{min-width:auto}
+  .exp-header{flex-direction:column;gap:0.1rem}
+  .exp-period{font-size:0.7rem}
+  .edu-row{flex-direction:column;align-items:flex-start;gap:0.1rem}
+  .ptab{min-width:460px}
+  .skill-row{grid-template-columns:1fr;gap:0.15rem;padding:0.5rem 0}
+}
+@media screen and (max-width:380px){
+  .award-row{flex-direction:column;gap:0.15rem}
+  .award-year{min-width:auto}
+}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SHWHHNF355"></script>
 <script>
@@ -258,6 +279,7 @@ track('page_view',{page:'resume'});
 <!-- PATENTS -->
 <div class="rs">
   <div class="rs-title">지식재산권 — 신뢰도 추천 특허 패밀리 (관련 5건 등록 완료)</div>
+  <div class="ptabwrap">
   <table class="ptab">
     <thead>
       <tr>
@@ -300,6 +322,7 @@ track('page_view',{page:'resume'});
       </tr>
     </tbody>
   </table>
+  </div>
   <p style="font-size:0.75rem;color:var(--gray-500);margin-top:0.625rem">과거 등록 특허: 10-0468514 — 지능형 에이전트 (메신저 기반 AI 정보검색, ATHUB 재직 시) · Microsoft 파트너 금상 수상</p>
 </div>
 
