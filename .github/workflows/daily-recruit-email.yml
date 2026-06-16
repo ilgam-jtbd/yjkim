@@ -29,8 +29,10 @@ jobs:
       - name: Check secrets
         id: guard
         run: |
+          echo "MAIL_USERNAME 감지: ${MAIL_USERNAME:+있음}${MAIL_USERNAME:-없음} (길이 ${#MAIL_USERNAME})"
+          echo "MAIL_PASSWORD 감지: ${MAIL_PASSWORD:+있음}${MAIL_PASSWORD:-없음} (길이 ${#MAIL_PASSWORD})"
           if [ -z "$MAIL_USERNAME" ] || [ -z "$MAIL_PASSWORD" ]; then
-            echo "::warning::MAIL_USERNAME/MAIL_PASSWORD 시크릿이 없어 메일 발송을 건너뜁니다. 레포 Settings > Secrets and variables > Actions 에서 추가하세요."
+            echo "::warning::시크릿 미감지 — 발송 건너뜀. Settings > Secrets and variables > Actions > Repository secrets 에 이름 정확히(MAIL_USERNAME, MAIL_PASSWORD) 추가했는지 확인하세요."
             echo "ready=false" >> "$GITHUB_OUTPUT"
           else
             echo "ready=true" >> "$GITHUB_OUTPUT"
