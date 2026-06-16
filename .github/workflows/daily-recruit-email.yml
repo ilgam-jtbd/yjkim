@@ -1,9 +1,10 @@
 name: Daily Recruit Digest Email
 
 # 평일(월~금) 오전 11:00 KST = 02:00 UTC 에 채용 타깃 다이제스트 메일 발송.
-# 메일 발송에는 아래 레포 시크릿 2개가 필요합니다(직접 추가):
-#   MAIL_USERNAME = 발송 Gmail 주소 (예: wisdom.yjkim@gmail.com)
-#   MAIL_PASSWORD = 해당 Gmail 계정의 "앱 비밀번호"(2단계 인증 후 발급)
+# 발송은 SendGrid SMTP 사용. 아래 레포 시크릿 1개가 필요합니다(직접 추가):
+#   SENDGRID_API_KEY = SendGrid API 키 (Settings > API Keys 에서 발급, Mail Send 권한)
+# 발신자(from)는 ilgam.jtbd@gmail.com — SendGrid에서 Single Sender Verification 으로
+# 미리 인증돼 있어야 합니다(Settings > Sender Authentication).
 # 시크릿이 없으면 발송 단계를 건너뜁니다(실패하지 않음).
 # 수동 테스트: Actions 탭 > 이 워크플로 > "Run workflow".
 
@@ -23,16 +24,14 @@ jobs:
   send:
     runs-on: ubuntu-latest
     env:
-      MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
-      MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
+      SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
     steps:
       - name: Check secrets
         id: guard
         run: |
-          echo "MAIL_USERNAME 감지: ${MAIL_USERNAME:+있음}${MAIL_USERNAME:-없음} (길이 ${#MAIL_USERNAME})"
-          echo "MAIL_PASSWORD 감지: ${MAIL_PASSWORD:+있음}${MAIL_PASSWORD:-없음} (길이 ${#MAIL_PASSWORD})"
-          if [ -z "$MAIL_USERNAME" ] || [ -z "$MAIL_PASSWORD" ]; then
-            echo "::warning::시크릿 미감지 — 발송 건너뜀. Settings > Secrets and variables > Actions > Repository secrets 에 이름 정확히(MAIL_USERNAME, MAIL_PASSWORD) 추가했는지 확인하세요."
+          echo "SENDGRID_API_KEY 감지: ${SENDGRID_API_KEY:+있음}${SENDGRID_API_KEY:-없음} (길이 ${#SENDGRID_API_KEY})"
+          if [ -z "$SENDGRID_API_KEY" ]; then
+            echo "::warning::시크릿 미감지 — 발송 건너뜀. Settings > Secrets and variables > Actions > Repository secrets 에 SENDGRID_API_KEY 를 추가했는지 확인하세요."
             echo "ready=false" >> "$GITHUB_OUTPUT"
           else
             echo "ready=true" >> "$GITHUB_OUTPUT"
@@ -79,12 +78,12 @@ jobs:
         if: steps.guard.outputs.ready == 'true'
         uses: dawidd6/action-send-mail@v3
         with:
-          server_address: smtp.gmail.com
+          server_address: smtp.sendgrid.net
           server_port: 465
           secure: true
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          from: 채용 레이더 <${{ secrets.MAIL_USERNAME }}>
+          username: apikey
+          password: ${{ secrets.SENDGRID_API_KEY }}
+          from: 채용 레이더 <ilgam.jtbd@gmail.com>
           to: wisdom.yjkim@gmail.com
           subject: "[채용 레이더] 평일 데일리 — CSO·대표·시니어 비즈니스 타깃"
           html_body: file://email_body.html
