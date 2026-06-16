@@ -1,0 +1,88 @@
+name: Daily Recruit Digest Email
+
+# 평일(월~금) 오전 11:00 KST = 02:00 UTC 에 채용 타깃 다이제스트 메일 발송.
+# 메일 발송에는 아래 레포 시크릿 2개가 필요합니다(직접 추가):
+#   MAIL_USERNAME = 발송 Gmail 주소 (예: wisdom.yjkim@gmail.com)
+#   MAIL_PASSWORD = 해당 Gmail 계정의 "앱 비밀번호"(2단계 인증 후 발급)
+# 시크릿이 없으면 발송 단계를 건너뜁니다(실패하지 않음).
+# 수동 테스트: Actions 탭 > 이 워크플로 > "Run workflow".
+
+on:
+  schedule:
+    - cron: '0 2 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: daily-recruit-email
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    env:
+      MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
+      MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
+    steps:
+      - name: Check secrets
+        id: guard
+        run: |
+          if [ -z "$MAIL_USERNAME" ] || [ -z "$MAIL_PASSWORD" ]; then
+            echo "::warning::MAIL_USERNAME/MAIL_PASSWORD 시크릿이 없어 메일 발송을 건너뜁니다. 레포 Settings > Secrets and variables > Actions 에서 추가하세요."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build email body
+        if: steps.guard.outputs.ready == 'true'
+        run: |
+          TODAY=$(TZ=Asia/Seoul date '+%Y-%m-%d (%a)')
+          cat > email_body.html <<HTML
+          <div style="font-family:'Apple SD Gothic Neo',sans-serif;max-width:640px;margin:0 auto;color:#212529">
+            <div style="background:#0F1C33;color:#fff;padding:18px 20px;border-radius:12px 12px 0 0">
+              <div style="font-size:12px;letter-spacing:.1em;color:#0EA5E9;font-weight:700">RECRUIT RADAR · 데일리</div>
+              <div style="font-size:18px;font-weight:800;margin-top:4px">김연재 YJ KIM · 채용 타깃 다이제스트</div>
+              <div style="font-size:13px;color:rgba(255,255,255,.7);margin-top:4px">$TODAY · CSO·대표·마케팅 / 시니어 비즈니스·성장 스타트업</div>
+            </div>
+            <div style="border:1px solid #E9ECEF;border-top:none;border-radius:0 0 12px 12px;padding:18px 20px">
+              <p style="margin:0 0 14px;font-size:14px">대시보드에서 실시간 검색·타깃 적합도를 확인하세요:</p>
+              <p style="margin:0 0 18px"><a href="https://ilgam-jtbd.github.io/yjkim/collect/" style="background:#2563EB;color:#fff;text-decoration:none;padding:9px 16px;border-radius:8px;font-weight:700;font-size:14px">📊 채용 타깃 대시보드 열기</a></p>
+
+              <div style="font-size:13px;font-weight:800;color:#0F1C33;margin:0 0 8px">① 직무별 실시간 채용 검색</div>
+              <ul style="margin:0 0 18px;padding-left:18px;font-size:13px;line-height:1.9">
+                <li><b>CSO/최고전략책임자</b> — <a href="https://www.wanted.co.kr/search?query=CSO%20%EC%B5%9C%EA%B3%A0%EC%A0%84%EB%9E%B5%EC%B1%85%EC%9E%84%EC%9E%90&tab=position">원티드</a> · <a href="https://www.saramin.co.kr/zf_user/search/recruit?searchword=CSO%20%EC%B5%9C%EA%B3%A0%EC%A0%84%EB%9E%B5%EC%B1%85%EC%9E%84%EC%9E%90">사람인</a></li>
+                <li><b>대표이사/경영총괄</b> — <a href="https://www.wanted.co.kr/search?query=%EB%8C%80%ED%91%9C%EC%9D%B4%EC%82%AC%20%EA%B2%BD%EC%98%81%EC%B4%9D%EA%B4%84&tab=position">원티드</a> · <a href="https://www.saramin.co.kr/zf_user/search/recruit?searchword=%EB%8C%80%ED%91%9C%EC%9D%B4%EC%82%AC%20%EA%B2%BD%EC%98%81%EC%B4%9D%EA%B4%84">사람인</a></li>
+                <li><b>신규사업/BD</b> — <a href="https://www.wanted.co.kr/search?query=%EC%8B%A0%EA%B7%9C%EC%82%AC%EC%97%85%20%EC%82%AC%EC%97%85%EA%B0%9C%EB%B0%9C&tab=position">원티드</a> · <a href="https://www.saramin.co.kr/zf_user/search/recruit?searchword=%EC%8B%A0%EA%B7%9C%EC%82%AC%EC%97%85%20%EC%82%AC%EC%97%85%EA%B0%9C%EB%B0%9C">사람인</a></li>
+                <li><b>마케팅 총괄/CMO</b> — <a href="https://www.wanted.co.kr/search?query=%EB%A7%88%EC%BC%80%ED%8C%85%20%EC%B4%9D%EA%B4%84%20CMO&tab=position">원티드</a> · <a href="https://www.saramin.co.kr/zf_user/search/recruit?searchword=%EB%A7%88%EC%BC%80%ED%8C%85%20%EC%B4%9D%EA%B4%84%20CMO">사람인</a></li>
+                <li><b>시니어 비즈니스/신사업 임원</b> — <a href="https://www.wanted.co.kr/search?query=%EC%8B%9C%EB%8B%88%EC%96%B4%20%EC%8B%A0%EC%82%AC%EC%97%85%20%EC%9E%84%EC%9B%90&tab=position">원티드</a> · <a href="https://www.saramin.co.kr/zf_user/search/recruit?searchword=%EC%8B%9C%EB%8B%88%EC%96%B4%20%EC%8B%A0%EC%82%AC%EC%97%85%20%EC%9E%84%EC%9B%90">사람인</a></li>
+              </ul>
+
+              <div style="font-size:13px;font-weight:800;color:#0F1C33;margin:0 0 8px">② 우선 타깃 기업 (적합도순)</div>
+              <ul style="margin:0 0 14px;padding-left:18px;font-size:13px;line-height:1.9">
+                <li><b>라포랩스(퀸잇)</b> 적합도 96 — 4050 커머스·D2C·M&amp;A 국면 · <a href="https://www.wanted.co.kr/company/14509">채용</a></li>
+                <li><b>케어링</b> 적합도 90 — 시니어 케어 1,000억+ · <a href="https://www.wanted.co.kr/search?query=%EC%BC%80%EC%96%B4%EB%A7%81&tab=company">채용검색</a></li>
+                <li><b>케어닥</b> 적합도 90 — 돌봄 매칭 O2O(시리즈B) · <a href="https://www.wanted.co.kr/search?query=%EC%BC%80%EC%96%B4%EB%8B%A5&tab=company">채용검색</a></li>
+                <li><b>내이루리</b> 적합도 88 — 시니어 인력 O2O(velor 유사) · <a href="https://www.wanted.co.kr/search?query=%EB%82%B4%EC%9D%B4%EB%A3%A8%EB%A6%AC&tab=company">채용검색</a></li>
+                <li><b>더뉴그레이</b> 적합도 85 — 시니어 콘텐츠·마케팅 · <a href="https://www.wanted.co.kr/search?query=%EB%8D%94%EB%89%B4%EA%B7%B8%EB%A0%88%EC%9D%B4&tab=company">채용검색</a></li>
+              </ul>
+              <p style="font-size:11px;color:#868E96;margin:14px 0 0;line-height:1.6">※ 큐레이션 + 검색 딥링크 기반(실시간 공고 수집 아님). 투자·채용 상태는 각 링크에서 최신 확인. 이 메일은 평일 11:00(KST) 자동 발송됩니다.</p>
+            </div>
+          </div>
+          HTML
+
+      - name: Send mail
+        if: steps.guard.outputs.ready == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          from: 채용 레이더 <${{ secrets.MAIL_USERNAME }}>
+          to: wisdom.yjkim@gmail.com
+          subject: "[채용 레이더] 평일 데일리 — CSO·대표·시니어 비즈니스 타깃"
+          html_body: file://email_body.html
