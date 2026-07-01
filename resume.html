@@ -130,7 +130,16 @@ body{font-family:'Pretendard','Noto Sans KR','Inter',-apple-system,sans-serif;co
   .exp-header{flex-direction:column;gap:0.1rem}
   .exp-period{font-size:0.7rem}
   .edu-row{flex-direction:column;align-items:flex-start;gap:0.1rem}
-  .ptab{min-width:460px}
+  /* 특허 표 → 모바일 카드 스택 (발명의 명칭 전체 폭 확보) */
+  .ptabwrap{overflow-x:visible}
+  .ptab{display:block}
+  .ptab thead{display:none}
+  .ptab tbody{display:block}
+  .ptab tr{display:block;border:1px solid var(--gray-200);border-radius:10px;padding:0.75rem 0.9rem;margin-bottom:0.55rem}
+  .ptab td{display:block;border:none;padding:0}
+  .ptab td:first-child{font-size:0.7rem;font-weight:700;color:var(--navy);letter-spacing:0.02em}
+  .ptab td.pnum{font-size:0.7rem;color:var(--gray-500);margin:0.1rem 0 0.35rem}
+  .ptab td:nth-child(3){font-size:0.9rem;font-weight:500;color:var(--gray-900);line-height:1.45;margin-bottom:0.45rem}
   .skill-row{grid-template-columns:1fr;gap:0.15rem;padding:0.5rem 0}
 }
 @media screen and (max-width:380px){
