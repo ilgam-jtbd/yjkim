@@ -103,7 +103,16 @@ p:last-child{margin-bottom:0}
   p{font-size:0.9rem}
   .indent{padding-left:1rem}
   .perf-grid{grid-template-columns:1fr;gap:0.45rem}
-  .ptab{min-width:460px}
+  /* 특허 표 → 모바일 카드 스택 (발명의 명칭 전체 폭 확보) */
+  .ptabwrap{overflow-x:visible}
+  .ptab{display:block}
+  .ptab thead{display:none}
+  .ptab tbody{display:block}
+  .ptab tr{display:block;border:1px solid var(--gray-200);border-radius:10px;padding:0.75rem 0.9rem;margin-bottom:0.55rem}
+  .ptab td{display:block;border:none;padding:0}
+  .ptab td:first-child{font-size:0.7rem;font-weight:700;color:var(--navy);letter-spacing:0.02em}
+  .ptab td.pnum{font-size:0.7rem;color:var(--gray-500);margin:0.1rem 0 0.35rem}
+  .ptab td:nth-child(3){font-size:0.9rem;font-weight:500;color:var(--gray-900);line-height:1.45;margin-bottom:0.45rem}
 }
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SHWHHNF355"></script>

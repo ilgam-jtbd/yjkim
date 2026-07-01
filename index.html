@@ -197,8 +197,15 @@ footer p{color:rgba(255,255,255,0.25);font-size:0.75rem}
   .eg{grid-template-columns:1fr}
   .ch,.cb{padding:1.5rem}
   .cm{grid-template-columns:repeat(2,1fr)}
-  .ptab{font-size:0.8rem}
-  .ptab th,.ptab td{padding:0.75rem}
+  /* 특허 표 → 모바일 카드 스택 (발명의 명칭 전체 폭 확보) */
+  .ptab{display:block;background:transparent;box-shadow:none;border-radius:0}
+  .ptab thead{display:none}
+  .ptab tbody{display:block}
+  .ptab tr{display:block;background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:0.9rem 1.05rem;margin-bottom:0.7rem;box-shadow:0 1px 4px rgba(0,0,0,0.05)}
+  .ptab td{display:block;border:none;padding:0}
+  .ptab td:first-child:not([colspan]){font-size:0.7rem;font-weight:700;color:var(--navy);letter-spacing:0.02em}
+  .ptab td.pnum{font-size:0.72rem;color:var(--gray-400);margin:0.12rem 0 0.4rem}
+  .ptab td:nth-child(3){font-size:0.95rem;font-weight:500;color:var(--gray-900);line-height:1.45;margin-bottom:0.55rem}
 }
 
 /* HERO CINEMATIC VISUAL */
