@@ -125,6 +125,10 @@ h2 em{font-style:normal;color:var(--primary)}
 .move p{font-size:.94rem;color:var(--ink-2);line-height:1.6}
 
 /* BARS */
+.fnlist{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.7rem}
+.fn{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.85rem .95rem}
+.fn b{display:block;font-size:.86rem;font-weight:800;color:var(--primary);margin-bottom:.3rem}
+.fn span{display:block;font-size:.84rem;color:var(--ink-2);line-height:1.5}
 .bars{display:flex;flex-direction:column;gap:.9rem;margin-top:.4rem}
 .bar-row{display:grid;grid-template-columns:96px 1fr auto;gap:.7rem;align-items:center}
 .bar-lb{font-size:.84rem;color:var(--ink-3);font-weight:600}
@@ -310,7 +314,7 @@ footer{padding:2.25rem 0 3rem;text-align:center;color:var(--ink-3);font-size:.85
 <section id="cases" class="band">
   <div class="wrap">
     <div class="slabel">Cases</div>
-    <h2>화면과 숫자로 보는 <em>네 개의 사례</em>.</h2>
+    <h2>화면과 숫자로 보는 <em>여섯 개의 사례</em>.</h2>
     <p class="ssub">각 사례는 <b>문제 → 접근 → 결과</b> 순서입니다. 자문·QA로 참여한 외주 프로젝트의 고객사명은 계약상 표기하지 않았습니다.</p>
 
     <div class="cases">
@@ -320,7 +324,7 @@ footer{padding:2.25rem 0 3rem;text-align:center;color:var(--ink-3);font-size:.85
         <div class="case-h">
           <div class="case-eyebrow">
             <span class="num">01</span>
-            <span class="tagp live">진행 중 · 2026.06 ~</span>
+            <span class="tagp live">진행 중 · 2026.08 ~</span>
             <span class="tagp">기획 · 개발 직접</span>
           </div>
           <h3>Sealo(씰로) — AI가 쓴 초안을 <em>내 스타일로</em> 다시 씁니다.</h3>
@@ -367,11 +371,60 @@ footer{padding:2.25rem 0 3rem;text-align:center;color:var(--ink-3);font-size:.85
         </div>
       </article>
 
-      <!-- CASE 02 · VELOR -->
+      <!-- CASE 02 · 시니어 서비스 자문 (익명) -->
       <article class="case">
         <div class="case-h">
           <div class="case-eyebrow">
             <span class="num">02</span>
+            <span class="tagp live">자문 · 2026.06 ~ 08 · 42일</span>
+            <span class="tagp">전략 · IR · 사업개발 · 제품</span>
+          </div>
+          <h3>시니어 서비스 자문 — 42일에 <em>산출물 50건</em>, 임원 다섯 자리 몫.</h3>
+          <p class="case-lede">
+            어바웃피싱을 나온 뒤, 시니어 대상 서비스를 운영하는 회사에 자문으로 합류했습니다. 계약상 회사명은 밝히지 않습니다.
+            초기 팀에 흔한 상태였습니다 — <b>전략·성장마케팅·데이터·AI 제품·업무자동화가 전부 대표 한 사람</b>에게 몰려 있었습니다.
+            42일 동안 그 다섯 기능을 나눠 맡아 문서와 화면으로 내려놨습니다. <b>제가 이 자리에서 무엇을 하는 사람인지</b>를 가장 짧은 기간에 보여준 사례입니다.
+          </p>
+          <div class="chips">
+            <span class="chip"><b>42일</b> · 산출물 50건</span>
+            <span class="chip">IR 문서 <b>16건</b> · 3개 버전 개정</span>
+            <span class="chip">파트너십 <b>1건</b> 계약 체결</span>
+            <span class="chip"><b>다섯 기능</b> 동시 커버</span>
+          </div>
+        </div>
+
+        <div class="shots">
+          <div class="shots-cap">무엇을 맡았고 무엇을 남겼나 — 42일 산출물 요약 (수치·거래처·계약 조건은 비공개)</div>
+          <div class="fnlist">
+            <div class="fn"><b>전략 · IR</b><span>투자 덱 3개 버전 개정, 수식형 재무모델과 밸류에이션 시뮬레이션, 정부지원 문서 이원화 — <b>IR 산출물 16건</b></span></div>
+            <div class="fn"><b>사업개발</b><span>대기업 계열사 제휴를 <b>발굴 → 협상 → 업무협약 날인</b>까지 단독 수행 — 매체비 부담 없이 채널 확보</span></div>
+            <div class="fn"><b>제품 · 기획</b><span>기능 나열식 5탭 구조를 목적형 <b>4대 메뉴로 개편</b> — 기획서·목업·동작 프로토타입까지</span></div>
+            <div class="fn"><b>성장 · 검색</b><span><b>SEO·ASO·AEO·GEO</b> 4개 채널 노출을 진단하고, AI 검색 시대에 맞춘 개선안을 문서화</span></div>
+            <div class="fn"><b>데이터 · 리스크</b><span>부서마다 달랐던 지표를 <b>단일 정본으로 통일</b>. 상표 미등록을 발견해 즉시 출원 조치</span></div>
+          </div>
+        </div>
+
+        <div class="moves">
+          <div class="move">
+            <div class="move-l">문제</div>
+            <p>서비스는 굴러가는데 <b>결정을 뒷받침할 문서가 없는</b> 상태였습니다. 투자자에게 보여줄 숫자의 근거, 제휴를 끝까지 끌고 갈 사람, 지표의 기준 — 세 가지가 동시에 비어 있었습니다.</p>
+          </div>
+          <div class="move">
+            <div class="move-l">접근</div>
+            <p>조언만 남기지 않았습니다. 각 영역에서 <b>바로 쓸 수 있는 산출물</b>로 끝냈습니다. 재무모델은 숫자가 아니라 수식으로 짜서 가정만 바꾸면 다시 돌아가게 했고, 제휴는 소개가 아니라 <b>날인까지</b> 제가 붙어 마무리했습니다.</p>
+          </div>
+          <div class="move">
+            <div class="move-l">결과</div>
+            <p>42일 · 산출물 50건, 파트너십 1건 체결. <b>단기 자문이었고 지금은 종료</b>했습니다. 상세 수치와 거래처는 계약상 공개하지 않으며, 필요하시면 면접에서 범위를 정해 설명드리겠습니다.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- CASE 03 · VELOR -->
+      <article class="case">
+        <div class="case-h">
+          <div class="case-eyebrow">
+            <span class="num">03</span>
             <span class="tagp live">데모 · 직접 제작</span>
             <span class="tagp">기획 · 개발 · 그로스 직접</span>
           </div>
@@ -437,7 +490,7 @@ footer{padding:2.25rem 0 3rem;text-align:center;color:var(--ink-3);font-size:.85
       <article class="case">
         <div class="case-h">
           <div class="case-eyebrow">
-            <span class="num">03</span>
+            <span class="num">04</span>
             <span class="tagp exit">지분매각 Exit</span>
             <span class="tagp">건설 인력 O2O · 공동창업 · CSO / 부사장</span>
           </div>
@@ -484,7 +537,7 @@ footer{padding:2.25rem 0 3rem;text-align:center;color:var(--ink-3);font-size:.85
       <article class="case">
         <div class="case-h">
           <div class="case-eyebrow">
-            <span class="num">04</span>
+            <span class="num">05</span>
             <span class="tagp">환인제약 계열 건기식 · 부문대표 / 부사장</span>
           </div>
           <h3>애즈유 — 시니어 D2C 자사몰 회원을 <em>+827%</em>로.</h3>
@@ -529,7 +582,7 @@ footer{padding:2.25rem 0 3rem;text-align:center;color:var(--ink-3);font-size:.85
       <article class="case">
         <div class="case-h">
           <div class="case-eyebrow">
-            <span class="num">05</span>
+            <span class="num">06</span>
             <span class="tagp">2025.10 – 2026.06</span>
             <span class="tagp">부사장 / CSO · 전략·마케팅·데이터·BD</span>
           </div>
@@ -652,12 +705,12 @@ footer{padding:2.25rem 0 3rem;text-align:center;color:var(--ink-3);font-size:.85
     <p class="ssub">연도보다 역할과 결과를 기준으로 정리했습니다. 자세한 연혁은 이력서에서 확인하실 수 있습니다.</p>
     <div class="tl">
       <div class="tli">
-        <div><div class="tl-co">Sealo(씰로)</div><div class="tl-ro">기획 · 개발 직접 · 2026.06 ~ 현재</div></div>
+        <div><div class="tl-co">Sealo(씰로)</div><div class="tl-ro">기획 · 개발 직접 · 2026.08 ~ 현재</div></div>
         <div class="tl-d">AI가 쓴 초안을 내 스타일로 다시 쓰는 도구. 직접 쓴 글에서 근거와 함께 스타일 규칙을 뽑고, 사람이 확정한 규칙으로 초안을 다시 씁니다. Claude API 프로토타입 구현 후 수동 파일럿으로 검증 중.</div>
       </div>
       <div class="tli">
-        <div><div class="tl-co">시니어 비즈니스 서비스 (자문)</div><div class="tl-ro">서비스 컨설팅 자문 · 2026.06 ~</div></div>
-        <div class="tl-d">시니어 대상 서비스의 사업·그로스 방향에 대해 컨설팅 자문을 제공했습니다. 계약상 고객사명은 표기하지 않습니다.</div>
+        <div><div class="tl-co">시니어 비즈니스 서비스 (자문)</div><div class="tl-ro">서비스 컨설팅 자문 · 2026.06 – 08 · 42일</div></div>
+        <div class="tl-d">전략·성장마케팅·데이터·AI 제품·업무자동화 다섯 기능을 42일간 자문으로 커버해 산출물 50건을 남기고, 대기업 계열사 제휴 1건을 날인까지 마무리했습니다. 계약상 고객사명은 표기하지 않습니다.</div>
       </div>
       <div class="tli">
         <div><div class="tl-co">시니어 전문지식 매칭 데모 (velor.kr)</div><div class="tl-ro">기획 · 개발 — 짧은 기간에 직접 제작</div></div>
