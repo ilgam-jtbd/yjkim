@@ -108,13 +108,13 @@ h2 em{font-style:normal;color:var(--primary)}
 /* SHOTS */
 .shots{margin-top:1.5rem;padding:1.4rem 1.9rem 1.6rem;background:var(--soft);border-top:1px solid var(--line)}
 .shots-cap{font-size:.8rem;font-weight:700;color:var(--ink-3);letter-spacing:.02em;margin-bottom:.85rem}
-.plates{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem}
+.plates{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem;align-items:start}
 .plate{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .plate{display:flex;flex-direction:column}
-.plate img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top center;background:#fff}
-.plate-wide img{aspect-ratio:auto;object-fit:contain;cursor:zoom-in}
+.plate img{width:100%;height:auto;background:#fff}
+.plate-wide img{cursor:zoom-in}
 .zoom{display:none;color:var(--primary);font-weight:600}
-.plate figcaption{font-size:.8rem;color:var(--ink-2);padding:.65rem .8rem;border-top:1px solid var(--line);line-height:1.45;margin-top:auto}
+.plate figcaption{font-size:.8rem;color:var(--ink-2);padding:.65rem .8rem;border-top:1px solid var(--line);line-height:1.45}
 .plate figcaption b{color:var(--ink);font-weight:700}
 .plate-wide{grid-column:1/-1}
 
@@ -250,7 +250,7 @@ footer{padding:2.25rem 0 3rem;text-align:center;color:var(--ink-3);font-size:.85
     <p class="lede">
       플랫폼 사업개발 <b>20년 이상</b>. 건설 인력 O2O를 공동창업해 <b>누적 매칭 13만 건 · 거래액 250억</b>까지 키우고 지분매각으로 Exit했고,
       제약 계열 건기식에서는 시니어 D2C 회원을 <b>+827%</b> 늘렸습니다. 최근에는 시니어 비즈니스 서비스 자문과 함께,
-      궁금한 시장을 <b>데모로 직접 만들어</b> 가설을 검증하고 있습니다.
+      궁금한 시장을 <b>데모로 직접 만들어</b> 검증합니다. 지금은 AI 초안을 내 스타일로 다시 쓰는 <b>Sealo</b>를 만들고 있습니다.
     </p>
     <p class="hero-name"><b>김연재 YJ Kim</b> · 사업전략 · 신규사업개발(BD) · 데이터 그로스 · IR</p>
 
@@ -314,24 +314,62 @@ footer{padding:2.25rem 0 3rem;text-align:center;color:var(--ink-3);font-size:.85
 
     <div class="cases">
 
-      <!-- CASE 01 · VELOR -->
+      <!-- CASE 01 · SEALO -->
       <article class="case">
         <div class="case-h">
           <div class="case-eyebrow">
             <span class="num">01</span>
+            <span class="tagp live">진행 중 · 2026.06 ~</span>
+            <span class="tagp">기획 · 개발 직접</span>
+          </div>
+          <h3>Sealo(씰로) — AI가 쓴 초안을 <em>내 스타일로</em> 다시 씁니다.</h3>
+          <p class="case-lede">
+            매주 글을 내야 하는 사람들은 AI 초안을 그대로 쓰지 못합니다. 빠르긴 한데 내 말투가 아니라서 올리기 전에 매번 고칩니다.
+            그래서 직접 쓴 글에서 <b>스타일 규칙을 근거와 함께 뽑아내고, 사람이 확정한 규칙으로 초안을 다시 쓰는 도구</b>를 만들고 있습니다.
+            슬로건은 <b>"AI가 그리고, 사람이 찍는다"</b>입니다.
+          </p>
+          <div class="chips">
+            <span class="chip"><b>근거 없는 규칙은</b> 만들지 않음</span>
+            <span class="chip"><b>확정은 사람이</b> — 자동 적용 없음</span>
+            <span class="chip">1순위 지표 <b>그대로 올린 비율</b></span>
+            <span class="chip">개발 중 · <b>수동 파일럿</b> 단계</span>
+          </div>
+        </div>
+
+        <div class="moves">
+          <div class="move">
+            <div class="move-l">문제</div>
+            <p>AI로 초안을 만들면 빠르지만, 내 말투가 아니라 결국 다시 씁니다. "사람 말투로 바꿔줘"를 매번 입력하는 것도 반복 비용입니다. 스타일은 이미 있는데 AI가 안 쓰고 있는 셈입니다.</p>
+          </div>
+          <div class="move">
+            <div class="move-l">접근</div>
+            <p>설문이나 검사 문항 없이 <b>직접 쓴 글에서만</b> 스타일을 추출합니다. 모든 관찰에 원문 인용을 붙이고, 근거가 없으면 그 항목은 만들지 않습니다. 규칙은 제안까지만 하고 <b>확정 도장은 사람이</b> 찍습니다.</p>
+          </div>
+          <div class="move">
+            <div class="move-l">현재</div>
+            <p>Claude API를 직접 호출하는 <b>프로토타입을 구현</b>했고, 제품을 크게 만들기 전에 수동 파일럿으로 검증 중입니다. 확인하려는 건 하나 — <b>고치지 않고 그대로 올렸는가</b>.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- CASE 02 · VELOR -->
+      <article class="case">
+        <div class="case-h">
+          <div class="case-eyebrow">
+            <span class="num">02</span>
             <span class="tagp live">데모 · 직접 제작</span>
             <span class="tagp">기획 · 개발 · 그로스 직접</span>
           </div>
-          <h3>시니어 전문지식 매칭 — 궁금해서 <em>MVP를 직접 만들었습니다</em>.</h3>
+          <h3>시니어 전문지식 매칭 — 궁금해서 <em>데모를 직접 만들었습니다</em>.</h3>
           <p class="case-lede">
             2차 베이비부머 954만 명이 은퇴를 시작하는데 그들의 경력을 살릴 거래 시장은 아직 없다고 봤습니다.
             시장이 실재하는지 확인하려고 기획서 대신 서비스를 만들었습니다. 전문가 등록·기업 의뢰·공고 피드까지
             <b>화면·백엔드·AI 온보딩을 직접 구현</b>해 짧은 기간에 데모 버전까지 만들었습니다.
           </p>
           <div class="chips">
-            <span class="chip"><b>3,600+</b> 라이브 실수요 공고</span>
+            <span class="chip"><b>386건</b> 전문가 위촉직 (캡처 시점)</span>
+            <span class="chip"><b>매일</b> 자동 갱신</span>
             <span class="chip"><b>3분</b> AI 전문가 온보딩</span>
-            <span class="chip"><b>1분</b> 기업 AI 진단</span>
             <span class="chip"><b>실거래 3건</b> 초기 검증 단계</span>
           </div>
         </div>
@@ -341,21 +379,25 @@ footer{padding:2.25rem 0 3rem;text-align:center;color:var(--ink-3);font-size:.85
           <div class="plates">
             <figure class="plate">
               <img src="images/velor-tenders.jpg" loading="lazy" alt="① 공고 피드 — 위촉직·평가위원·자문 공고를 한곳에 모아 매일 자동 갱신">
-              <figcaption><b>① 공고 피드</b> · 위촉직 421 · 생활일자리 14,572 · 입찰 12,690 — 매일 자동 갱신</figcaption>
+              <figcaption><b>① 공고 피드</b> · 전문가 위촉직 386 · 생활일자리 12,537 · 입찰 8,091 — 매일 자동 갱신 (캡처 시점)</figcaption>
             </figure>
             <figure class="plate">
-              <img src="images/velor-recruit.jpg" loading="lazy" alt="② 전문가 등록 — 3분 AI 온보딩으로 경력을 문제 해결 가치로 정리">
-              <figcaption><b>② 전문가 등록</b> · 경력 나열 대신 AI가 &lsquo;해결 가능한 문제&rsquo;로 재정리</figcaption>
+              <img src="images/velor-listings.jpg" loading="lazy" alt="② 실제 공고 목록 — 공공기관 위촉·채용 공고가 마감 임박순으로 정렬된 화면">
+              <figcaption><b>② 실제 공고 목록</b> · 공공기관 위촉·채용 공고를 마감 임박순으로 — 로그인 없이 열람</figcaption>
             </figure>
             <figure class="plate">
-              <img src="images/velor-business.jpg" loading="lazy" alt="③ 기업 의뢰 — 1분 AI 진단으로 필요한 전문성만 시간 단위로 매칭">
-              <figcaption><b>③ 기업 의뢰</b> · 1분 AI 진단 → 필요한 전문성만 시간 단위로</figcaption>
+              <img src="images/velor-recruit.jpg" loading="lazy" alt="③ 전문가 등록 — 3분 AI 온보딩으로 경력을 문제 해결 가치로 정리">
+              <figcaption><b>③ 전문가 등록</b> · 경력 나열 대신 AI가 &lsquo;해결 가능한 문제&rsquo;로 재정리</figcaption>
+            </figure>
+            <figure class="plate">
+              <img src="images/velor-business.jpg" loading="lazy" alt="④ 기업 의뢰 — 1분 AI 진단으로 필요한 전문성만 시간 단위로 매칭">
+              <figcaption><b>④ 기업 의뢰</b> · 1분 AI 진단 → 필요한 전문성만 시간 단위로</figcaption>
             </figure>
             <figure class="plate plate-wide">
               <a href="images/velor-bm.jpg" target="_blank" rel="noopener" aria-label="수익 구조 다이어그램 원본 크기로 열기">
                 <img src="images/velor-bm.jpg" loading="lazy" alt="수익 구조 4단계 — 자문(Advisory) → 현장(Spot Work) → 채용(Scout Work) → 한국 진출(Koreanization)">
               </a>
-              <figcaption><b>④ 수익 구조</b> · 자문 → 현장 → 채용 → 한국 진출 — 한 전문가의 거래를 단계로 이어 LTV를 키우는 설계 <span class="zoom">(탭하면 크게 보기)</span></figcaption>
+              <figcaption><b>⑤ 수익 구조</b> · 자문 → 현장 → 채용 → 한국 진출 — 한 전문가의 거래를 단계로 이어 LTV를 키우는 설계 <span class="zoom">(탭하면 크게 보기)</span></figcaption>
             </figure>
           </div>
         </div>
@@ -371,7 +413,7 @@ footer{padding:2.25rem 0 3rem;text-align:center;color:var(--ink-3);font-size:.85
           </div>
           <div class="move">
             <div class="move-l">결과</div>
-            <p>라이브 공고 3,600+ 위에서 <b>실거래 3건</b>을 만들었습니다. 아직 초기 검증 단계이고, 시범 기간이라 수수료는 받지 않습니다. 부풀리지 않고 있는 그대로 씁니다.</p>
+            <p>매일 갱신되는 실수요 공고 위에서 <b>실거래 3건</b>을 만들었습니다. 아직 초기 검증 단계이고, 시범 기간이라 수수료는 받지 않습니다. 부풀리지 않고 있는 그대로 씁니다.</p>
           </div>
         </div>
       </article>
@@ -380,7 +422,7 @@ footer{padding:2.25rem 0 3rem;text-align:center;color:var(--ink-3);font-size:.85
       <article class="case">
         <div class="case-h">
           <div class="case-eyebrow">
-            <span class="num">02</span>
+            <span class="num">03</span>
             <span class="tagp exit">지분매각 Exit</span>
             <span class="tagp">건설 인력 O2O · 공동창업 · CSO / 부사장</span>
           </div>
@@ -427,7 +469,7 @@ footer{padding:2.25rem 0 3rem;text-align:center;color:var(--ink-3);font-size:.85
       <article class="case">
         <div class="case-h">
           <div class="case-eyebrow">
-            <span class="num">03</span>
+            <span class="num">04</span>
             <span class="tagp">환인제약 계열 건기식 · 부문대표 / 부사장</span>
           </div>
           <h3>애즈유 — 시니어 D2C 자사몰 회원을 <em>+827%</em>로.</h3>
@@ -472,7 +514,7 @@ footer{padding:2.25rem 0 3rem;text-align:center;color:var(--ink-3);font-size:.85
       <article class="case">
         <div class="case-h">
           <div class="case-eyebrow">
-            <span class="num">04</span>
+            <span class="num">05</span>
             <span class="tagp">2025.10 – 2026.06</span>
             <span class="tagp">부사장 / CSO · 전략·마케팅·데이터·BD</span>
           </div>
@@ -572,8 +614,8 @@ footer{padding:2.25rem 0 3rem;text-align:center;color:var(--ink-3);font-size:.85
     <p class="ssub">연도보다 역할과 결과를 기준으로 정리했습니다. 자세한 연혁은 이력서에서 확인하실 수 있습니다.</p>
     <div class="tl">
       <div class="tli">
-        <div><div class="tl-co">Sealo 프로젝트</div><div class="tl-ro">기획 · 개발 진행 중 · 2026.06 ~ 현재</div></div>
-        <div class="tl-d">신규 프로젝트를 직접 기획·개발하며 진행하고 있습니다.</div>
+        <div><div class="tl-co">Sealo(씰로)</div><div class="tl-ro">기획 · 개발 직접 · 2026.06 ~ 현재</div></div>
+        <div class="tl-d">AI가 쓴 초안을 내 스타일로 다시 쓰는 도구. 직접 쓴 글에서 근거와 함께 스타일 규칙을 뽑고, 사람이 확정한 규칙으로 초안을 다시 씁니다. Claude API 프로토타입 구현 후 수동 파일럿으로 검증 중.</div>
       </div>
       <div class="tli">
         <div><div class="tl-co">시니어 비즈니스 서비스 (자문)</div><div class="tl-ro">서비스 컨설팅 자문 · 2026.06 ~</div></div>
