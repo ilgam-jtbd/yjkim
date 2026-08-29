@@ -1,0 +1,30 @@
+name: 정본 대조
+
+on:
+  pull_request:
+    paths:
+      - '*.html'
+      - '.claude/facts.json'
+      - 'scripts/check-facts.mjs'
+  push:
+    branches: [main]
+    paths:
+      - '*.html'
+      - '.claude/facts.json'
+      - 'scripts/check-facts.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      # 경력 연월·수치가 문서마다 어긋나거나, 비공개 대상이 새어 나갔는지 대조한다.
+      # 의존성 설치 없음 — node 표준 라이브러리만 쓴다.
+      - run: node scripts/check-facts.mjs
