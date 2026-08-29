@@ -61,6 +61,14 @@ for (const [src, pdf] of Object.entries(F.pdfs)) {
   if (!docs[src].includes(pdf)) fail.push(`${src}: PDF 내려받기 링크가 "${pdf}" 를 가리키지 않습니다`);
 }
 
+// 6b) 낡은 용어가 다시 들어왔는가
+for (const [term, alt] of Object.entries(F.dated_terms || {})) {
+  if (term.startsWith('_')) continue;
+  for (const d of F.docs) {
+    if (bodies[d].includes(term)) fail.push(`${d}: 낡은 용어 "${term}" — 대신 ${alt}`);
+  }
+}
+
 // 7) 상단 포지셔닝(타이틀·메타·h1)이 Founder 프레이밍으로 새지 않았는가
 // 과거 직함으로서의 Founder 표기는 사실이므로 통과시킨다 — 대상은 '지금 무엇으로 지원하는가'뿐이다.
 for (const d of F.docs) {
