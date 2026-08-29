@@ -109,6 +109,7 @@ h2 em{font-style:normal;color:var(--primary)}
 .shots{margin-top:1.5rem;padding:1.4rem 1.9rem 1.6rem;background:var(--soft);border-top:1px solid var(--line)}
 .shots-cap{font-size:.8rem;font-weight:700;color:var(--ink-3);letter-spacing:.02em;margin-bottom:.85rem}
 .plates{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem;align-items:start}
+.plates.two{grid-template-columns:repeat(2,1fr)}
 .plate{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .plate{display:flex;flex-direction:column}
 .plate img{width:100%;height:auto;background:#fff}
@@ -333,6 +334,20 @@ footer{padding:2.25rem 0 3rem;text-align:center;color:var(--ink-3);font-size:.85
             <span class="chip"><b>확정은 사람이</b> — 자동 적용 없음</span>
             <span class="chip">1순위 지표 <b>그대로 올린 비율</b></span>
             <span class="chip">개발 중 · <b>수동 파일럿</b> 단계</span>
+          </div>
+        </div>
+
+        <div class="shots">
+          <div class="shots-cap">직접 만든 것 — 스타일 추출 프로토타입 · 파일럿 제안서</div>
+          <div class="plates two">
+            <figure class="plate">
+              <img src="images/sealo-proto.jpg" loading="lazy" alt="① 스타일 추출 프로토타입 — 직접 쓴 글을 붙여넣으면 근거와 함께 스타일을 뽑아내는 화면">
+              <figcaption><b>① 스타일 추출 프로토타입</b> · 검사 문항 없이 직접 쓴 글에서만 추출 — 모든 관찰에 원문 근거를 붙이고, 근거가 없으면 항목을 만들지 않습니다 (Claude API 실호출)</figcaption>
+            </figure>
+            <figure class="plate">
+              <img src="images/sealo-offer.jpg" loading="lazy" alt="② 파일럿 제안서 — 글 열 편을 받아 AI 초안을 그 말투로 다시 써주는 무료 검증 제안">
+              <figcaption><b>② 파일럿 제안서</b> · 글 10편을 받아 AI 초안을 그 말투로 다시 써 드리고, <b>고치지 않고 그대로 쓸 수 있는지</b>만 확인합니다 — 무료</figcaption>
+            </figure>
           </div>
         </div>
 
@@ -583,8 +598,31 @@ footer{padding:2.25rem 0 3rem;text-align:center;color:var(--ink-3);font-size:.85
   </div>
 </section>
 
+<!-- 90 DAYS -->
+<section id="plan" class="band">
+  <div class="wrap">
+    <div class="slabel">First 90 Days</div>
+    <h2>합류하면 <em>90일 안에</em> 이렇게 하겠습니다.</h2>
+    <p class="ssub">말보다 계획이 낫다고 생각해서 미리 적어 둡니다. 회사 상황에 따라 순서는 조정하겠습니다.</p>
+    <div class="how">
+      <div class="hc">
+        <h4>0–30일 · 진단과 측정</h4>
+        <p>측정부터 믿을 수 있게 만듭니다. 전환 추적을 점검·복구하고 핵심 퍼널과 단위경제를 다시 정의해 <b>새는 지점 세 곳</b>을 찾습니다. 팀·파트너와 1:1로 진짜 병목을 확인합니다.</p>
+      </div>
+      <div class="hc">
+        <h4>30–60일 · 그로스와 BD 실험</h4>
+        <p>개선 캠페인을 돌려 CAC·ROAS를 움직입니다. 동시에 <b>신규 수익원·제휴 2건</b>을 파이프라인으로 만들고 제안서를 씁니다. 가설–실험–신호–결과로 의사결정 속도를 올립니다.</p>
+      </div>
+      <div class="hc">
+        <h4>60–90일 · 스케일과 자금</h4>
+        <p>검증된 채널에 더 넣고 안 되는 것은 정리합니다. 다음 라운드가 필요하면 <b>IR 스토리·데이터룸·재무 시나리오</b> 초안을 준비하고, 분기 목표와 책임 범위를 합의해 고정합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- IP -->
-<section id="ip" class="band">
+<section id="ip">
   <div class="wrap">
     <div class="slabel">Intellectual Property</div>
     <h2>등록 특허 <em>6건</em> · 출원 1건.</h2>
