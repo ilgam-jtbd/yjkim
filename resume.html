@@ -18,6 +18,9 @@
 <meta name="theme-color" content="#16223D">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700;900&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -119,6 +122,15 @@ a{color:var(--primary);text-decoration:none}
   .ptab td.pnum{font-size:.78rem;color:var(--ink-3);margin-bottom:.2rem}
   .ptab td:nth-child(2){font-size:.92rem;color:var(--ink);font-weight:500;line-height:1.45;margin-bottom:.4rem}
 }
+
+/* ── 타이포 규율 ── */
+:root{--serif:'Noto Serif KR','Nanum Myeongjo',Georgia,serif}
+body{word-break:keep-all;overflow-wrap:break-word}
+.rh-name,.rh-name b{font-family:var(--serif);font-weight:900;letter-spacing:-.02em}
+.define p:first-child{font-family:var(--serif);font-weight:700;line-height:1.6;letter-spacing:-.01em}
+.exp-pd,.row .r{font-variant-numeric:tabular-nums}
+.exp li,.sv p{line-height:1.66}
+
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"김연재","alternateName":"YJ Kim","jobTitle":"CSO · CBO (사업전략·신규사업개발)","url":"https://ilgam-jtbd.github.io/yjkim/resume.html","email":"mailto:ilgam.jtbd@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Seoul","addressCountry":"KR"},"description":"플랫폼 사업개발 — 양면 시장 매칭·0→1 신규사업·데이터 그로스·IR을 반복해서 실행. 누적 매칭 13만 건·거래액 250억·지분매각 Exit, 투자유치 100억+, 등록 특허 6건.","alumniOf":[{"@type":"CollegeOrUniversity","name":"Helsinki School of Economics (Executive MBA)"},{"@type":"CollegeOrUniversity","name":"University of Indonesia"}],"sameAs":["https://www.linkedin.com/in/wisdomkim","https://velor.kr"]},"dateModified":"2026-08-29"}
@@ -255,7 +267,7 @@ a{color:var(--primary);text-decoration:none}
     <ul>
       <li><b>누적 매칭 13만 건 · 플랫폼 거래액 250억</b> 달성, 전략본부 신설 후 조직 <b>3명 → 50명</b></li>
       <li><b>투자 60억 유치</b> — 한국투자파트너스 리드, NHN·하나금융 ESG·IBK기업은행·건설 CVC 등</li>
-      <li>국내 최초 <b>노임채권 시스템</b> 구축으로 임금 미지급 리스크 제거 — 공급자 신뢰 확보</li>
+      <li><b>노임채권 시스템</b>을 구축해 임금 미지급 리스크를 구조적으로 제거 — 공급자 신뢰 확보</li>
       <li>대안신용평가 기반 근로자 금융 서비스 기획(대상 전원 상환 완료), 추천 시스템 최적화</li>
     </ul>
   </div>

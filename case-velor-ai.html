@@ -17,6 +17,9 @@
 <meta name="theme-color" content="#16223D">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700;900&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--ink:#16223D;--ink-2:#41506E;--ink-3:#6B7A99;--primary:#1B4DE6;--primary-d:#1440BE;--accent:#FF7A4D;--line:#E4ECF7;--soft:#F5F8FE;--soft-2:#EEF3FC;--r:20px}
@@ -75,6 +78,17 @@ figure.shot figcaption{font-size:.8rem;color:var(--ink-3);padding:.6rem .85rem;b
   th{padding-top:.7rem;padding-bottom:0;background:#fff;font-size:.78rem;color:var(--ink-3);letter-spacing:.02em}
   td{padding-bottom:.7rem}
 }
+
+/* ── 타이포 규율 ── */
+:root{--serif:'Noto Serif KR','Nanum Myeongjo',Georgia,serif;--mono:'JetBrains Mono',ui-monospace,monospace}
+body{word-break:keep-all;overflow-wrap:break-word;line-height:1.65}
+h1{font-family:var(--serif);font-weight:900;letter-spacing:-.02em;line-height:1.22}
+h2{font-family:var(--serif);font-weight:700;letter-spacing:-.01em}
+.quote{font-family:var(--serif);font-weight:700;line-height:1.65}
+.eyebrow{font-family:var(--mono);letter-spacing:.1em}
+.kpi b,.ax b{font-variant-numeric:tabular-nums}
+p{line-height:1.72}
+
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"AI로 만든 AI 교육 — 3주간의 구축 기록","author":{"@type":"Person","name":"김연재","alternateName":"YJ Kim","url":"https://ilgam-jtbd.github.io/yjkim/"},"datePublished":"2026-09-01","dateModified":"2026-09-01","mainEntityOfPage":"https://ilgam-jtbd.github.io/yjkim/case-velor-ai.html","description":"3주간 VELOR에 무료 AI 교육 40강, 실전 도구 31종, 자동 제작 영상 13편을 혼자 구축·운영한 기록."}

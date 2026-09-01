@@ -37,9 +37,12 @@ node scripts/check-facts.mjs
 
 ### 4. 렌더 검증 + PDF (필수)
 ```
+bash scripts/fetch-fonts.sh            # 세션당 1회 — 로컬 폰트 캐시 (없으면 PDF 가 대체 서체로 나감)
 PUPPETEER_PATH=<puppeteer 경로> node scripts/render.mjs
 ```
 390 / 768 / 1200px 오버플로 0, PDF 2종 재생성. 캡처는 `/tmp/yjkim-render` 에 남습니다.
+**이 환경의 Chromium 은 CDN 폰트를 못 받습니다.** `fetch-fonts.sh` 가 curl 로 Pretendard·Noto Serif KR·JetBrains Mono 를
+받아 두면 `render.mjs` 가 자동으로 주입합니다. 로그에 "로컬 폰트 주입" 이 안 보이면 PDF 를 배포하지 마십시오.
 **새 블록을 넣었으면 캡처를 눈으로 봅니다.** 오버플로 검사는 잘림·줄바꿈 붕괴를 잡지 못합니다 —
 실제로 놓친 사례가 둘 있습니다(공고 이미지 `object-fit:cover` 잘림, 특허 표 모바일 붕괴).
 
@@ -61,5 +64,12 @@ PR 생성 → 머지 → Actions `Deploy static content to Pages` 성공 확인.
 - **자문처 익명** — 회사명·제휴사·계약 조건은 문서 어디에도 넣지 않습니다. 본문에 "계약상 밝히지 않습니다" 를 남겨 감추는 것이 아니라 지키는 것으로 읽히게 합니다.
 
 ## 디자인 토큰
-`facts.json` 의 `tokens` 가 정본입니다. Pretendard · 본문 17px · 행간 1.6 · 터치 타깃 48px.
-빨강(`#D71921`) 계열은 쓰지 않습니다.
+`facts.json` 의 `tokens` 가 정본입니다. 본문 Pretendard 17px · 행간 1.65 · 터치 타깃 48px · `word-break:keep-all`.
+**제목·인용은 Noto Serif KR 700 이상**(명조는 시간과 검증을 함축), **영문 라벨·번호는 JetBrains Mono**, 수치는 `tabular-nums`.
+Light·Thin 웨이트와 빨강(`#D71921`) 계열은 쓰지 않습니다.
+
+## 언어 규율
+- 첫 문장은 `[분야] — [반복해서 푼 문제] + [결과]`. 상단 포지셔닝에 연차를 쓰지 않습니다.
+- 매니페스토(정본 `positioning.manifesto`)에서 각 사례의 접근 문장이 내려와야 합니다.
+- "국내 최초·세계 최초·업계 유일" 금지 — 기간·건수·특허번호 같은 검증 가능한 사실로 대체합니다 (대조 검사가 막습니다).
+- 신뢰 장치는 이미 가진 것을 노출합니다 — 특허번호, 언론 원문 링크, 라이브 서비스, 캡처 일자.
