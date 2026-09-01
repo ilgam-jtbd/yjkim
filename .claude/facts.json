@@ -57,6 +57,20 @@
       "from": "2011.08",
       "to": "2018.07",
       "public": true
+    },
+    {
+      "org": "ATHUB",
+      "role": "이사 — IT 컨설팅",
+      "from": "2004.02",
+      "to": "2009.05",
+      "public": true
+    },
+    {
+      "org": "㈜인터파크 · 한국 Microsoft",
+      "role": "솔루션사업부 팀장 · R&D 기술연구소 연구원",
+      "from": "1999.02",
+      "to": "2002.11",
+      "public": true
     }
   ],
   "claims": [
