@@ -10,6 +10,7 @@
 | `.claude/facts.json` | **사실의 정본** — 경력·수치·비공개 목록·디자인 토큰 |
 | `scripts/check-facts.mjs` | 정본 ↔ 문서 대조 (의존성 없음) |
 | `scripts/render.mjs` | 반응형 검증 + PDF 재생성 (puppeteer) |
+| `scripts/fetch-fonts.sh` | 렌더용 로컬 폰트 캐시 — Chromium 이 CDN 폰트를 못 받는 환경 대응 |
 | `harness/velor/` | VELOR 하네스 패키지 — 이 저장소에서는 보관용, 실행하지 않음 |
 
 ## 문서를 고칠 때
@@ -19,7 +20,7 @@
 1. `.claude/facts.json` 을 먼저 고친다
 2. 문서 3종에 반영한다
 3. `node scripts/check-facts.mjs` — `✗` 가 있으면 커밋 금지
-4. `node scripts/render.mjs` — 오버플로 0 + PDF 재생성, 새 블록은 캡처를 눈으로 확인
+4. `bash scripts/fetch-fonts.sh` 후 `node scripts/render.mjs` — 오버플로 0 + PDF 재생성, 새 블록은 캡처를 눈으로 확인
 5. PR → 머지 → Actions 배포 성공 확인
 
 ## 커밋
@@ -39,4 +40,4 @@
 
 - `ilgam-jtbd.github.io` 는 이 실행 환경의 프록시에서 **403** 이 납니다. 배포 확인은 Actions 결과로 합니다.
 - `.github/workflows/daily-recruit-email.yml` 은 평일 11:00 KST (`cron: 0 2 * * 1-5`) 발송. 시크릿이 없으면 건너뜁니다.
-- 한국어 PDF 렌더에는 `fonts-noto-cjk` 가 필요합니다.
+- headless Chromium 은 프록시를 타지 못해 CDN 폰트(jsdelivr·Google Fonts)를 받지 못합니다. `scripts/fetch-fonts.sh` 로 로컬 캐시를 만든 뒤 렌더하십시오 — 없으면 PDF 가 대체 서체로 나갑니다.
