@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VELOR AI 구축 기록 — 김연재 사례 상세</title>
+<meta name="description" content="김연재(YJ Kim) 사례 상세. 3주간 VELOR에 무료 AI 교육 40강, 실전 도구 31종, 자동 제작 영상 13편을 혼자 구축·운영한 기록. 전부 velor.kr에서 열어 확인할 수 있습니다.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="김연재 YJ Kim">
+<link rel="canonical" href="https://ilgam-jtbd.github.io/yjkim/case-velor-ai.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:url" content="https://ilgam-jtbd.github.io/yjkim/case-velor-ai.html">
+<meta property="og:title" content="AI로 만든 AI 교육 — 3주간의 구축 기록">
+<meta property="og:description" content="무료 강의 40강 · 실전 도구 31종 · 자동 제작 영상 13편. 기획서 대신 돌아가는 서비스로 만들었습니다.">
+<meta property="og:image" content="https://ilgam-jtbd.github.io/yjkim/og-image.png">
+<meta name="theme-color" content="#16223D">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#16223D;--ink-2:#41506E;--ink-3:#6B7A99;--primary:#1B4DE6;--primary-d:#1440BE;--accent:#FF7A4D;--line:#E4ECF7;--soft:#F5F8FE;--soft-2:#EEF3FC;--r:20px}
+body{font-family:'Pretendard','Noto Sans KR',-apple-system,sans-serif;color:var(--ink);background:#fff;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--primary);text-decoration:none}
+.wrap{max-width:860px;margin:0 auto;padding:0 1.5rem}
+.bar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:860px;margin:0 auto;padding:.7rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.bar a.back{display:inline-flex;align-items:center;min-height:48px;font-size:.9rem;font-weight:600;color:var(--ink-2)}
+.bar a.back:hover{color:var(--primary)}
+.bar a.cta{display:inline-flex;align-items:center;min-height:48px;padding:.5rem 1.1rem;border-radius:10px;font-size:.88rem;font-weight:700;background:var(--primary);color:#fff}
+.head{padding:3rem 0 2rem;border-bottom:1px solid var(--line)}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;font-weight:800;letter-spacing:.08em;color:var(--primary);background:var(--soft);border:1px solid var(--line);padding:.4rem .85rem;border-radius:100px;margin-bottom:1.1rem}
+h1{font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.25;letter-spacing:-.03em;font-weight:800;margin-bottom:.9rem}
+h1 em{font-style:normal;color:var(--primary)}
+.lead{font-size:1.05rem;color:var(--ink-2);line-height:1.65}
+.lead b{color:var(--ink)}
+.asof{margin-top:1rem;font-size:.84rem;color:var(--ink-3)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1.6rem}
+.kpi{background:var(--soft);border:1px solid var(--line);border-radius:var(--r);padding:1rem 1.1rem}
+.kpi b{display:block;font-size:1.45rem;font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.kpi span{display:block;font-size:.82rem;color:var(--ink-3);margin-top:.35rem;line-height:1.4}
+section{padding:2.4rem 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-size:1.25rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.8rem;padding-left:.7rem;border-left:3px solid var(--primary)}
+p{color:var(--ink-2);margin-bottom:.9rem}
+p b{color:var(--ink)}
+.tbl-wrap{overflow-x:auto;margin:1rem 0}
+table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:480px}
+th,td{padding:.65rem .85rem;border:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.5}
+th{background:var(--soft);font-weight:700;white-space:nowrap;width:32%}
+td b{color:var(--ink);font-weight:800}
+.links{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.6rem}
+.links a{display:inline-flex;align-items:center;min-height:48px;padding:.55rem 1rem;border:1px solid var(--line);border-radius:100px;font-size:.86rem;font-weight:700;background:#fff}
+.links a:hover{border-color:var(--primary)}
+.note{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:1rem 1.2rem;font-size:.92rem;color:var(--ink-2);margin-top:1rem}
+.note b{color:var(--ink)}
+.quote{background:var(--soft);border-left:3px solid var(--accent);border-radius:0 14px 14px 0;padding:1.1rem 1.3rem;margin:1.2rem 0;font-size:1rem;font-weight:600;color:var(--ink);line-height:1.6}
+.aux{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.7rem;margin-top:.4rem}
+.ax{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.85rem .95rem}
+.ax b{display:block;font-size:1.15rem;font-weight:800}
+.ax span{display:block;font-size:.82rem;color:var(--ink-3);margin-top:.25rem;line-height:1.45}
+.foot{padding:2.2rem 0 3.5rem;text-align:center}
+.foot a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.7rem 1.3rem;border-radius:12px;font-weight:700;font-size:.95rem}
+.foot a.p{background:var(--primary);color:#fff}
+.foot a.o{border:1px solid var(--line);color:var(--ink);margin-left:.5rem}
+@media(max-width:640px){
+  .kpis{grid-template-columns:1fr}
+  table{min-width:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  tr{display:block;border-bottom:1px solid var(--line)}
+  tr:last-child{border-bottom:0}
+  th,td{display:block;width:100%;border:0;padding:.45rem .85rem}
+  th{padding-top:.7rem;padding-bottom:0;background:#fff;font-size:.78rem;color:var(--ink-3);letter-spacing:.02em}
+  td{padding-bottom:.7rem}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"AI로 만든 AI 교육 — 3주간의 구축 기록","author":{"@type":"Person","name":"김연재","alternateName":"YJ Kim","url":"https://ilgam-jtbd.github.io/yjkim/"},"datePublished":"2026-09-01","dateModified":"2026-09-01","mainEntityOfPage":"https://ilgam-jtbd.github.io/yjkim/case-velor-ai.html","description":"3주간 VELOR에 무료 AI 교육 40강, 실전 도구 31종, 자동 제작 영상 13편을 혼자 구축·운영한 기록."}
+</script>
+</head>
+<body>
+
+<div class="bar"><div class="bar-in">
+  <a class="back" href="index.html#cases">← 포트폴리오 · 사례 목록</a>
+  <a class="cta" href="index.html#contact">채용 문의</a>
+</div></div>
+
+<div class="wrap">
+
+<div class="head">
+  <div class="eyebrow">CASE 03 · VELOR 상세</div>
+  <h1>AI로 만든 AI 교육 — <em>3주간의 구축 기록</em></h1>
+  <p class="lead">기획서 대신 서비스를 만들었습니다. <b>무료 강의 40강, 실전 도구 31종, 자동 제작 영상 13편.</b>
+  전부 velor.kr에서 지금 열어 확인하실 수 있습니다.</p>
+  <p class="asof">수치는 <b>2026년 8월 기준</b> DB 실측값입니다. 강의·도구는 계속 늘어나는 값이라 기준 시점을 밝힙니다.</p>
+  <div class="kpis">
+    <div class="kpi"><b>40강</b><span>무료 AI 교육 · 11개 과정<br>입문 5 · 중급 4 · 고급 2</span></div>
+    <div class="kpi"><b>31종</b><span>무료 AI 실전 도구<br>빈칸만 채우면 실행</span></div>
+    <div class="kpi"><b>13편</b><span>유튜브 에피소드<br>제작·발행 자동화</span></div>
+  </div>
+</div>
+
+<section>
+  <h2>왜 만들었나</h2>
+  <p>전문가 매칭 서비스의 초기 난제는 공급도 수요도 없는 상태에서 <b>사람이 먼저 찾아올 이유</b>를 만드는 것입니다.
+  광고비를 태우는 대신 <b>"무료로 배우고 바로 써 보는 공간"</b>을 만들어 유입을 만들고,
+  그 안에서 전문가 등록으로 이어지도록 설계했습니다. 아래는 그 설계를 3주 동안 실제 운영 단계까지 올린 기록입니다.
+  VELOR의 AI 기능은 <b>AI 기반 전문가 매칭 인텔리전스</b> — 경력을 "해결 가능한 문제"로 바꿔 수요와 잇는 것 — 를 향해 있습니다.</p>
+</section>
+
+<section>
+  <h2>1 · AI 교육 과정 — 11개 과정 · 40강, 전부 무료</h2>
+  <div class="tbl-wrap"><table>
+    <tr><th>과정</th><td><b>11개 과정</b> · <b>40강</b> (전부 무료)</td></tr>
+    <tr><th>난이도 구성</th><td>입문 5 · 중급 4 · 고급 2</td></tr>
+    <tr><th>AI 사용 안내</th><td>3종(ChatGPT · Gemini · Claude) × 100항목 = <b>300항목</b></td></tr>
+    <tr><th>특징</th><td>강사가 사람이 아니라 <b>이 서비스를 실제로 만들고 운영하는 AI 에이전트 6인</b></td></tr>
+  </table></div>
+  <p>강의 본문은 각 사 공식 문서(Anthropic 고객지원 · Google Gemini 고객센터 · OpenAI 도움말)를 근거로 작성했고,
+  <b>출처는 공식·공인 기관만 표기하는 규칙</b>을 세워 전수 적용했습니다.</p>
+  <div class="links">
+    <a href="https://velor.kr/ai" target="_blank" rel="noopener">교육 홈 ↗</a>
+    <a href="https://velor.kr/ai-claude" target="_blank" rel="noopener">Claude 과정 ↗</a>
+    <a href="https://velor.kr/ai-chatgpt" target="_blank" rel="noopener">ChatGPT 과정 ↗</a>
+    <a href="https://velor.kr/ai-gemini-google" target="_blank" rel="noopener">Gemini 과정 ↗</a>
+  </div>
+</section>
+
+<section>
+  <h2>2 · AI 실전 도구 — 31종, 빈칸만 채우면 실행</h2>
+  <div class="tbl-wrap"><table>
+    <tr><th>도구</th><td><b>31종</b> (전부 무료)</td></tr>
+    <tr><th>구성</th><td>빈칸 2~3개만 채우면 전문가 수준 지시문이 자동 생성</td></tr>
+    <tr><th>실행 경로</th><td>프롬프트 복사(무제한) + 회원 즉시 실행(하루 5회) 이중 경로</td></tr>
+    <tr><th>연결</th><td>31종 전부 <b>다음 도구 자동 추천</b> — 결과물이 다음 도구에 자동 주입</td></tr>
+    <tr><th>안전장치</th><td>수치·상호 생성 금지, 확인 필요 항목 표시, 지도 검색 링크로 환각 차단</td></tr>
+  </table></div>
+  <p>설계 원칙은 하나입니다 — 사용자에게 <b>"좋은 프롬프트를 쓰라"고 요구하지 않는다.</b>
+  무료 LLM 3단 폴백(Gemini → Groq → OpenRouter)으로 유료 비용 0을 유지하면서 실행 실패를 줄였습니다.</p>
+  <div class="links">
+    <a href="https://velor.kr/ai/tools" target="_blank" rel="noopener">도구 목록 ↗</a>
+  </div>
+</section>
+
+<section>
+  <h2>3 · 유튜브 자동 제작·발행 — 13편</h2>
+  <div class="tbl-wrap"><table>
+    <tr><th>에피소드</th><td><b>13편</b> 제작 · 전편 공개</td></tr>
+    <tr><th>파이프라인</th><td>대본 → 자막 → 렌더 → 발행 → 지표 수집까지 자동화</td></tr>
+    <tr><th>품질 가드</th><td>무음 영상 발행 차단(오디오 검증 통과 전 발행 불가) · 사실검증 항목 관리</td></tr>
+    <tr><th>운영</th><td>매일 정해진 시각 자동 발행 · 지표 수집</td></tr>
+  </table></div>
+  <p>사람이 하는 일은 <b>목소리 녹음과 최종 확인뿐</b>이고 나머지는 에이전트가 처리합니다.
+  영상은 해당 주제의 강의 페이지에 연결돼 사이트와 채널이 서로를 밀어줍니다.</p>
+  <div class="links">
+    <a href="https://www.youtube.com/@velor_kr" target="_blank" rel="noopener">유튜브 @velor_kr ↗</a>
+  </div>
+</section>
+
+<section>
+  <h2>혼자가 아니라, 에이전트 팀으로</h2>
+  <p>AI 에이전트를 역할별로 나눠 운용했습니다. 운영 총괄 에이전트가 데이터베이스·콘텐츠·검증을,
+  화면 담당 에이전트가 코드와 배포를 맡고, 사람은 <b>되돌릴 수 없는 결정(투자·법률·비용·삭제)만 승인</b>합니다.
+  두 에이전트는 공유 작업 원장에 기록을 남겨 충돌을 막습니다.</p>
+  <p>이 운영 방식 자체가 교육 과정의 콘텐츠가 됐습니다 — 에이전트가 자기 운영 노하우를 강의합니다.</p>
+  <div class="quote">도구를 써 본 경험이 아니라, AI에게 일을 맡기고 검증하는 운영 방식을 만든 경험입니다.</div>
+</section>
+
+<section>
+  <h2>부수 지표 (2026년 8월 기준)</h2>
+  <div class="aux">
+    <div class="ax"><b>100편</b><span>아티클 발행</span></div>
+    <div class="ax"><b>약 8,000건</b><span>공공 공고 자동 수집</span></div>
+    <div class="ax"><b>387개</b><span>검색 키워드 100% 커버</span></div>
+    <div class="ax"><b>8,151건</b><span>콘텐츠 상호 추천 인덱스</span></div>
+  </div>
+  <div class="note"><b>AI 검색 대응(GEO · AEO)까지 직접 구현</b> — FAQ · Organization 스키마 마크업, <code>llms.txt</code> 게시,
+  주요 AI 크롤러(GPTBot · ClaudeBot · PerplexityBot 등) 접근 허용을 사이트에 적용했습니다.</div>
+</section>
+
+<div class="foot">
+  <a class="p" href="index.html#cases">← 다른 사례 보기</a>
+  <a class="o" href="mailto:ilgam.jtbd@gmail.com">ilgam.jtbd@gmail.com</a>
+</div>
+
+</div>
+</body>
+</html>
