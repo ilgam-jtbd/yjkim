@@ -61,12 +61,19 @@ git push -u origin claude/cso-ceo-dashboard-repo-20qwzw
 PR 생성 → 머지 → Actions `Deploy static content to Pages` 성공 확인.
 `ilgam-jtbd.github.io` 는 이 환경의 프록시에서 403이 납니다. **배포 확인은 Actions 결과로 합니다.**
 
+## 문서 상호 이동 (페이지를 새로 만들 때)
+
+문서 4종은 상단 `.doctabs`(현재 문서 `.on`) + 하단 `.docnav` 로 서로 연결됩니다.
+새 페이지를 만들면 **그 페이지에 둘 다 넣고, 기존 4종의 `.docnav` 에도 링크를 추가**합니다.
+`facts.json` 의 `docs` 에도 등록해야 대조·렌더 검증 대상이 됩니다. 인쇄에서는 `display:none` 입니다.
+
 ## 자주 틀리는 것
 
 - **케이스 번호** — 새 사례를 중간에 넣고 뒤 번호를 안 고침
 - **PDF** — HTML만 고치고 PDF를 다시 안 만듦 (사이트에서 내려받는 파일이 옛날 것이 됨)
 - **모바일 표** — 열이 많은 표는 600px 이하에서 카드 스택으로 바꿔야 함
 - **이미지 잘림** — `.plate img` 는 `height:auto`. `aspect-ratio` + `object-fit:cover` 를 다시 넣지 않습니다.
+- **상호 이동 누락** — 새 페이지에 `.doctabs`/`.docnav` 를 안 넣거나, 기존 문서의 `.docnav` 에 새 페이지를 안 넣음
 - **자문처 익명** — 회사명·제휴사·계약 조건은 문서 어디에도 넣지 않습니다. 본문에 "계약상 밝히지 않습니다" 를 남겨 감추는 것이 아니라 지키는 것으로 읽히게 합니다.
 
 ## 디자인 토큰
