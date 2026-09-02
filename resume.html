@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>이력서 — 김연재 YJ Kim · CSO · CBO(사업개발)</title>
-<meta name="description" content="김연재(YJ Kim) 이력서. 양면 시장 매칭·0→1 신규사업·데이터 그로스·IR을 반복해서 풀어온 사업가. 누적 매칭 13만 건·거래액 250억·지분매각 Exit, 투자유치 100억+, 등록 특허 6건.">
+<title>이력서 — 김연재 YJ Kim · CSO · CBO</title>
+<meta name="description" content="김연재(YJ Kim) 이력서 — CSO · CBO · 사업전략 · 신규사업개발 · BD · Growth. 누적 매칭 13만 건 · 거래액 250억 · 지분매각 Exit · 투자유치 100억+ · 등록 특허 6건.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="김연재 YJ Kim">
 <link rel="canonical" href="https://ilgam-jtbd.github.io/yjkim/resume.html">
@@ -12,8 +12,8 @@
 <meta property="og:type" content="profile">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:url" content="https://ilgam-jtbd.github.io/yjkim/resume.html">
-<meta property="og:title" content="이력서 — 김연재 YJ Kim · CSO · CBO(사업개발)">
-<meta property="og:description" content="매칭 13만 건·거래액 250억·지분매각 Exit · 투자유치 100억+ · 등록 특허 6건.">
+<meta property="og:title" content="이력서 — 김연재 YJ Kim · CSO · CBO">
+<meta property="og:description" content="매칭 13만 건 · 거래액 250억 · 지분매각 Exit · 투자유치 100억+ · 등록 특허 6건.">
 <meta property="og:image" content="https://ilgam-jtbd.github.io/yjkim/og-image.png">
 <meta name="theme-color" content="#16223D">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -23,117 +23,139 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700;900&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --ink:#16223D;--ink-2:#41506E;--ink-3:#6B7A99;
-  --primary:#1B4DE6;--accent:#FF7A4D;--line:#E4ECF7;--soft:#F5F8FE;
-}
-body{font-family:'Pretendard','Noto Sans KR',-apple-system,sans-serif;color:var(--ink);background:#fff;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+:root{--ink:#16223D;--ink-2:#41506E;--ink-3:#6B7A99;--primary:#1B4DE6;--accent:#FF7A4D;--line:#E4ECF7;--soft:#F5F8FE;
+  --serif:'Noto Serif KR','Nanum Myeongjo',Georgia,serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace}
+body{font-family:'Pretendard','Noto Sans KR',-apple-system,sans-serif;color:var(--ink);background:#fff;font-size:17px;line-height:1.6;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
 a{color:var(--primary);text-decoration:none}
 
 @media screen{
   body{max-width:860px;margin:0 auto;padding:2rem 1.5rem 4rem}
   .bar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:1rem;margin:-2rem -1.5rem 2rem;padding:.7rem 1.5rem}
   .bar a.back{font-size:.9rem;font-weight:600;color:var(--ink-2)}
-  .bar a.back:hover{color:var(--primary)}
   .bar-r{display:flex;gap:.5rem}
   .btn{display:inline-flex;align-items:center;min-height:44px;padding:.5rem 1rem;border-radius:10px;font-size:.88rem;font-weight:700;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;font-family:inherit}
   .btn.p{background:var(--primary);border-color:var(--primary);color:#fff}
-}
-@media print{
-  @page{size:A4;margin:14mm}
-  body{font-size:10.5pt;line-height:1.5;padding:0;max-width:none}
-  .bar{display:none}
-  .sec{page-break-inside:avoid}
-  a{color:var(--ink)}
+  .page+.page{margin-top:2.5rem;padding-top:2rem;border-top:2px dashed var(--line)}
+  .pgno{font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.1em;margin-bottom:1rem}
 }
 
 /* HEADER */
-.rh{border-top:4px solid var(--primary);padding-top:1rem;padding-bottom:1.25rem;border-bottom:1px solid var(--line);margin-bottom:1.75rem}
-.rh-eyebrow{font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
-.rh-name{font-size:2rem;font-weight:800;letter-spacing:-.03em;line-height:1.1}
-.rh-name span{font-size:.5em;font-weight:500;color:var(--ink-3);margin-left:.5rem;letter-spacing:0}
-.rh-title{font-size:1.02rem;font-weight:700;color:var(--primary);margin-top:.5rem}
-.rh-contact{display:flex;flex-wrap:wrap;gap:.4rem 1.25rem;font-size:.86rem;color:var(--ink-3);margin-top:.7rem}
+.rh{border-top:4px solid var(--primary);padding-top:.9rem;padding-bottom:1.1rem;border-bottom:1px solid var(--line);margin-bottom:1.4rem;display:grid;grid-template-columns:1fr auto;gap:.6rem 1.5rem;align-items:start}
+.rh-name{font-family:var(--serif);font-size:1.9rem;font-weight:900;letter-spacing:-.02em;line-height:1.1}
+.rh-name span{font-family:'Pretendard',sans-serif;font-size:.48em;font-weight:500;color:var(--ink-3);margin-left:.5rem;letter-spacing:0}
+.rh-title{font-size:1rem;font-weight:700;color:var(--primary);margin-top:.4rem}
+.rh-contact{display:flex;flex-wrap:wrap;gap:.3rem 1.1rem;font-size:.84rem;color:var(--ink-3);margin-top:.55rem}
+.links{display:flex;flex-direction:column;gap:.4rem;min-width:230px}
+.lk{display:flex;align-items:center;gap:.6rem;padding:.45rem .7rem;border:1px solid var(--line);border-radius:10px;background:var(--soft);font-size:.84rem;color:var(--ink);font-weight:600}
+.lk .lb{font-family:var(--mono);font-size:.68rem;font-weight:700;letter-spacing:.1em;color:var(--primary);min-width:72px}
+.lk u{text-decoration:none;color:var(--primary);font-weight:700}
 
-/* DEFINITION */
-.define{background:var(--soft);border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:0 14px 14px 0;padding:1.15rem 1.35rem;margin-bottom:1.9rem}
-.define p{font-size:1.02rem;font-weight:600;line-height:1.6}
-.define .sub{font-size:.9rem;font-weight:400;color:var(--ink-2);margin-top:.55rem}
+/* SUMMARY */
+.define{background:var(--soft);border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:0 12px 12px 0;padding:.95rem 1.15rem;margin-bottom:1.3rem}
+.define p{font-size:.95rem;line-height:1.6;color:var(--ink-2)}
+.define p+p{margin-top:.25rem}
+.define p b{color:var(--ink)}
+.define p.lead{font-family:var(--serif);font-weight:700;color:var(--ink);font-size:1rem}
 
 /* SECTION */
-.sec{margin-bottom:1.9rem}
-.sec-t{font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);border-bottom:1px solid var(--line);padding-bottom:.4rem;margin-bottom:1rem}
-
-/* SOLVE */
-.solve{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}
-.sv{border:1px solid var(--line);border-radius:14px;padding:.95rem 1.1rem}
-.sv h3{font-size:.98rem;font-weight:800;margin-bottom:.35rem;letter-spacing:-.01em}
-.sv p{font-size:.88rem;color:var(--ink-2);line-height:1.55}
-.sv .ev{margin-top:.5rem;font-size:.83rem;color:var(--ink-3)}
-.sv .ev b{color:var(--primary)}
+.sec{margin-bottom:1.4rem}
+.sec-t{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);border-bottom:1px solid var(--line);padding-bottom:.35rem;margin-bottom:.75rem}
 
 /* METRICS */
-.met{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem}
-.mt{border:1px solid var(--line);border-radius:12px;padding:.8rem .9rem;background:var(--soft)}
-.mt b{display:block;font-size:1.15rem;font-weight:800;letter-spacing:-.02em}
-.mt span{display:block;font-size:.78rem;color:var(--ink-3);margin-top:.25rem;line-height:1.4}
+.met{display:grid;grid-template-columns:repeat(4,1fr);gap:.55rem}
+.mt{border:1px solid var(--line);border-radius:10px;padding:.65rem .8rem;background:var(--soft)}
+.mt b{display:block;font-size:1.1rem;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.mt span{display:block;font-size:.76rem;color:var(--ink-3);margin-top:.2rem;line-height:1.35}
 
 /* EXPERIENCE */
-.exp{margin-bottom:1.15rem;padding-bottom:1.15rem;border-bottom:1px dashed var(--line)}
+.exp{margin-bottom:.95rem;padding-bottom:.9rem;border-bottom:1px dashed var(--line)}
 .exp:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
 .exp-h{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
 .exp-co{font-size:1rem;font-weight:800;letter-spacing:-.01em}
-.exp-pd{font-size:.82rem;color:var(--ink-3);white-space:nowrap;font-variant-numeric:tabular-nums}
-.exp-ro{font-size:.88rem;font-weight:700;color:var(--primary);margin:.2rem 0 .5rem}
+.exp-pd{font-size:.8rem;color:var(--ink-3);white-space:nowrap;font-variant-numeric:tabular-nums}
+.exp-ro{font-size:.86rem;font-weight:700;color:var(--primary);margin:.15rem 0 .1rem}
+.exp-sc{font-size:.8rem;color:var(--ink-3);margin-bottom:.35rem}
+.exp-sc b{color:var(--ink-2);font-weight:700}
 .exp ul{list-style:none}
-.exp li{font-size:.9rem;color:var(--ink-2);line-height:1.55;padding:.16rem 0 .16rem 1rem;position:relative}
+.exp li{font-size:.88rem;color:var(--ink-2);line-height:1.55;padding:.12rem 0 .12rem 1rem;position:relative}
 .exp li::before{content:'·';position:absolute;left:.25rem;color:var(--primary);font-weight:800}
 .exp li b{color:var(--ink)}
+.exp li .st{font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.06em;color:var(--ink-3);margin-right:.3rem}
+.exp.compact li{padding-top:.05rem;padding-bottom:.05rem}
+
+/* KEY-VALUE ROWS */
+.kv{display:grid;grid-template-columns:1.3fr 1.1fr .9fr 2.2fr;gap:.6rem;font-size:.86rem;padding:.45rem 0;border-bottom:1px solid var(--line);align-items:baseline}
+.kv:last-child{border-bottom:none}
+.kv b{font-weight:800}
+.kv .ro{color:var(--primary);font-weight:700;font-size:.82rem}
+.kv .pd{color:var(--ink-3);font-size:.8rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.kv .rs{color:var(--ink-2)}
 
 /* PATENT */
-.ptab{width:100%;border-collapse:collapse;font-size:.87rem}
-.ptab th{background:var(--soft);text-align:left;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);padding:.55rem .75rem;border:1px solid var(--line)}
-.ptab td{padding:.6rem .75rem;border:1px solid var(--line);color:var(--ink-2);vertical-align:top;line-height:1.45}
-.pnum{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700;color:var(--ink)}
-.bg{display:inline-block;background:#E8F0FF;color:var(--primary);font-size:.72rem;font-weight:700;padding:.15rem .5rem;border-radius:100px;white-space:nowrap}
+.ptab{width:100%;border-collapse:collapse;font-size:.84rem}
+.ptab th{background:var(--soft);text-align:left;font-family:var(--mono);font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);padding:.45rem .65rem;border:1px solid var(--line)}
+.ptab td{padding:.45rem .65rem;border:1px solid var(--line);color:var(--ink-2);vertical-align:top;line-height:1.4}
+.pnum{font-family:var(--mono);font-size:.78rem;white-space:nowrap;font-weight:700;color:var(--ink)}
+.bg{display:inline-block;background:#E8F0FF;color:var(--primary);font-size:.7rem;font-weight:700;padding:.12rem .45rem;border-radius:100px;white-space:nowrap}
 .bg.f{background:#FFF0E9;color:#C2521F}
 
 /* ROWS */
-.row{display:flex;justify-content:space-between;gap:1rem;font-size:.9rem;padding:.45rem 0;border-bottom:1px solid var(--line)}
+.row{display:flex;justify-content:space-between;gap:1rem;font-size:.86rem;padding:.35rem 0;border-bottom:1px solid var(--line)}
 .row:last-child{border-bottom:none}
 .row b{font-weight:700}
-.row span.r{color:var(--ink-3);font-size:.84rem;white-space:nowrap;font-variant-numeric:tabular-nums}
-.row .d{color:var(--ink-2)}
+.row span.r{color:var(--ink-3);font-size:.8rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+.row .d{color:var(--ink-2);line-height:1.5}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 2rem}
 
-.foot{text-align:center;font-size:.82rem;color:var(--ink-3);border-top:1px solid var(--line);padding-top:1rem;margin-top:1.5rem}
+.foot{text-align:center;font-size:.8rem;color:var(--ink-3);border-top:1px solid var(--line);padding-top:.8rem;margin-top:1.2rem}
 
 @media screen and (max-width:640px){
   body{padding:1.25rem 1.1rem 3rem}
   .bar{margin:-1.25rem -1.1rem 1.5rem;padding:.6rem 1.1rem}
+  .rh{grid-template-columns:1fr}
   .rh-name{font-size:1.6rem}
-  .solve{grid-template-columns:1fr}
   .met{grid-template-columns:repeat(2,1fr)}
   .exp-h{flex-direction:column;gap:.1rem}
+  .kv{grid-template-columns:1fr 1fr;gap:.15rem .6rem}
+  .kv .rs{grid-column:1/-1}
   .row{flex-direction:column;gap:.15rem}
+  .two{grid-template-columns:1fr}
   .ptab,.ptab tbody,.ptab tr,.ptab td{display:block}
   .ptab thead{display:none}
-  .ptab tr{border:1px solid var(--line);border-radius:12px;padding:.7rem .85rem;margin-bottom:.55rem}
+  .ptab tr{border:1px solid var(--line);border-radius:12px;padding:.6rem .8rem;margin-bottom:.5rem}
   .ptab td{border:none;padding:0}
-  .ptab td.pnum{font-size:.78rem;color:var(--ink-3);margin-bottom:.2rem}
-  .ptab td:nth-child(2){font-size:.92rem;color:var(--ink);font-weight:500;line-height:1.45;margin-bottom:.4rem}
+  .ptab td.pnum{font-size:.76rem;color:var(--ink-3);margin-bottom:.15rem}
+  .ptab td:nth-child(2){font-size:.9rem;color:var(--ink);font-weight:500;line-height:1.45;margin-bottom:.35rem}
 }
-
-/* ── 타이포 규율 ── */
-:root{--serif:'Noto Serif KR','Nanum Myeongjo',Georgia,serif}
-body{word-break:keep-all;overflow-wrap:break-word}
-.rh-name,.rh-name b{font-family:var(--serif);font-weight:900;letter-spacing:-.02em}
-.define p:first-child{font-family:var(--serif);font-weight:700;line-height:1.6;letter-spacing:-.01em}
-.exp-pd,.row .r{font-variant-numeric:tabular-nums}
-.exp li,.sv p{line-height:1.66}
-
+/* 인쇄 규칙은 화면 규칙보다 뒤에 와야 이긴다 */
+@media print{
+  @page{size:A4;margin:14mm}
+  html,body{font-size:10.5pt;line-height:1.42;padding:0;max-width:none}
+  .bar,.pgno{display:none}
+  .page{page-break-after:always;break-after:page}
+  .page:last-child{page-break-after:auto;break-after:auto}
+  .exp,.ptab,.kv,.two .sec{page-break-inside:avoid;break-inside:avoid}
+  .two{break-inside:auto}
+  a{color:var(--primary)}
+  .rh{padding-top:.3rem;padding-bottom:.55rem;margin-bottom:.7rem;gap:.4rem 1.2rem}
+  .rh-name{font-size:1.65rem}
+  .lk{padding:.3rem .6rem}
+  .sec{margin-bottom:.7rem}
+  .sec-t{margin-bottom:.45rem;padding-bottom:.25rem}
+  .exp{margin-bottom:.45rem;padding-bottom:.45rem}
+  .exp li{padding:.05rem 0 .05rem 1rem;line-height:1.45}
+  .exp-ro{margin:.08rem 0 .05rem}
+  .exp-sc{margin-bottom:.2rem}
+  .define{padding:.55rem .85rem;margin-bottom:.7rem}
+  .define p{line-height:1.5}
+  .mt{padding:.45rem .7rem}
+  .kv{padding:.28rem 0}
+  .row{padding:.26rem 0}
+  .ptab td,.ptab th{padding:.32rem .55rem}
+}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"김연재","alternateName":"YJ Kim","jobTitle":"CSO · CBO (사업전략·신규사업개발)","url":"https://ilgam-jtbd.github.io/yjkim/resume.html","email":"mailto:ilgam.jtbd@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Seoul","addressCountry":"KR"},"description":"플랫폼 사업개발 — 양면 시장 매칭·0→1 신규사업·데이터 그로스·IR을 반복해서 실행. 누적 매칭 13만 건·거래액 250억·지분매각 Exit, 투자유치 100억+, 등록 특허 6건.","alumniOf":[{"@type":"CollegeOrUniversity","name":"Helsinki School of Economics (Executive MBA)"},{"@type":"CollegeOrUniversity","name":"University of Indonesia"}],"sameAs":["https://www.linkedin.com/in/wisdomkim","https://velor.kr"]},"dateModified":"2026-08-29"}
+{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"김연재","alternateName":"YJ Kim","jobTitle":"CSO · CBO (사업전략 · 신규사업개발 · BD · Growth)","url":"https://ilgam-jtbd.github.io/yjkim/resume.html","email":"mailto:ilgam.jtbd@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Seoul","addressCountry":"KR"},"description":"수요와 공급이 따로 노는 시장에 거래가 일어나게 만드는 사업을 해왔습니다. 누적 매칭 13만 건 · 거래액 250억 · 지분매각 Exit · 투자유치 100억+ · 등록 특허 6건.","alumniOf":[{"@type":"CollegeOrUniversity","name":"Helsinki School of Economics (Executive MBA)"},{"@type":"CollegeOrUniversity","name":"University of Indonesia"}],"sameAs":["https://www.linkedin.com/in/wisdomkim","https://velor.kr"]},"dateModified":"2026-09-02"}
 </script>
 </head>
 <body>
@@ -141,58 +163,39 @@ body{word-break:keep-all;overflow-wrap:break-word}
 <div class="bar">
   <a class="back" href="index.html">← 포트폴리오</a>
   <div class="bar-r">
-    <a class="btn" href="김연재_이력서_2026.pdf" download>PDF 내려받기</a>
+    <a class="btn" href="김연재_이력서_2026.pdf" download>PDF 내려받기 (A4 2쪽)</a>
     <button class="btn p" onclick="window.print()">인쇄 / PDF 저장</button>
   </div>
 </div>
 
+<!-- ═══════════ PAGE 1 ═══════════ -->
+<div class="page">
+<div class="pgno">PAGE 1 / 2</div>
+
 <div class="rh">
-  <div class="rh-eyebrow">Résumé · 2026</div>
-  <div class="rh-name">김연재 <span>YJ Kim</span></div>
-  <div class="rh-title">CSO · CBO(사업개발) — 사업전략 · 신규사업개발 · 데이터 그로스 · IR</div>
-  <div class="rh-contact">
-    <span>ilgam.jtbd@gmail.com</span>
-    <span><a href="https://www.linkedin.com/in/wisdomkim" target="_blank" rel="noopener">linkedin.com/in/wisdomkim</a></span>
-    <span><a href="https://ilgam-jtbd.github.io/yjkim/" target="_blank" rel="noopener">포트폴리오</a></span>
-    <span><a href="https://velor.kr" target="_blank" rel="noopener">velor.kr (직접 만든 MVP)</a></span>
+  <div>
+    <div class="rh-name">김연재 <span>YJ Kim</span></div>
+    <div class="rh-title">CSO · CBO — 사업전략 · 신규사업개발 · BD · Growth</div>
+    <div class="rh-contact">
+      <span>Seoul</span>
+      <span><a href="mailto:ilgam.jtbd@gmail.com">ilgam.jtbd@gmail.com</a></span>
+      <span><a href="https://www.linkedin.com/in/wisdomkim" target="_blank" rel="noopener">linkedin.com/in/wisdomkim</a></span>
+    </div>
+  </div>
+  <div class="links">
+    <a class="lk" href="https://ilgam-jtbd.github.io/yjkim/" target="_blank" rel="noopener"><span class="lb">PORTFOLIO</span><u>ilgam-jtbd.github.io/yjkim/</u></a>
+    <a class="lk" href="https://velor.kr/" target="_blank" rel="noopener"><span class="lb">VELOR</span><u>velor.kr</u></a>
   </div>
 </div>
 
 <div class="define">
-  <p>플랫폼 사업개발 — <b>수요와 공급이 따로 노는 시장에 거래를 붙이는 일</b>을 이커머스 마켓플레이스 · 건설 인력 · 시니어 전문지식 <b>세 산업에서 반복</b>했습니다. 누적 매칭 13만 건 · 거래액 250억 · 지분매각 Exit.</p>
-  <p class="sub">누적 투자유치 100억+ · 등록 특허 6건(출원 1건). 커리어는 <b>한국 Microsoft R&amp;D와 인터파크</b>에서 기술로 시작했습니다. 최근에는 시니어 비즈니스 서비스 자문(42일 · 산출물 50건)과 병행해 매칭 시장 데모를 직접 제작했고, 현재 Sealo 프로젝트를 진행하고 있습니다.</p>
+  <p class="lead">수요와 공급이 따로 노는 시장에 거래가 일어나게 만드는 사업을 해왔습니다.</p>
+  <p>이커머스 마켓플레이스 · 건설 인력 O2O · 시니어 D2C · 레저 슈퍼앱에서 <b>사업전략과 신규사업을 총괄</b>했습니다.</p>
+  <p>공동창업한 건설 인력 O2O를 <b>누적 매칭 13만 건 · 거래액 250억</b>까지 키우고 지분매각으로 Exit했습니다.</p>
+  <p>측정 체계를 세워 팀이 같은 숫자를 보게 만든 뒤 성장을 만듭니다 — <b>Meta ROAS 643% · 시니어 D2C 회원 +827%</b>. 기관 IR로 <b>누적 100억+</b>를 유치했습니다.</p>
 </div>
 
-<!-- 해결한 문제 -->
 <div class="sec">
-  <div class="sec-t">해결해 온 문제</div>
-  <div class="solve">
-    <div class="sv">
-      <h3>양면 시장을 붙이는 일</h3>
-      <p>수요·공급 중 어디를 먼저 채울지 정하고, 한쪽이 다른 쪽을 부르게 만드는 구조를 설계합니다.</p>
-      <div class="ev"><b>세 번</b> — 이커머스 마켓플레이스 · 건설 인력 O2O <b>누적 매칭 13만 건 · 거래액 250억</b> · 시니어 전문지식</div>
-    </div>
-    <div class="sv">
-      <h3>0→1 신규사업을 굴러가게 만드는 일</h3>
-      <p>기획서에서 멈추지 않고 돌아가는 서비스까지 만듭니다. 새 가설은 MVP로 먼저 검증합니다.</p>
-      <div class="ev"><b>네 번</b> — 단독창업 · 공동창업 · 시니어 매칭 데모 <b>직접 제작</b> · Sealo 프로토타입</div>
-    </div>
-    <div class="sv">
-      <h3>측정 체계부터 만들고 숫자를 올리는 일</h3>
-      <p>GA4·GTM·서버사이드 트래킹을 직접 붙여 전환을 신뢰할 수 있게 만든 뒤 광고·퍼널을 개선합니다.</p>
-      <div class="ev"><b>두 번</b> — 레저 슈퍼앱 <b>Meta ROAS 643% · Google CPA 769원</b> · 시니어 D2C <b>회원 +827%</b></div>
-    </div>
-    <div class="sv">
-      <h3>돈과 파트너를 데려오는 일</h3>
-      <p>기관 IR 문서와 미팅을 직접 리드하고, 공공·대기업 파트너십을 사업 수요로 바꿉니다.</p>
-      <div class="ev">누적 <b>투자유치 100억+</b> · 한국투자파트너스 리드 · 대기업 계열사 제휴 <b>날인까지 단독 수행</b></div>
-    </div>
-  </div>
-</div>
-
-<!-- 핵심 지표 -->
-<div class="sec">
-  <div class="sec-t">핵심 지표</div>
   <div class="met">
     <div class="mt"><b>13만 건</b><span>누적 매칭 · 거래액 250억</span></div>
     <div class="mt"><b>100억+</b><span>누적 투자유치 주도</span></div>
@@ -201,108 +204,82 @@ body{word-break:keep-all;overflow-wrap:break-word}
   </div>
 </div>
 
-<!-- 경력 -->
 <div class="sec">
-  <div class="sec-t">경력 사항</div>
+  <div class="sec-t">주요 경력</div>
 
   <div class="exp">
-    <div class="exp-h"><div class="exp-co">Sealo(씰로) — AI 초안을 내 스타일로 다시 쓰는 도구</div><div class="exp-pd">2026.08 ~ 현재</div></div>
-    <div class="exp-ro">기획 · 개발 직접 — "AI가 그리고, 사람이 찍는다"</div>
+    <div class="exp-h"><div class="exp-co">㈜웍스메이트 — 건설 인력 O2O</div><div class="exp-pd">2020.08 – 2022.12</div></div>
+    <div class="exp-ro">공동창업 · CSO / 부사장 (지분매각 Exit)</div>
+    <div class="exp-sc"><b>책임 범위</b> · 조직 3 → 50명 · 전략본부 신설·총괄</div>
     <ul>
-      <li>반복해서 글을 내는 사람들이 <b>AI 초안을 매번 고쳐 쓰는 문제</b>를 대상으로 함 — 스타일은 이미 있는데 AI가 쓰지 않는 상태</li>
-      <li>설문 없이 <b>직접 쓴 글에서만</b> 스타일을 추출하고, 모든 관찰에 원문 근거를 붙임 — 근거 없으면 항목을 만들지 않음</li>
-      <li>규칙은 제안까지만 하고 <b>확정은 사람이</b> — 자동 적용하지 않는 설계</li>
-      <li>Claude API 직접 호출 <b>프로토타입 구현</b>, 제품화 이전 <b>수동 파일럿</b>으로 검증 중 · 1순위 지표는 <b>고치지 않고 그대로 올린 비율</b></li>
+      <li><span class="st">상황</span>거래는 전화와 인맥으로 흩어지고, 공급자는 임금을 떼일 위험 때문에 플랫폼에 남지 않았음</li>
+      <li><span class="st">결정</span>수요 확보보다 <b>공급자 신뢰</b>를 먼저 — 노임채권 시스템으로 임금 미지급 리스크를 제거하고 대안신용평가 기반 금융을 결합</li>
+      <li><span class="st">결과</span><b>누적 매칭 13만 건 · 거래액 250억</b> · 한국투자파트너스 리드 <b>투자 60억</b>(NHN · 하나금융 · IBK 등) · 조직 3 → 50명 · 지분매각 Exit</li>
     </ul>
   </div>
 
   <div class="exp">
-    <div class="exp-h"><div class="exp-co">시니어 비즈니스 서비스 — 컨설팅 자문</div><div class="exp-pd">2026.06 ~ 2026.08</div></div>
-    <div class="exp-ro">전략 · IR · 사업개발 · 제품 자문 — 42일, 산출물 50건 (계약상 고객사명 비표기)</div>
+    <div class="exp-h"><div class="exp-co">㈜어바웃피싱 — 레저 슈퍼앱</div><div class="exp-pd">2025.10 – 2026.06</div></div>
+    <div class="exp-ro">부사장 / CSO</div>
+    <div class="exp-sc"><b>책임 범위</b> · 전략 · 마케팅 · 데이터 · BD 총괄</div>
     <ul>
-      <li>대표 한 사람에게 몰려 있던 <b>전략 · 성장마케팅 · 데이터 · AI 제품 · 업무자동화</b> 다섯 기능을 나눠 맡아 <b>42일간 산출물 50건</b> 제출</li>
-      <li><b>IR 산출물 16건</b> — 투자 덱 3개 버전 개정, 가정만 바꾸면 다시 도는 <b>수식형 재무모델</b>과 밸류에이션 시뮬레이션, 정부지원 문서 이원화</li>
-      <li><b>파트너십 1건 계약 체결</b> — 대기업 계열사 제휴를 <b>발굴 → 협상 → 업무협약 날인까지 단독 수행</b>, 매체비 부담 없이 채널 확보</li>
-      <li>기능 나열식 5탭 구조를 <b>목적형 4대 메뉴</b>로 개편 (기획서 · 목업 · 동작 프로토타입까지 직접 제작)</li>
-      <li><b>SEO · ASO · AEO · GEO</b> 4개 채널 노출 진단 및 AI 검색 대응안 문서화 · 부서별로 달랐던 <b>지표를 단일 정본으로 통일</b> · 상표 미등록 발견 후 즉시 출원 조치</li>
+      <li><span class="st">상황</span>대행사 태깅 붕괴로 채널별 전환 비교가 불가능 — 광고비는 쓰는데 무엇이 전환을 만드는지 알 수 없었음</li>
+      <li><span class="st">결정</span>캠페인 확대 전에 <b>측정 체계 복구</b>를 우선 — GA4 · GTM · 서버사이드 트래킹으로 전환을 다시 잡고, 보고를 자동화해 팀이 같은 숫자를 보게 함</li>
+      <li><span class="st">결과</span><b>Meta ROAS 643% · Google CPA 769원 · MAU 6.2만 → 8.4만(+35.5%)</b> · AI 신뢰·추천 알고리즘 <b>특허 5건 등록</b>(발명자) · Pre-A IR 진행</li>
     </ul>
   </div>
 
   <div class="exp">
-    <div class="exp-h"><div class="exp-co">시니어 전문지식 매칭 데모 (velor.kr)</div><div class="exp-pd">2026 · 직접 제작</div></div>
-    <div class="exp-ro">기획 · 개발 — 신규 시장 가설 검증</div>
+    <div class="exp-h"><div class="exp-co">㈜애즈유 — 환인제약 계열 건강기능식품</div><div class="exp-pd">2023.05 – 2025.09</div></div>
+    <div class="exp-ro">부문대표 / 부사장</div>
+    <div class="exp-sc"><b>책임 범위</b> · 부문 경영 총괄</div>
     <ul>
-      <li>공고 피드 · 전문가 등록 · 기업 진단까지 <b>직접 구현해 짧은 기간에 데모 완성</b> — 기획서 대신 서비스로 검증</li>
-      <li>공공이 만든 위촉·평가·자문 수요를 <b>매일 자동 수집</b>해 공고 피드로 노출, 수요→공급 순으로 시장 형성</li>
-      <li><b>실거래 3건</b>으로 초기 가설 확인 · 시범 기간으로 수수료 미수취</li>
-      <li>AI 온보딩(전문가 3분·기업 1분) 설계, 자문→현장→채용으로 이어지는 단계별 수익 구조 정의</li>
-    </ul>
-  </div>
-
-  <div class="exp">
-    <div class="exp-h"><div class="exp-co">㈜어바웃피싱 — 레저 슈퍼앱</div><div class="exp-pd">2025.10 ~ 2026.06</div></div>
-    <div class="exp-ro">부사장 / CSO — 전략 · 마케팅 · 데이터 · BD 총괄</div>
-    <ul>
-      <li>GA4·GTM v3·서버사이드 트래킹 직접 구축으로 전환 측정 복구 — <b>Meta ROAS 643% · Google CPA 769원</b></li>
-      <li><b>MAU 6.2만 → 8.4만(+35.5%)</b> · AI 자동 리포트와 데이터 수집 파이프라인 구축으로 수작업 제거</li>
-      <li>AI 신뢰·추천 알고리즘 <b>특허 5건 등록</b>(10-2947624 외) — 발명자</li>
-      <li>대기업 제휴 POC 제안, 공공 프로젝트 제안 발표, 이노비즈 인증 대응, Pre-A IR 진행</li>
-    </ul>
-  </div>
-
-  <div class="exp">
-    <div class="exp-h"><div class="exp-co">㈜애즈유 — 환인제약 계열 건강기능식품</div><div class="exp-pd">2023.05 ~ 2025.09</div></div>
-    <div class="exp-ro">부문대표 / 부사장 — 경영 총괄</div>
-    <ul>
-      <li>시니어 D2C 자사몰 구축·리뉴얼 주도 — <b>회원 +827% · 매출 +187%</b> (언론 보도)</li>
-      <li>신제품 기획·포트폴리오 확대, B2B/B2C 영업 전략 실행으로 <b>월 매출 3배</b></li>
-      <li>SCM 자동 물류·재고 시스템 구축으로 운영 효율화 · IR 문서 작업 및 자본증자 진행</li>
-      <li>중장년 고객의 구매 행동을 현장에서 관찰 — 현재 시니어 매칭 MVP의 직접적 근거</li>
-    </ul>
-  </div>
-
-  <div class="exp">
-    <div class="exp-h"><div class="exp-co">㈜웍스메이트 — 건설 인력 O2O</div><div class="exp-pd">2020.08 ~ 2022.12</div></div>
-    <div class="exp-ro">공동창업 · CSO / 부사장 — 전략본부 총괄 (지분매각 Exit)</div>
-    <ul>
-      <li><b>누적 매칭 13만 건 · 플랫폼 거래액 250억</b> 달성, 전략본부 신설 후 조직 <b>3명 → 50명</b></li>
-      <li><b>투자 60억 유치</b> — 한국투자파트너스 리드, NHN·하나금융 ESG·IBK기업은행·건설 CVC 등</li>
-      <li><b>노임채권 시스템</b>을 구축해 임금 미지급 리스크를 구조적으로 제거 — 공급자 신뢰 확보</li>
-      <li>대안신용평가 기반 근로자 금융 서비스 기획(대상 전원 상환 완료), 추천 시스템 최적화</li>
-    </ul>
-  </div>
-
-  <div class="exp">
-    <div class="exp-h"><div class="exp-co">Smart Wisdom Group — 인도네시아 이커머스 마켓플레이스</div><div class="exp-pd">2011.08 ~ 2018.07</div></div>
-    <div class="exp-ro">단독 창업 · Founder &amp; CEO — 경영 총괄</div>
-    <ul>
-      <li>창업 1년 만에 현지 업계 1위, 연 매출 <b>11억 → 207억(19배)</b></li>
-      <li><b>Red Herring Global 100</b> 혁신기업 선정(2012) · 현지 이커머스 협회 설립 제안·구축</li>
-      <li>5개국 현지화 오픈, 글로벌 테크 기업 공동 프로모션 및 국영기업 채널 확보</li>
-    </ul>
-  </div>
-
-  <div class="exp">
-    <div class="exp-h"><div class="exp-co">ATHUB — IT 컨설팅</div><div class="exp-pd">2004.02 ~ 2009.05</div></div>
-    <div class="exp-ro">이사 — 통신사 무선 콘텐츠·검색 컨설팅</div>
-    <ul>
-      <li>이동통신사 무선 콘텐츠·검색 서비스 컨설팅 및 개발 기획 5년</li>
-      <li>지능형 에이전트 <b>특허 등록(10-0468514)</b> · <b>Microsoft 파트너 금상</b> 수상</li>
-    </ul>
-  </div>
-
-  <div class="exp">
-    <div class="exp-h"><div class="exp-co">㈜인터파크 · 한국 Microsoft</div><div class="exp-pd">1999.02 ~ 2002.11</div></div>
-    <div class="exp-ro">솔루션사업부 팀장 · R&amp;D 기술연구소 연구원</div>
-    <ul>
-      <li>FIFA 월드컵 온라인 판매 공식 파트너 제안 기술 총괄 및 해외 협력사 코디네이션</li>
-      <li>MSSQL 국내·미국 버전 동시 출시 참여, 대기업 DB 기술 지원</li>
+      <li><span class="st">상황</span>제품은 있는데 자사몰이 팔리지 않음 — 중장년 고객에게 화면이 불친절하고 재고·물류는 수작업</li>
+      <li><span class="st">결정</span>광고보다 <b>자사몰 리뉴얼</b>에 먼저 투자 — 가입·구매 동선 단순화, 신제품 라인으로 재구매 창출, SCM 자동화</li>
+      <li><span class="st">결과</span><b>회원 +827% · 매출 +187% · 월 매출 3배</b>(B2B·B2C 영업 병행) · IR 문서 작업 및 자본증자 진행 · <a href="https://megaeconomy.co.kr/news/newsview.php?ncode=1065598837841438" target="_blank" rel="noopener">언론 보도</a></li>
     </ul>
   </div>
 </div>
 
-<!-- 특허 -->
 <div class="sec">
+  <div class="sec-t">자문 · 프로젝트</div>
+  <div class="kv"><b>시니어 서비스 자문</b><span class="ro">전략 · IR · BD · 제품 · 운영</span><span class="pd">2026.06 – 2026.08</span><span class="rs">42일 · 산출물 50건(IR 16건) · 대기업 계열사 파트너십 1건 날인 (계약상 고객사명 비표기)</span></div>
+  <div class="kv"><b>VELOR (velor.kr)</b><span class="ro">사업 가설 검증 · 기획 · 개발</span><span class="pd">2026</span><span class="rs">시니어 전문지식 매칭 — 공공 수요 자동 수집 → 전문가 등록 순으로 시장 형성 · 실거래 3건 · AI 교육 40강 · 도구 31종 운영</span></div>
+  <div class="kv"><b>그 외 프로젝트</b><span class="ro">Sealo(씰로) · 개인 프로젝트</span><span class="pd">2026.08 –</span><span class="rs">AI 초안의 스타일 일관성을 검증하는 프로토타입</span></div>
+</div>
+</div>
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page">
+<div class="pgno">PAGE 2 / 2</div>
+
+<div class="sec">
+  <div class="sec-t">초기 경력</div>
+  <div class="exp compact">
+    <div class="exp-h"><div class="exp-co">Smart Wisdom Group — 인도네시아 이커머스 마켓플레이스</div><div class="exp-pd">2011.08 – 2018.07</div></div>
+    <div class="exp-ro">단독 창업 · CEO</div>
+    <ul>
+      <li>창업 1년 만에 현지 업계 1위, 연 매출 <b>11억 → 207억</b> · Red Herring Global 100 선정(2012) · 5개국 현지화 · 국영기업 채널 확보</li>
+    </ul>
+  </div>
+  <div class="exp compact">
+    <div class="exp-h"><div class="exp-co">ATHUB — IT 컨설팅</div><div class="exp-pd">2004.02 – 2009.05</div></div>
+    <div class="exp-ro">이사</div>
+    <ul>
+      <li>이동통신사 무선 콘텐츠·검색 서비스 컨설팅 5년 · 지능형 에이전트 특허 등록(10-0468514) · Microsoft 파트너 금상</li>
+    </ul>
+  </div>
+  <div class="exp compact">
+    <div class="exp-h"><div class="exp-co">㈜인터파크 · 한국 Microsoft</div><div class="exp-pd">1999.02 – 2002.11</div></div>
+    <div class="exp-ro">솔루션사업부 팀장 · R&amp;D 기술연구소 연구원</div>
+    <ul>
+      <li>FIFA 월드컵 온라인 판매 공식 파트너 제안 기술 총괄 · MSSQL 국내·미국 버전 동시 출시 참여, 대기업 DB 기술 지원</li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="sec" id="ip">
   <div class="sec-t">지식재산권 — 등록 6건 · 출원 1건</div>
   <table class="ptab">
     <thead><tr><th>번호</th><th>발명의 명칭</th><th>상태</th></tr></thead>
@@ -318,26 +295,24 @@ body{word-break:keep-all;overflow-wrap:break-word}
   </table>
 </div>
 
-<!-- 역량 -->
-<div class="sec">
-  <div class="sec-t">역량</div>
-  <div class="row"><span class="d"><b>전략 · BD</b> — 사업전략 수립, 신규 BM 설계, 양면 시장 매칭 설계, 파트너십 협상, OKR/KPI 체계</span></div>
-  <div class="row"><span class="d"><b>그로스 · 데이터</b> — GA4 · GTM · 서버사이드 트래킹, 퍼널·어트리뷰션 분석, A/B 실험 설계, 퍼포먼스 마케팅</span></div>
-  <div class="row"><span class="d"><b>IR · 재무</b> — 기관 IR 문서·피칭, Pre-A~Series A 대응, 기업가치 산정, 중장기 재무 시나리오, 이노비즈 인증</span></div>
-  <div class="row"><span class="d"><b>제품 · AI</b> — MVP 기획·개발·배포, AI 에이전트 운영 체계(역할 분담·검증 루프·승인 게이트), 자동화 파이프라인</span></div>
-  <div class="row"><span class="d"><b>글로벌</b> — 영어/인도네시아어 비즈니스 구사, 해외 거주 8년+, 5개국 현지화 사업 경험</span></div>
+<div class="two">
+  <div class="sec">
+    <div class="sec-t">학력 · 수상</div>
+    <div class="row"><span class="d"><b>Helsinki School of Economics</b> — Executive MBA (기업 장학)</span><span class="r">2004 – 2005</span></div>
+    <div class="row"><span class="d"><b>University of Indonesia</b> — 경영전략 박사 수료 (포스코 청암재단 장학)</span><span class="r">2010 – 2013</span></div>
+    <div class="row"><span class="d"><b>Red Herring Global 100</b> 혁신기업 선정</span><span class="r">2012</span></div>
+    <div class="row"><span class="d"><b>Microsoft 파트너 금상</b> — 지능형 에이전트</span><span class="r">2004</span></div>
+  </div>
+  <div class="sec">
+    <div class="sec-t">핵심 역량</div>
+    <div class="row"><span class="d"><b>전략 · BD</b> — 신규 BM 설계 · 양면 시장 매칭 · 파트너십 협상 · OKR/KPI</span></div>
+    <div class="row"><span class="d"><b>그로스 · 데이터</b> — GA4 · GTM · 서버사이드 트래킹 · 퍼널/어트리뷰션 · A/B 실험</span></div>
+    <div class="row"><span class="d"><b>IR · 재무</b> — 기관 IR · Pre-A~Series A · 기업가치 산정 · 재무 시나리오</span></div>
+    <div class="row"><span class="d"><b>제품 · AI</b> — 가설을 서비스로 검증 · AI 에이전트 운영 체계(역할 분담 · 승인 게이트)</span></div>
+    <div class="row"><span class="d"><b>글로벌</b> — 영어 · 인도네시아어 비즈니스 구사 · 해외 거주 8년+</span></div>
+  </div>
 </div>
 
-<!-- 학력·수상 -->
-<div class="sec">
-  <div class="sec-t">학력 · 수상</div>
-  <div class="row"><span class="d"><b>Helsinki School of Economics</b> — Executive MBA 석사 (기업 장학)</span><span class="r">2004.08 – 2005.08</span></div>
-  <div class="row"><span class="d"><b>University of Indonesia</b> — 경영전략 박사 수료 (포스코 청암재단 아시아지역전문가 장학)</span><span class="r">2010.08 – 2013.07</span></div>
-  <div class="row"><span class="d"><b>Red Herring Global 100</b> 혁신기업 선정</span><span class="r">2012</span></div>
-  <div class="row"><span class="d"><b>Microsoft 파트너 금상</b> — 지능형 에이전트 개발</span><span class="r">2004</span></div>
-</div>
-
-<!-- 보도 -->
 <div class="sec">
   <div class="sec-t">언론 보도</div>
   <div class="row"><span class="d">웍스메이트, 건설 인력 서비스 프리A 투자 유치(한국투자파트너스) — <a href="https://news.mt.co.kr/mtview.php?no=2021122217123512910" target="_blank" rel="noopener">머니투데이</a></span><span class="r">2021.12</span></div>
@@ -345,7 +320,8 @@ body{word-break:keep-all;overflow-wrap:break-word}
   <div class="row"><span class="d">어바웃피싱, 선상낚시 통합 예약 서비스 공식 오픈 — <a href="https://www.fnnews.com/news/202603181553333897" target="_blank" rel="noopener">파이낸셜뉴스</a></span><span class="r">2026.03</span></div>
 </div>
 
-<div class="foot">2026년 8월 · 김연재 YJ Kim · ilgam.jtbd@gmail.com</div>
+<div class="foot">2026년 9월 · 김연재 YJ Kim · ilgam.jtbd@gmail.com · 포트폴리오 ilgam-jtbd.github.io/yjkim</div>
+</div>
 
 </body>
 </html>
