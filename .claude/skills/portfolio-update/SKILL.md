@@ -27,7 +27,7 @@ description: 김연재 구직 문서 3종(포트폴리오 index.html · 이력�
 | `resume.html` | 이력서 — A4 인쇄 최적화 | 경력 불릿, 지표 표, 특허 표 |
 | `cover-letter.html` | 자기소개서 — 서술 ~1,500자 | 해당 문단만 |
 
-케이스를 새로 넣으면 **번호(`.num`)를 전부 재배열**하고 섹션 헤드라인의 사례 개수도 함께 고칩니다.
+케이스를 새로 넣으면 **번호(`.num`)를 전부 재배열**하고 섹션 헤드라인의 사례 개수도 함께 고칩니다. 사례 순서는 정본 `case_order`(웍스메이트 → 어바웃피싱 → 애즈유 → VELOR → 자문)를 따르고, Sealo 는 사례에 넣지 않습니다.
 
 ### 3. 대조 (필수)
 ```
@@ -47,6 +47,12 @@ PUPPETEER_PATH=<puppeteer 경로> node scripts/render.mjs
 실제로 놓친 사례가 둘 있습니다(공고 이미지 `object-fit:cover` 잘림, 특허 표 모바일 붕괴).
 
 한국어 렌더가 깨지면 `fonts-noto-cjk` 를 설치합니다.
+
+### 4b. 채용 관점 실측 (구조를 바꿨을 때)
+```
+node scripts/audit-hiring.mjs .claude/audit/<이름>-after.md --label after
+```
+390px 총 높이 ≤ 10,200px(12화면) · index "직접" ≤ 10 · 이력서 PDF 2쪽 · 첫 3화면에 Sealo 없음 · 최상급·자랑성 표현 0. 수정 전에 `-before.md` 를 먼저 남겨 같은 잣대로 비교합니다.
 
 ### 5. 배포
 ```

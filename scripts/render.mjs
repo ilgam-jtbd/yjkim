@@ -76,7 +76,7 @@ for (const doc of F.docs) {
 }
 
 if (!noPdf) {
-  for (const [src, pdf] of Object.entries(F.pdfs)) {
+  for (const [src, pdf] of Object.entries(F.pdfs).filter(([k]) => k.endsWith('.html'))) {
     const p = await b.newPage();
     await prep(p);
     await p.goto(pathToFileURL(join(ROOT, src)).href, { waitUntil: 'networkidle0', timeout: 60000 });
