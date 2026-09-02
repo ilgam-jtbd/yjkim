@@ -7,6 +7,7 @@
 | `index.html` | 포트폴리오 (사례 5건 · 채용 관점 재편, 390px ≤ 12화면) |
 | `resume.html` | 이력서 — **A4 2쪽 고정**, 상단 PORTFOLIO·VELOR 하이퍼링크 (채용 제출물은 이 PDF 하나) |
 | `cover-letter.html` | 자기소개서 |
+| `case-velor-ai.html` | VELOR 사례 상세 (index CASE 04 에서 링크) |
 | `.claude/facts.json` | **사실의 정본** — 경력·수치·비공개 목록·디자인 토큰 |
 | `scripts/check-facts.mjs` | 정본 ↔ 문서 대조 (의존성 없음) |
 | `scripts/render.mjs` | 반응형 검증 + PDF 재생성 (puppeteer) |
@@ -23,6 +24,13 @@
 3. `node scripts/check-facts.mjs` — `✗` 가 있으면 커밋 금지
 4. `bash scripts/fetch-fonts.sh` 후 `node scripts/render.mjs` — 오버플로 0 + PDF 재생성, 새 블록은 캡처를 눈으로 확인
 5. PR → 머지 → Actions 배포 성공 확인
+
+## 문서 4종은 서로 오갈 수 있어야 합니다
+
+`index` · `resume` · `cover-letter` · `case-velor-ai` 는 **상단 `.doctabs` 탭**(현재 문서는 `.on`)과
+**하단 `.docnav` 이동 링크**로 연결돼 있습니다. 채용 담당자가 이력서만 열어도 포트폴리오·자기소개서로
+바로 넘어갈 수 있어야 하기 때문입니다. 페이지를 새로 만들면 두 곳 모두에 추가하고,
+기존 4종의 `.docnav` 에도 새 페이지를 넣으십시오. 인쇄에서는 둘 다 `display:none` 입니다.
 
 ## 커밋
 
