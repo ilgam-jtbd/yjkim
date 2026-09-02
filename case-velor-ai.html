@@ -89,6 +89,19 @@ h2{font-family:var(--serif);font-weight:700;letter-spacing:-.01em}
 .kpi b,.ax b{font-variant-numeric:tabular-nums}
 p{line-height:1.72}
 
+
+/* ── 문서 간 이동 (포트폴리오 · 이력서 · 자기소개서) ── */
+.doctabs{display:inline-flex;gap:.15rem;padding:.2rem;border:1px solid var(--line);border-radius:100px;background:#fff}
+.doctabs a{display:inline-flex;align-items:center;min-height:36px;padding:.3rem .8rem;border-radius:100px;font-size:.84rem;font-weight:700;color:var(--ink-2)}
+.doctabs a.on{background:var(--ink);color:#fff}
+.doctabs a:not(.on):hover{color:var(--primary)}
+.docnav{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .5rem;justify-content:center;padding:1rem 1.15rem .2rem}
+.docnav-l{font-size:.74rem;font-weight:800;letter-spacing:.08em;color:var(--ink-3);margin-right:.2rem}
+.docnav a{display:inline-flex;align-items:center;min-height:40px;padding:.35rem .85rem;border:1px solid var(--line);border-radius:100px;font-size:.84rem;font-weight:700;color:var(--ink-2);background:#fff}
+.docnav a.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.docnav a:not(.on):hover{border-color:var(--primary);color:var(--primary)}
+@media print{.doctabs,.docnav{display:none!important}}
+@media(max-width:640px){.doctabs a{padding:.3rem .58rem;font-size:.79rem;min-height:34px}.docnav a{min-height:36px;padding:.3rem .7rem;font-size:.8rem}.docnav{padding-top:.7rem}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"AI로 만든 AI 교육 — 3주간의 구축 기록","author":{"@type":"Person","name":"김연재","alternateName":"YJ Kim","url":"https://ilgam-jtbd.github.io/yjkim/"},"datePublished":"2026-09-01","dateModified":"2026-09-01","mainEntityOfPage":"https://ilgam-jtbd.github.io/yjkim/case-velor-ai.html","description":"3주간 VELOR에 무료 AI 교육 40강, 실전 도구 31종, 자동 제작 영상 13편을 AI 에이전트 팀을 운영해 구축한 기록."}
@@ -97,7 +110,7 @@ p{line-height:1.72}
 <body>
 
 <div class="bar"><div class="bar-in">
-  <a class="back" href="index.html#cases">← 포트폴리오 · 사례 목록</a>
+  <nav class="doctabs" aria-label="문서 이동"><a href="index.html" class="on" aria-current="page">포트폴리오</a><a href="resume.html">이력서</a><a href="cover-letter.html">자기소개서</a></nav>
   <a class="cta" href="index.html#contact">채용 문의</a>
 </div></div>
 
@@ -206,6 +219,7 @@ p{line-height:1.72}
   <a class="p" href="index.html#cases">← 다른 사례 보기</a>
   <a class="o" href="mailto:ilgam.jtbd@gmail.com">ilgam.jtbd@gmail.com</a>
 </div>
+<div class="docnav"><span class="docnav-l">문서 이동</span><a href="index.html">포트폴리오</a><a href="resume.html">이력서</a><a href="cover-letter.html">자기소개서</a><a href="case-velor-ai.html" class="on">VELOR 상세</a><a href="김연재_이력서_2026.pdf" download>이력서 PDF</a></div>
 
 </div>
 </body>

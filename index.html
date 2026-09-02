@@ -183,7 +183,8 @@ h2 em{font-style:normal;color:var(--primary)}
 .dl a{display:flex;align-items:center;gap:.6rem;min-height:48px;padding:.7rem 1.05rem;border:1px solid rgba(255,255,255,.22);border-radius:12px;color:rgba(255,255,255,.9);font-size:.92rem;font-weight:600}
 .dl a:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.06)}
 .dl a.pri{background:var(--primary);border-color:var(--primary);color:#fff}
-footer{padding:1.8rem 0 2.4rem;text-align:center;color:var(--ink-3);font-size:.85rem}
+footer{padding:.5rem 0 1.5rem;text-align:center;color:var(--ink-3);font-size:.82rem}
+.copy{margin-top:.55rem}
 .note{font-size:.83rem;color:var(--ink-3);margin-top:.9rem;line-height:1.6}
 
 @media(min-width:901px){section{padding:4.5rem 0}}
@@ -218,7 +219,7 @@ footer{padding:1.8rem 0 2.4rem;text-align:center;color:var(--ink-3);font-size:.8
   .pi{padding:.8rem .95rem}
   .dl a{min-height:44px;padding:.55rem .95rem}
   .contact h2{font-size:1.35rem}
-  footer{padding:1rem 0 1.4rem}
+  footer{padding:.2rem 0 1rem}
   .ssub{margin-bottom:1.05rem}
   .contact{padding:1.5rem 1.2rem}
   .contact p{margin-bottom:.8rem}
@@ -242,6 +243,19 @@ footer{padding:1.8rem 0 2.4rem;text-align:center;color:var(--ink-3);font-size:.8
   .cases{gap:.95rem}
   .ssub{margin-bottom:1.3rem}
 }
+
+/* ── 문서 간 이동 (포트폴리오 · 이력서 · 자기소개서) ── */
+.doctabs{display:inline-flex;gap:.15rem;padding:.2rem;border:1px solid var(--line);border-radius:100px;background:#fff}
+.doctabs a{display:inline-flex;align-items:center;min-height:36px;padding:.3rem .8rem;border-radius:100px;font-size:.84rem;font-weight:700;color:var(--ink-2)}
+.doctabs a.on{background:var(--ink);color:#fff}
+.doctabs a:not(.on):hover{color:var(--primary)}
+.docnav{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .5rem;justify-content:center;padding:1rem 1.15rem .2rem}
+.docnav-l{font-size:.74rem;font-weight:800;letter-spacing:.08em;color:var(--ink-3);margin-right:.2rem}
+.docnav a{display:inline-flex;align-items:center;min-height:40px;padding:.35rem .85rem;border:1px solid var(--line);border-radius:100px;font-size:.84rem;font-weight:700;color:var(--ink-2);background:#fff}
+.docnav a.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.docnav a:not(.on):hover{border-color:var(--primary);color:var(--primary)}
+@media print{.doctabs,.docnav{display:none!important}}
+@media(max-width:640px){.doctabs a{padding:.3rem .58rem;font-size:.79rem;min-height:34px}.docnav a{min-height:36px;padding:.3rem .7rem;font-size:.8rem}.docnav{padding-top:.7rem}}
 </style>
 <script type="application/ld+json">
 {
@@ -273,10 +287,11 @@ footer{padding:1.8rem 0 2.4rem;text-align:center;color:var(--ink-3);font-size:.8
   <div class="nav-in">
     <a href="#top" class="brand">김연재 <span>YJ Kim</span></a>
     <ul class="nav-links">
-      <li><a href="#solve">맡길 수 있는 일</a></li>
       <li><a href="#cases">사례</a></li>
       <li><a href="#plan">첫 90일</a></li>
       <li><a href="#career">약력</a></li>
+      <li><a href="resume.html">이력서</a></li>
+      <li><a href="cover-letter.html">자기소개서</a></li>
     </ul>
     <div class="nav-cta">
       <a href="김연재_이력서_2026.pdf" class="btn btn-o" download>이력서 PDF</a>
@@ -651,7 +666,7 @@ footer{padding:1.8rem 0 2.4rem;text-align:center;color:var(--ink-3);font-size:.8
 </section>
 
 <footer>
-  <div class="wrap">© 2026 김연재 YJ Kim · ilgam.jtbd@gmail.com</div>
+  <div class="wrap"><div class="docnav"><span class="docnav-l">문서 이동</span><a href="index.html" class="on">포트폴리오</a><a href="resume.html">이력서</a><a href="cover-letter.html">자기소개서</a><a href="case-velor-ai.html">VELOR 상세</a><a href="김연재_이력서_2026.pdf" download>이력서 PDF</a></div><div class="copy">© 2026 김연재 YJ Kim · ilgam.jtbd@gmail.com</div></div>
 </footer>
 
 </body>
