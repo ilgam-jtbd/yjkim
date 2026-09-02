@@ -80,6 +80,30 @@ body{word-break:keep-all;overflow-wrap:break-word}
 .pull{font-family:var(--serif);font-weight:700;line-height:1.7}
 .blk p{line-height:1.8}
 
+
+/* ── 문서 간 이동 (포트폴리오 · 이력서 · 자기소개서) ── */
+.doctabs{display:inline-flex;gap:.15rem;padding:.2rem;border:1px solid var(--line);border-radius:100px;background:#fff}
+.doctabs a{display:inline-flex;align-items:center;min-height:36px;padding:.3rem .8rem;border-radius:100px;font-size:.84rem;font-weight:700;color:var(--ink-2)}
+.doctabs a.on{background:var(--ink);color:#fff}
+.doctabs a:not(.on):hover{color:var(--primary)}
+.docnav{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .5rem;justify-content:center;padding:1rem 1.15rem .2rem}
+.docnav-l{font-size:.74rem;font-weight:800;letter-spacing:.08em;color:var(--ink-3);margin-right:.2rem}
+.docnav a{display:inline-flex;align-items:center;min-height:40px;padding:.35rem .85rem;border:1px solid var(--line);border-radius:100px;font-size:.84rem;font-weight:700;color:var(--ink-2);background:#fff}
+.docnav a.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.docnav a:not(.on):hover{border-color:var(--primary);color:var(--primary)}
+@media print{.doctabs,.docnav{display:none!important}}
+@media(max-width:640px){.doctabs a{padding:.3rem .58rem;font-size:.79rem;min-height:34px}.docnav a{min-height:36px;padding:.3rem .7rem;font-size:.8rem}.docnav{padding-top:.7rem}}
+
+@media screen{
+  .lbl-min{display:none}
+}
+@media screen and (max-width:640px){
+  .bar{gap:.5rem;padding-left:1.1rem;padding-right:1.1rem}
+  .bar-r{gap:.35rem}
+  .lbl-full{display:none}
+  .lbl-min{display:inline}
+  .bar .btn{padding:.5rem .75rem;font-size:.84rem;white-space:nowrap}
+}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"김연재","alternateName":"YJ Kim","jobTitle":"CSO · CBO (사업전략·신규사업개발)","url":"https://ilgam-jtbd.github.io/yjkim/cover-letter.html","email":"mailto:ilgam.jtbd@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Seoul","addressCountry":"KR"},"description":"수요와 공급이 따로 노는 시장에 거래를 붙이는 일을 이커머스 마켓플레이스·건설 인력·시니어 전문지식 세 산업에서 반복. 시니어 전문지식 매칭을 MVP로 검증 중.","sameAs":["https://www.linkedin.com/in/wisdomkim","https://velor.kr"]},"dateModified":"2026-08-29"}
@@ -88,10 +112,10 @@ body{word-break:keep-all;overflow-wrap:break-word}
 <body>
 
 <div class="bar">
-  <a class="back" href="index.html">← 포트폴리오</a>
+  <nav class="doctabs" aria-label="문서 이동"><a href="index.html">포트폴리오</a><a href="resume.html">이력서</a><a href="cover-letter.html" class="on" aria-current="page">자기소개서</a></nav>
   <div class="bar-r">
-    <a class="btn" href="김연재_자기소개서_2026.pdf" download>PDF 내려받기</a>
-    <button class="btn p" onclick="window.print()">인쇄 / PDF 저장</button>
+    <a class="btn" href="김연재_자기소개서_2026.pdf" download><span class="lbl-full">PDF 내려받기</span><span class="lbl-min">PDF</span></a>
+    <button class="btn p" onclick="window.print()"><span class="lbl-full">인쇄 / PDF 저장</span><span class="lbl-min">인쇄</span></button>
   </div>
 </div>
 
@@ -144,6 +168,8 @@ body{word-break:keep-all;overflow-wrap:break-word}
   <b>김연재 YJ Kim</b><br>
   ilgam.jtbd@gmail.com
 </div>
+
+<div class="docnav"><span class="docnav-l">문서 이동</span><a href="index.html">포트폴리오</a><a href="resume.html">이력서</a><a href="cover-letter.html" class="on">자기소개서</a><a href="case-velor-ai.html">VELOR 상세</a><a href="김연재_이력서_2026.pdf" download>이력서 PDF</a></div>
 
 </body>
 </html>

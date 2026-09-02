@@ -1,15 +1,17 @@
-# 채용 관점 실측 — after · 2026-09-02 05:18 UTC
+# 채용 관점 실측 — after · 2026-09-02 19:24 UTC
 
 측정 도구: `scripts/audit-hiring.mjs` · 뷰포트 390 / 768 / 1200 · 1화면 = 844px · 로컬 폰트 주입
 
 
 ## 1–2. 커밋 · 파일 구조
 
-- **main commit**: dafff72 브랜드 진단 원칙을 퍼스널 브랜딩에 적용 — 타이포 규율·매니페스토·신뢰 장치·언어 대조 (#32)
+- **main commit**: 5beb66b 채용 관점 재편 — 5사례 · Sealo 하향 · 이력서 A4 2쪽 · 모바일 12화면 (#33)
 - **브랜치**: claude/cso-ceo-dashboard-repo-20qwzw
 ```
 "\352\271\200\354\227\260\354\236\254_\354\235\264\353\240\245\354\204\234_2026.pdf"
 "\352\271\200\354\227\260\354\236\254_\354\236\220\352\270\260\354\206\214\352\260\234\354\204\234_2026.pdf"
+.claude/audit/hiring-v3-after.md
+.claude/audit/hiring-v3-before.md
 .claude/facts.json
 .claude/settings.json
 .claude/skills/portfolio-update/SKILL.md
@@ -20,8 +22,6 @@
 CLAUDE.md
 case-velor-ai.html
 cover-letter.html
-images/sealo-offer.jpg
-images/sealo-proto.jpg
 images/velor-ai-edu.jpg
 images/velor-ai-tools.jpg
 images/velor-bm.jpg
@@ -32,6 +32,7 @@ images/velor-tenders.jpg
 index.html
 og-image.png
 resume.html
+scripts/audit-hiring.mjs
 scripts/check-facts.mjs
 scripts/fetch-fonts.sh
 scripts/render.mjs
@@ -40,10 +41,10 @@ sitemap.xml
 
 ## 3–8. 문서 · 정본 · 검사기
 
-- **index.html**: 41,340 B · 659 줄
-- **resume.html**: 22,828 B · 328 줄
-- **cover-letter.html**: 12,061 B · 150 줄
-- **case-velor-ai.html**: 15,188 B · 213 줄
+- **index.html**: 43,029 B · 674 줄
+- **resume.html**: 24,978 B · 354 줄
+- **cover-letter.html**: 14,211 B · 176 줄
+- **case-velor-ai.html**: 16,902 B · 227 줄
 - **.claude/facts.json**: 13,521 B · 371 줄
 - **scripts/check-facts.mjs**: 6,039 B · 126 줄
 - **facts.json**: docs 4 · career 9 · claims 28 · rules 12 · dated_terms 13
@@ -52,22 +53,22 @@ sitemap.xml
 
 | 문서 | 폭 | 총 높이 | 화면 수 | scrollWidth | 오버플로 요소 | JS 오류 | alt 누락 |
 |---|---|---|---|---|---|---|---|
-| index.html | 390 | 10,187 | 12.1 | 390 ✓ | — | 0 | 0 |
-| index.html | 768 | 9,171 | 10.9 | 768 ✓ | — | 0 | 0 |
-| index.html | 1200 | 7,482 | 8.9 | 1200 ✓ | — | 0 | 0 |
-| resume.html | 390 | 4,664 | 5.5 | 390 ✓ | — | 0 | 0 |
-| resume.html | 768 | 2,836 | 3.4 | 768 ✓ | — | 0 | 0 |
-| resume.html | 1200 | 2,730 | 3.2 | 1200 ✓ | — | 0 | 0 |
-| cover-letter.html | 390 | 3,253 | 3.9 | 390 ✓ | — | 0 | 0 |
-| cover-letter.html | 768 | 2,057 | 2.4 | 768 ✓ | — | 0 | 0 |
-| cover-letter.html | 1200 | 2,057 | 2.4 | 1200 ✓ | — | 0 | 0 |
-| case-velor-ai.html | 390 | 5,624 | 6.7 | 390 ✓ | — | 0 | 0 |
-| case-velor-ai.html | 768 | 4,711 | 5.6 | 768 ✓ | — | 0 | 0 |
-| case-velor-ai.html | 1200 | 4,798 | 5.7 | 1200 ✓ | — | 0 | 0 |
+| index.html | 390 | 10,268 | 12.2 | 390 ✓ | — | 0 | 0 |
+| index.html | 768 | 9,203 | 10.9 | 768 ✓ | — | 0 | 0 |
+| index.html | 1200 | 7,514 | 8.9 | 1200 ✓ | — | 0 | 0 |
+| resume.html | 390 | 4,738 | 5.6 | 390 ✓ | — | 0 | 0 |
+| resume.html | 768 | 2,895 | 3.4 | 768 ✓ | — | 0 | 0 |
+| resume.html | 1200 | 2,790 | 3.3 | 1200 ✓ | — | 0 | 0 |
+| cover-letter.html | 390 | 3,345 | 4.0 | 390 ✓ | — | 0 | 0 |
+| cover-letter.html | 768 | 2,116 | 2.5 | 768 ✓ | — | 0 | 0 |
+| cover-letter.html | 1200 | 2,116 | 2.5 | 1200 ✓ | — | 0 | 0 |
+| case-velor-ai.html | 390 | 5,717 | 6.8 | 390 ✓ | — | 0 | 0 |
+| case-velor-ai.html | 768 | 4,770 | 5.7 | 768 ✓ | — | 0 | 0 |
+| case-velor-ai.html | 1200 | 4,857 | 5.8 | 1200 ✓ | — | 0 | 0 |
 
 ## 12–15. index 390px — 섹션별 · 사례별 높이, 사례 순서
 
-총 높이 **10,187px = 12.1화면** (목표 ≤ 10,200px / 12화면)
+총 높이 **10,268px = 12.2화면** (목표 ≤ 10,200px / 12화면)
 
 | 섹션 | 높이 | 화면 |
 |---|---|---|
@@ -80,7 +81,7 @@ sitemap.xml
 | career | 1,278 | 1.51 |
 | press | 399 | 0.47 |
 | contact | 637 | 0.75 |
-| footer | 61 | 0.07 |
+| footer | 142 | 0.17 |
 
 | 사례 | 제목 | 높이 | 화면 | 이미지 |
 |---|---|---|---|---|
@@ -134,8 +135,8 @@ sitemap.xml
 
 ## 17–18. Sealo 노출 위치 · 이미지
 
-- **index.html**: L597 — 1줄
-- **resume.html**: L248 — 1줄
+- **index.html**: L612 — 1줄
+- **resume.html**: L272 — 1줄
 - **images/sealo-proto.jpg**: 없음
 - **images/sealo-offer.jpg**: 없음
 
@@ -146,13 +147,13 @@ sitemap.xml
 
 ## 22–24. 링크 — 포트폴리오 · VELOR · 내부 링크/이미지 존재
 
-- **index.html**: velor.kr 1개 · 포트폴리오 링크 1개 · 내부 참조 8개 · **깨진 내부 참조 0**
+- **index.html**: velor.kr 1개 · 포트폴리오 링크 1개 · 내부 참조 9개 · **깨진 내부 참조 0**
   - velor.kr: https://velor.kr
-- **resume.html**: velor.kr 1개 · 포트폴리오 링크 2개 · 내부 참조 3개 · **깨진 내부 참조 0**
+- **resume.html**: velor.kr 1개 · 포트폴리오 링크 2개 · 내부 참조 6개 · **깨진 내부 참조 0**
   - velor.kr: https://velor.kr/
-- **cover-letter.html**: velor.kr 1개 · 포트폴리오 링크 2개 · 내부 참조 3개 · **깨진 내부 참조 0**
+- **cover-letter.html**: velor.kr 1개 · 포트폴리오 링크 2개 · 내부 참조 7개 · **깨진 내부 참조 0**
   - velor.kr: https://velor.kr
-- **case-velor-ai.html**: velor.kr 5개 · 포트폴리오 링크 1개 · 내부 참조 4개 · **깨진 내부 참조 0**
+- **case-velor-ai.html**: velor.kr 5개 · 포트폴리오 링크 1개 · 내부 참조 9개 · **깨진 내부 참조 0**
   - velor.kr: https://velor.kr/ai · https://velor.kr/ai-claude · https://velor.kr/ai-chatgpt · https://velor.kr/ai-gemini-google · https://velor.kr/ai/tools
 
 외부 링크(velor.kr·언론)는 이 실행 환경의 프록시가 차단해 HTTP 상태를 직접 확인할 수 없다. 09-02 기준값(velor.kr 8개 전부 200)을 참고값으로 둔다.
@@ -160,10 +161,10 @@ sitemap.xml
 ## 28. CI 상태 (main 최신 실행)
 
 ```
+Daily Recruit Digest Email | completed | success | 5beb66b
+정본 대조 | completed | success | 5beb66b
+Deploy static content to Pages | completed | success | 5beb66b
 Deploy static content to Pages | completed | success | dafff72
-정본 대조 | completed | success | dafff72
-Daily Recruit Digest Email | completed | success | a0656d4
-정본 대조 | completed | success | a0656d4
 ```
 
 ## 29. 정본 ↔ 문서 대조 (check-facts)
