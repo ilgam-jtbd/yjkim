@@ -9,6 +9,14 @@
   },
   "career": [
     {
+      "org": "모모는(momois)",
+      "role": "Founder · 기획 · 개발",
+      "from": "2026",
+      "to": "현재",
+      "public": true,
+      "note": "AI 비서. 웹 momois.app 운영, 모바일 비공개 테스트·스토어 출시 준비 중. 운영사 주식회사 제이티비디(설립 예정). 공개 수치는 베타 검증 목표만 [목표] 표기."
+    },
+    {
       "org": "Sealo(씰로)",
       "role": "기획 · 개발 직접",
       "from": "2026.08",
@@ -235,7 +243,8 @@
     "index.html",
     "resume.html",
     "cover-letter.html",
-    "case-velor-ai.html"
+    "case-velor-ai.html",
+    "momois.html"
   ],
   "pdfs": {
     "resume.html": "김연재_이력서_2026.pdf",
