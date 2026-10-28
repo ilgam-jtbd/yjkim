@@ -40,7 +40,8 @@ a{color:var(--primary);text-decoration:none}
 }
 
 /* HEADER */
-.rh{border-top:4px solid var(--primary);padding-top:.9rem;padding-bottom:1.1rem;border-bottom:1px solid var(--line);margin-bottom:1.4rem;display:grid;grid-template-columns:1fr auto;gap:.6rem 1.5rem;align-items:start}
+.rh{border-top:4px solid var(--primary);padding-top:.9rem;padding-bottom:1.1rem;border-bottom:1px solid var(--line);margin-bottom:1.4rem;display:grid;grid-template-columns:auto 1fr auto;gap:.6rem 1.3rem;align-items:start}
+.rh-ph{width:92px;height:92px;border-radius:12px;object-fit:cover;border:1px solid var(--line);display:block}
 .rh-name{font-family:var(--serif);font-size:1.9rem;font-weight:900;letter-spacing:-.02em;line-height:1.1}
 .rh-name span{font-family:'Pretendard',sans-serif;font-size:.48em;font-weight:500;color:var(--ink-3);margin-left:.5rem;letter-spacing:0}
 .rh-title{font-size:1rem;font-weight:700;color:var(--primary);margin-top:.4rem}
@@ -112,7 +113,9 @@ a{color:var(--primary);text-decoration:none}
 @media screen and (max-width:640px){
   body{padding:1.25rem 1.1rem 3rem}
   .bar{margin:-1.25rem -1.1rem 1.5rem;padding:.6rem 1.1rem}
-  .rh{grid-template-columns:1fr}
+  .rh{grid-template-columns:auto 1fr}
+  .rh .links{grid-column:1/-1}
+  .rh-ph{width:72px;height:72px}
   .rh-name{font-size:1.6rem}
   .met{grid-template-columns:repeat(2,1fr)}
   .exp-h{flex-direction:column;gap:.1rem}
@@ -139,6 +142,7 @@ a{color:var(--primary);text-decoration:none}
   a{color:var(--primary)}
   .rh{padding-top:.3rem;padding-bottom:.55rem;margin-bottom:.7rem;gap:.4rem 1.2rem}
   .rh-name{font-size:1.65rem}
+  .rh-ph{width:84px;height:84px}
   .lk{padding:.3rem .6rem}
   .sec{margin-bottom:.7rem}
   .sec-t{margin-bottom:.45rem;padding-bottom:.25rem}
@@ -179,7 +183,7 @@ a{color:var(--primary);text-decoration:none}
 }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"김연재","alternateName":"YJ Kim","jobTitle":"CSO · CBO (사업전략 · 신규사업개발 · BD · Growth)","url":"https://ilgam-jtbd.github.io/yjkim/resume.html","email":"mailto:ilgam.jtbd@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Seoul","addressCountry":"KR"},"description":"수요와 공급이 따로 노는 시장에 거래가 일어나게 만드는 사업을 해왔습니다. 누적 매칭 13만 건 · 거래액 250억 · 지분매각 Exit · 투자유치 100억+ · 등록 특허 6건.","alumniOf":[{"@type":"CollegeOrUniversity","name":"Helsinki School of Economics (Executive MBA)"},{"@type":"CollegeOrUniversity","name":"University of Indonesia"}],"sameAs":["https://www.linkedin.com/in/wisdomkim","https://velor.kr"]},"dateModified":"2026-09-02"}
+{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"김연재","image":"https://ilgam-jtbd.github.io/yjkim/images/profile.jpg","alternateName":"YJ Kim","jobTitle":"CSO · CBO (사업전략 · 신규사업개발 · BD · Growth)","url":"https://ilgam-jtbd.github.io/yjkim/resume.html","email":"mailto:ilgam.jtbd@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Seoul","addressCountry":"KR"},"description":"수요와 공급이 따로 노는 시장에 거래가 일어나게 만드는 사업을 해왔습니다. 누적 매칭 13만 건 · 거래액 250억 · 지분매각 Exit · 투자유치 100억+ · 등록 특허 6건.","alumniOf":[{"@type":"CollegeOrUniversity","name":"Helsinki School of Economics (Executive MBA)"},{"@type":"CollegeOrUniversity","name":"University of Indonesia"}],"sameAs":["https://www.linkedin.com/in/wisdomkim","https://velor.kr"]},"dateModified":"2026-09-02"}
 </script>
 </head>
 <body>
@@ -197,6 +201,7 @@ a{color:var(--primary);text-decoration:none}
 <div class="pgno">PAGE 1 / 2</div>
 
 <div class="rh">
+  <img class="rh-ph" src="images/profile.jpg" alt="김연재 프로필 사진" width="92" height="92">
   <div>
     <div class="rh-name">김연재 <span>YJ Kim</span></div>
     <div class="rh-title">CSO · CBO — 사업전략 · 신규사업개발 · BD · Growth</div>

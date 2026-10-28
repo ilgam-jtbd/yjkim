@@ -66,7 +66,8 @@ nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-f
 h1{font-family:var(--serif);font-size:clamp(1.85rem,4.4vw,2.9rem);line-height:1.25;letter-spacing:-.02em;font-weight:900;margin-bottom:1rem}
 h1 em{font-style:normal;color:var(--primary)}
 .manifesto{font-family:var(--serif);font-weight:700;font-size:clamp(1.05rem,2.1vw,1.35rem);line-height:1.6;color:var(--ink);max-width:760px;margin:1.1rem 0 0;padding-left:1rem;border-left:3px solid var(--accent);letter-spacing:-.01em}
-.hero-name{margin-top:1.4rem;font-size:.95rem;color:var(--ink-3)}
+.hero-name{margin-top:1.4rem;font-size:.95rem;color:var(--ink-3);display:flex;align-items:center;gap:.9rem}
+.hero-ph{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--line);flex:none}
 .hero-name b{color:var(--ink);font-weight:700;font-size:1.05rem}
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-top:1.8rem}
 .kpi{background:var(--soft);border:1px solid var(--line);border-radius:var(--r);padding:1rem 1.1rem}
@@ -266,6 +267,7 @@ footer{padding:.5rem 0 1.5rem;text-align:center;color:var(--ink-3);font-size:.82
   "@type":"ProfilePage",
   "mainEntity":{
     "@type":"Person",
+    "image":"https://ilgam-jtbd.github.io/yjkim/images/profile.jpg",
     "name":"김연재",
     "alternateName":"YJ Kim",
     "jobTitle":"CSO · CBO (사업전략 · 신규사업개발 · BD · Growth)",
@@ -309,7 +311,7 @@ footer{padding:.5rem 0 1.5rem;text-align:center;color:var(--ink-3);font-size:.82
     <div class="eyebrow"><i></i> CSO · CBO / 사업전략 · 신규사업 · BD · Growth</div>
     <h1>수요와 공급이 따로 노는 시장에<br><em>거래가 일어나게 만드는 사업</em>을 해왔습니다.</h1>
     <p class="manifesto">거래가 안 되는 시장에도 수요와 공급은 있습니다. 없는 것은 믿을 근거입니다. 저는 그 근거를 구조로 만듭니다.</p>
-    <p class="hero-name"><b>김연재 YJ Kim</b> · 이커머스 마켓플레이스 · 건설 인력 O2O · 시니어 D2C · 레저 슈퍼앱에서 사업전략과 신규사업을 총괄해 왔습니다.</p>
+    <p class="hero-name"><img class="hero-ph" src="images/profile.jpg" alt="김연재 프로필 사진" width="64" height="64"><span><b>김연재 YJ Kim</b> · 이커머스 마켓플레이스 · 건설 인력 O2O · 시니어 D2C · 레저 슈퍼앱에서 사업전략과 신규사업을 총괄해 왔습니다.</span></p>
 
     <div class="kpis">
       <div class="kpi"><b>13만 건</b><span>누적 매칭<br>건설 인력 O2O · 경영총괄</span></div>
